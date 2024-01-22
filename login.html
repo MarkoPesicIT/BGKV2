@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="style/resposive.css" />
+            <script src="script.js"></script>
+		<title>Почетна</title>
+	</head>
+	<body>
+			<header>
+				<div class="gornjideo">
+                              <a href="index.html">БЕОГРАД-КООРДИНАТЕ</a>
+                              <a id="link" href="https://www.sveti-sava.edu.rs/">
+                                    <div class="logoIme">
+                                          <img src="Materijal/Logo/logo 1  Gimnazija-Sveti-Sava-FI.png" alt="">
+                                          <p>Гимназија "Свети Сава"</p>
+                                    </div>
+                              </a>
+                              <a id="link" href="https://www.brodarska.edu.rs/">
+                                    <div class="logoIme">
+                                          <img src="Materijal/Logo/logo 2 ŠBBH logo -01.png" alt="">
+                                          <p>Школа за бродарство, бродоградњу и хидроградњу</p>
+                                    </div>
+                              </a>
+                              <a id="ulogujse" href="login.html">ULOGUJ SE</a>
+				</div>
+                        <hr>
+				<ul class="menu cf">
+					<li>
+						<a href="index.html">ПОЧЕТНА</a>
+					</li>
+					<li>
+						<a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
+						<ul class="submenu">
+                                          <li>
+                                                <a href="stara_zeleznicka_stanica.html">СТАРА ЖЕЛЕЗНИЧКА СТАНИЦА</a>
+                                          </li>
+                                          <li>
+                                                <a href="syudentski_kulturni_centar.html">СТУДЕНТСКИ КУЛТУРНИ ЦЕНТАР</a>
+                                          </li>
+							<li>
+								<a href="beogradjanka.html">БЕОГРАЂАНКА</a>
+							</li>
+							<li>
+								<a href="gradska_zadruga.html">ГРАДСКА ЗАДРУГА</a>
+							</li>
+							<li>
+                                                <a href="moderna_arhitektura.html">МОДЕРНА АРХИТЕКТУРА</a>
+							</li>
+							<li>
+                                                <a href="klasicizam.html">КЛАСИЦИЗАМ</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
+						<ul class="submenu">
+							<li>
+								<a href="beogradjanka.html">СИМА ПАНДУРОВИЋ</a>
+							</li>
+							<li>
+								<a href="gradska_zadruga.html">МИЛОШ ЦРЊАНСКИ</a>
+							</li>
+							<li>
+								<a href="stara_zeleznicka_stanica.html">МОМЧИЛО НАСТАСИЈЕВИЋ</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="duh_metropole.html">ДУХ МЕТРОПОЛЕ</a>
+					</li>
+					<li>
+						<a href="fragmenti.html">ФРАГМЕНТИ</a>
+					</li>
+					<li>
+						<a href="kvizovi.html">КВИЗОВИ</a>
+					</li>
+                              <li>
+                                    <a href="oprojektu">О ПРОЈЕКТУ</a>
+                              </li>
+				</ul>
+                              <img id="baner" src="Materijal/Baneri/Baner - oznake.jpg" alt="">
+			</header>
+                  <div class="strana">
+                        <main class="beogradjanka">
+                              <h1>Улогуј се</h1>
+                              <form id="loginForm">
+                                    <label style="font-size: 3rem;" for="username">Корисничко име:</label>
+                                    <input style="font-size: 2rem; margin: 1rem;"type="text" id="username" name="username" required>
+                                    <br>
+                                    <label style="font-size: 3rem;"for="password">Шифра:</label>
+                                    <input style="font-size: 2rem; margin: 1rem     " type="password" id="password" name="password" required>
+                                    <br>
+                                    <button style="font-size: 2rem;" type="button" onclick="login()">Login</button>
+                              </form>
+                              <script>
+                                    // Import the functions you need from the SDKs you need
+                                          import { initializeApp } from "firebase/app";
+                                          import { getAnalytics } from "firebase/analytics";
+                                          // TODO: Add SDKs for Firebase products that you want to use
+                                          // https://firebase.google.com/docs/web/setup#available-libraries
+                                                                        
+                                          // Your web app's Firebase configuration
+                                          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                                          const firebaseConfig = {
+                                            apiKey: "AIzaSyAwmEWumYAYJ5_1dw_s1STaGlwshvzibCQ",
+                                            authDomain: "beograd-koordinate.firebaseapp.com",
+                                            databaseURL: "https://beograd-koordinate-default-rtdb.europe-west1.firebasedatabase.app",
+                                            projectId: "beograd-koordinate",
+                                            storageBucket: "beograd-koordinate.appspot.com",
+                                            messagingSenderId: "265886337687",
+                                            appId: "1:265886337687:web:e64eb797413d3b86f377d2",
+                                            measurementId: "G-P974RQ20RZ"
+                                          };
+                                          
+                                          // Initialize Firebase
+                                          const app = initializeApp(firebaseConfig);
+                                          const analytics = getAnalytics(app);
+                                
+                                    firebase.initializeApp(firebaseConfig);
+                                
+                                    function login() {
+                                      const email = document.getElementById('email').value;
+                                      const password = document.getElementById('password').value;
+                                
+                                      firebase.auth().signInWithEmailAndPassword(email, password)
+                                        .then((userCredential) => {
+                                          const user = userCredential.user;
+                                          alert(`Login successful! User: ${user.email}`);
+                                        })
+                                        .catch((error) => {
+                                          const errorCode = error.code;
+                                          const errorMessage = error.message;
+                                          alert(`Login failed. Error: ${errorMessage}`);
+                                        });
+                                    }
+                                  </script>
+                        </main>
+                  </div>
+			<footer>
+				<div class="mainFooter">
+                              <div id="ukratko">
+                                    <h1>УКРАТКО О ПРОЈЕКТУ</h1>
+                                    <p id="tekst">Београд - Координате је платформа настала на основу
+                                          резултата мултимедијалног пројекта
+                                          Европске метрополе - Београд, град из фрагмената усмереног
+                                          на област уметности, културе и друштва. Пројекат је одобрен од
+                                          Канцеларије за младе града Београда.</p>
+                              </div>
+                              
+                              <div id="brziMeni">
+                                    <h1>БРЗИ МЕНИ</h1>
+                                    <div class="content">
+                                          <a href="index.html">ПОЧЕТНА</a>
+                                          <a href="o_gradjevinama">О ГРАЂЕВИНАМА</a>
+                                          <a href="o_licnostima">О ЛИЧНОСТИМА</a>
+                                          <a href="duh_metropole">ДУХ МЕТРОПОЛЕ</a>
+                                          <a href="fragmenti">ФРАГМЕНТИ</a>
+                                          <a href="kvizovi">КВИЗОВИ</a>
+                                          <a href="o_projektu">О ПРОЈЕКТУ</a>
+                                    </div>
+                              </div>
+
+                              <div id="korisniLinkovi">
+                                    <h1>КОРИСНИ ЛИНКОВИ</h1>
+                                    <div class="content">
+                                          <a href="https://www.sveti-sava.edu.rs/">Гимназија "Свети Сава"</a>
+                                          <a href="https://www.brodarska.edu.rs/">Школа за бродарство, <br>бродоградњу и хидроградњу</a>
+                                    </div>
+                              </div>
+                        </div>
+			</footer>
+	</body>
+</html>white;white;
