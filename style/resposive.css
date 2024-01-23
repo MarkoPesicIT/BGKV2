@@ -93,16 +93,49 @@
             font-size: 1.8rem;
       }
 
+      .ol{
+           display:flex;
+           flex-direction: column; 
+           margin-left: 10rem;
+           /* height: 50rem; */
 
+      }
+
+      .ol1 {
+            margin-left: -9.5rem;
+            height: 20rem ;
+            width: 15rem;
+      }
+
+      .ol1 img{
+          height: 15rem;
+          width: 15rem;
+      }
+      #naslovOL{
+            font-size: 2.3rem;
+      }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
 
 }
 @media only screen and (min-width: 768px) and (max-width: 1599px){
+      
+      #nebitno{
+            padding: -3rem;
+
+      }
+      .menu a{
+            font-size: 1.2rem;
+      }
+
       .autoriBanera{
             width: 30rem;
             margin-left: -15rem;
             
+      }
+      .ol1{
+            width: 20rem;
+          
       }
       .donjiFooter{
             display:flex;
@@ -118,10 +151,11 @@
       }
       #brziMeni{
             height: 30rem;
-            width: 20rem;
+            width: 15rem;
       }
       #korisniLinkovi{
             height: 30rem;
+            width: 15rem;
       }
       .mainFooter{
             display:flex;
