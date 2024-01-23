@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearActiveImage();
       });
     });
-function menuBtnFunction(menuBtn) {
+  function menuBtnFunction(menuBtn) {
     menuBtn.classList.toggle("active");
     var sidemenu = document.getElementById('sidemenu');
   if (sidemenu.style.right === '0%') {
