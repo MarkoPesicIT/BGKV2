@@ -46,17 +46,24 @@
             width: 12rem;
             margin-left: -7.5rem;
       }
+
+      .autoriBanera h1{
+            font-size: 1.7rem;
+      }
+
+
+      .autoriBanera p{
+            font-size:1rem ;
+      }
+
+
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
-
+      .menu a{
+            
+      }
 }
-@media only screen and (min-width: 768px) and (max-width: 166px){
-      
-}
-
-@media only screen and (max-width: 1599px){
-
-      
+@media only screen and (min-width: 768px) and (max-width: 1660px){
 }
 
 @media only screen and (min-width: 1600px){
@@ -68,3 +75,4 @@
             display: none;
       }
 }
+
