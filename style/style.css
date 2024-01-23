@@ -53,7 +53,9 @@ main {
 }
 
 .gornjideo {
-	height: 5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	height: 7rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -96,7 +98,7 @@ main {
 
 .gornjideo img {
 	border-radius: 1rem;
-	width: 3rem;
+	width: 7rem;
 	height: auto;
 	aspect-ratio: 1/1;
 	transition: 0.2s ease-in-out scale;
@@ -122,6 +124,10 @@ main {
 	background-color: var(--svetloP);
 	scale: 1.07;
 	cursor: pointer;
+}
+
+#naziv{
+	font-size: 3rem;
 }
 
 .cf:before,
@@ -170,7 +176,7 @@ main {
 
 .menu>li>a {
 	transform: skewX(35deg);
-	padding: 1em 2em;
+	padding: 0.7rem;
 }
 
 .submenu {
