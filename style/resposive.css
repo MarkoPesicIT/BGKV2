@@ -36,30 +36,125 @@
 
       .strana {
             width: 20%;
-            margin: 5rem auto;
+            margin: 4rem auto;
             display: flex;
             flex-direction: column;
             align-items: center;
       }
 
       .autoriBanera{
-            width: 12rem;
-            margin-left: -7.5rem;
+            width: 17rem;
+            margin-left: -10rem;
+            height: 90rem;
       }
 
       .autoriBanera h1{
-            font-size: 1.7rem;
+            font-size: 2rem;
       }
 
+       .autoriBanera p{
 
-      .autoriBanera p{
-            font-size:1rem ;
+            font-size: 1.2rem;
+      }
+
+      .glavno{
+            width:17rem;
+
+      }
+
+      .glavno h1{
+            font-size:2rem
+      }
+
+      .glavno p{
+            font-size: 1.2rem
+      }
+
+      .zgrada{
+            width: 6rem;
+            margin-left:-6.5rem ;
+            padding: 0.8rem;
+      }
+
+      .zgrade{
+            margin-left: 6.9rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(10vw, 2fr));
+            grid-template-rows: repeat(auto, 1fr);
+            gap: 8rem;
+      }
+
+      .zgrada img{
+            width: 6rem;
+      }
+
+      .ogradjevinama p{
+            margin-top:1rem;
+            font-size: 1.8rem;
       }
 
 
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
+
 }
+@media only screen and (min-width: 768px) and (max-width: 1599px){
+      .autoriBanera{
+            width: 30rem;
+            margin-left: -15rem;
+            
+      }
+      .donjiFooter{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+      }
+      #ukratko{
+            width: 30rem;
+            margin-left: 1;
+      }
+      #brziMeni{
+            height: 30rem;
+            width: 20rem;
+      }
+      #korisniLinkovi{
+            height: 30rem;
+      }
+      .mainFooter{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      }
+      .glavno a{
+            font-size: 2rem;
+            font-weight: 300;
+            padding: 0.8rem;
+      }
+      .glavno{
+            width: 30rem;
+            margin-left: 1rem;
+      }
+      .autoriBanera p{
+            font-size: 2.7rem;
+            
+      }
+      .strana {
+            width: 20%;
+            margin: 5rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+      }
+}
+
+
+
+
+      
 @media only screen and (min-width: 768px) and (max-width: 1660px){
 }
 
