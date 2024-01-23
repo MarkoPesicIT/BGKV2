@@ -50,14 +50,62 @@
 @media only screen and (min-width: 480px) and (max-width: 767px){
 
 }
-@media only screen and (min-width: 768px) and (max-width: 166px){
-      
+@media only screen and (min-width: 768px) and (max-width: 1599px){
+      .autoriBanera{
+            width: 30rem;
+            margin-left: -15rem;
+            
+      }
+      .donjiFooter{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+      }
+      #ukratko{
+            width: 30rem;
+            margin-left: 1;
+      }
+      #brziMeni{
+            height: 30rem;
+            width: 20rem;
+      }
+      #korisniLinkovi{
+            height: 30rem;
+      }
+      .mainFooter{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      }
+      .glavno a{
+            font-size: 2rem;
+            font-weight: 300;
+            padding: 0.8rem;
+      }
+      .glavno{
+            width: 30rem;
+            margin-left: 1rem;
+      }
+      .autoriBanera p{
+            font-size: 2.7rem;
+            
+      }
+      .strana {
+            width: 20%;
+            margin: 5rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+      }
 }
 
-@media only screen and (max-width: 1599px){
 
-      
-}
+
+
 
 @media only screen and (min-width: 1600px){
       .device{
