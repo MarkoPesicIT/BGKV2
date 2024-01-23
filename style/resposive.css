@@ -36,24 +36,61 @@
 
       .strana {
             width: 20%;
-            margin: 5rem auto;
+            margin: 4rem auto;
             display: flex;
             flex-direction: column;
             align-items: center;
       }
 
       .autoriBanera{
-            width: 12rem;
-            margin-left: -7.5rem;
+            width: 17rem;
+            margin-left: -10rem;
+            height: 90rem;
       }
 
       .autoriBanera h1{
-            font-size: 1.7rem;
+            font-size: 2rem;
       }
 
+       .autoriBanera p{
 
-      .autoriBanera p{
-            font-size:1rem ;
+            font-size: 1.2rem;
+      }
+
+      .glavno{
+            width:17rem;
+
+      }
+
+      .glavno h1{
+            font-size:2rem
+      }
+
+      .glavno p{
+            font-size: 1.2rem
+      }
+
+      .zgrada{
+            width: 6rem;
+            margin-left:-6.5rem ;
+            padding: 0.8rem;
+      }
+
+      .zgrade{
+            margin-left: 6.9rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(10vw, 2fr));
+            grid-template-rows: repeat(auto, 1fr);
+            gap: 8rem;
+      }
+
+      .zgrada img{
+            width: 6rem;
+      }
+
+      .ogradjevinama p{
+            margin-top:1rem;
+            font-size: 1.8rem;
       }
 
 
@@ -117,10 +154,7 @@
 
 
 
-      .menu a{
-            
-      }
-}
+      
 @media only screen and (min-width: 768px) and (max-width: 1660px){
 }
 
