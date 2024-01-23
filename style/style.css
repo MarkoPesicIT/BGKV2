@@ -54,7 +54,7 @@ main {
 }
 
 .gornjideo {
-	height: 5rem;
+	height: 10rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -93,6 +93,10 @@ main {
 .logoIme p{
 	margin-left: 1rem;
 	color: var(--crna);
+}
+
+#logoGSS{
+	width: 25rem;
 }
 
 .gornjideo img {
@@ -171,7 +175,7 @@ main {
 
 .menu>li>a {
 	transform: skewX(35deg);
-	padding: 1em 2em;
+	padding: 0.5rem;
 }
 
 .submenu {
