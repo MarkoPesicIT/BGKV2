@@ -1,4 +1,4 @@
-:root {
+/* :root {
 	--primary: #06829C;
 	--svetloP: #0093b0;
 	--svetloP2: #00b1d4;
@@ -12,13 +12,10 @@
 
 @media only screen and (min-width: 320px) and (max-width: 479px){
       .sidemenu{
-            z-index: 1000;
             overflow-x: hidden;
             overflow-y: hidden;
       }
       .triLinije{
-            overflow-y: hidden;
-            overflow-x: hidden;
             margin-right: 2rem;
       }
       .mainFooterTablet{
@@ -37,7 +34,6 @@
       }
       header{
             margin-top: -4rem;
-            width: 100vw;
       }
       .menu{
             display: none;
@@ -51,7 +47,7 @@
             display: none;
       }
       .gornjideo{
-            padding-left: 1rem;     
+            padding-left: 1rem;
             padding-right: 1rem;
             background-color: var(--primary);
             height: 4rem;
@@ -65,7 +61,7 @@
       }
 
       .strana {
-            /* width: 95vw; */
+            width: 20%;
             margin: 4rem auto;
             display: flex;
             flex-direction: column;
@@ -74,8 +70,8 @@
 
       .autoriBanera{
             width: 17rem;
+            margin-left: -10rem;
             height: 90rem;
-            margin-left: -7.5rem;
       }
 
       .autoriBanera h1{
@@ -88,7 +84,11 @@
 
       .glavno{
             width:17rem;
+      }
 
+      .glavno a{
+            font-size: 1.2rem;
+            padding: 0.5rem;
       }
 
       .glavno h1{
@@ -100,39 +100,28 @@
       }
 
       .zgrada{
-            width: 17rem;
-            /* margin-left:-6.5rem ; */
-            padding: 1.5rem;
-            height: fit-content;
-            display: flex;
-            flex-direction: column;
+            width: 6rem;
+            margin-left:-6.5rem ;
+            padding: 0.8rem;
       }
 
       .zgrade{
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
+            margin-left: 6.9rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(10vw, 2fr));
+            grid-template-rows: repeat(auto, 1fr);
+            gap: 8rem;
       }
 
       .zgrada img{
-            width: 17rem;
+            width: 6rem;
       }
 
-      .zgrada h1{
-            font-size: 1.7rem;
-            margin: 1rem;
-            margin-top: 1.5rem;
-      }
-  
       .ogradjevinama p{
             margin-top:1rem;
-            font-size: 1.5rem;
-      }
-      .ogradjUvod h1{
-            margin-top: -1rem;
             font-size: 1.8rem;
       }
+
       .ol{
            display:flex;
            flex-direction: column; 
@@ -162,8 +151,8 @@
       }
       .brziMeniFon{
             margin-top: 2rem;
-            box-shadow: inset 0 0 1rem rgb(0, 190, 224);
             height: 32rem;
+            box-shadow: inset 0 0 1rem rgb(0, 190, 224);
             border-radius: 2rem;
       }
       .bmLinkoviFon{
@@ -182,7 +171,7 @@
       .korisniLinkoviFon{
             box-shadow: inset 0 0 1rem rgb(0, 190, 224);
             margin-top: 2rem;
-            margin-bottom: -1.7rem;
+            margin-bottom: -1.5rem;
       }
 
       .klinkFon{
@@ -190,76 +179,6 @@
             display: flex;
             flex-direction: column;
       }
-      /* Uopsteno zasebne strane za gradjevine */
-      .beogradjanka h1{
-            font-size: 2.5rem;
-            margin: 0 auto;
-            margin-bottom: 3rem;
-      }
-
-      .slider-container{
-            z-index: -1;
-      }
-
-      .image-container {
-            aspect-ratio: 16/9;
-            position: relative;
-            overflow: hidden;
-            /* max-width: 70vw; */
-            width: 25rem;
-            height: auto;
-            border: 2px solid var(--svetloP);
-            margin-bottom: 2rem;
-            box-shadow: 0 0 2rem rgba(0, 0, 0, 0.6);
-            border-radius: 2rem;
-            margin: 0 auto;
-      }
-      
-      .slider-container {
-            width: 100%;
-            aspect-ratio: 16/9;
-            display: flex;
-            overflow: hidden;
-      }
-      
-      .slider-container:has(.img.active) .img:not(.active) {
-            filter: grayscale(100%);
-            filter: brightness(60%);
-      }
-      
-      .slider-container img {
-            height: 100%;
-            width: calc(100% / 5);
-            object-fit: cover;
-            overflow: hidden;
-            border-left: 1px solid var(--svetloP);
-            border-right: 1px solid var(--svetloP);
-            transition: all 0.7s cubic-bezier(0.42, 0, 0, 0);
-            cursor: pointer;
-      }
-      
-      .slider-container img.active {
-            width: 400%;
-      }
-      
-      .beogradjanka {
-            display: flex;
-            flex-direction: column;
-            width: 100vw;
-            padding-left: 0%;
-            padding-right: 0%;
-      }
-      
-      .beogradjankaTekst {
-            margin-top: 5rem;
-            margin-left: 2rem;
-            margin-right: 2rem;
-      }
-      
-      .beogradjankaTekst p {
-            font-size: 1.5rem;
-      }
-
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
 
@@ -280,7 +199,6 @@
       .gornjideo{
             padding-left: 1rem;
             padding-right: 1rem;
-            height: 7rem;
       }
 
 .gornjideo img{
@@ -310,6 +228,12 @@
       }
       .menu a{
             font-size: 1.2rem;
+      }
+
+      .autoriBanera{
+            width: 30rem;
+            margin-left: -15rem;
+            
       }
 
       .ol1{
@@ -362,35 +286,6 @@
             flex-direction: column;
             align-items: center;
       }
-
-      .zgrada{
-            width: 20rem;
-            margin-left:-6.5rem ;
-            padding-top: 1rem;
-            height: 25rem;
-      }
-
-      .zgrade{
-            margin-left: -1rem;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(10vw, 2fr));
-            grid-template-rows: repeat(auto, 1fr);
-            row-gap: 5rem;
-            column-gap: 20rem;
-      }
-
-      .zgrada img{
-            width: 18rem;
-      }
-
-      .zgrada h1{
-            margin: 1rem;
-      }
-
-      .ogradjUvod{
-            margin-left: -10rem;
-            margin-right: -10rem;
-      }
 }
 
 @media only screen and (min-width: 1600px){
@@ -414,4 +309,4 @@
             display: none;
       }
 }
-
+ */
