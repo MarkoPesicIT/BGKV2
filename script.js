@@ -32,19 +32,3 @@ document.addEventListener("DOMContentLoaded", function () {
     sidemenu.style.right = '0%';
   }
 }
-let isRotated = false;
-
-  function toggleArrow() {
-    const arrowIcon = document.getElementById('arrow');
-    const submenu = document.getElementById('submenu');
-
-    if (isRotated) {
-      arrowIcon.classList.remove('rotate-90');
-      submenu.classList.remove('visible');
-    } else {
-      arrowIcon.classList.add('rotate-90');
-      submenu.classList.add('visible');
-    }
-
-    isRotated = !isRotated;
-  }

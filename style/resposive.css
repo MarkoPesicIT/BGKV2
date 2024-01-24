@@ -11,6 +11,30 @@
 
 
 @media only screen and (min-width: 320px) and (max-width: 479px){
+      .sidemenu{
+            overflow-x: hidden;
+            overflow-y: hidden;
+      }
+      .triLinije{
+            margin-right: 2rem;
+      }
+      .mainFooterTablet{
+            display: none;
+      }
+      .mainFooterPC{
+            display: none;
+      }
+      #banerFon{
+            margin-top: 4rem;
+            width: 100vw;
+      }
+
+      #baner{
+            display: none;
+      }
+      header{
+            margin-top: -4rem;
+      }
       .menu{
             display: none;
       }
@@ -22,16 +46,18 @@
       #ulogujse{
             display: none;
       }
-
       .gornjideo{
-            background-color: var(--primary);
             padding-left: 1rem;
             padding-right: 1rem;
+            background-color: var(--primary);
+            height: 4rem;
+            position: fixed;
+            width: 100%;
       }
 
       #naziv{
             color: var(--bela);
-            font-size: 1.5rem;
+            font-size: 1.81rem;
       }
 
       .strana {
@@ -53,7 +79,6 @@
       }
 
        .autoriBanera p{
-
             font-size: 1.2rem;
       }
 
@@ -97,7 +122,6 @@
            display:flex;
            flex-direction: column; 
            margin-left: 10rem;
-           /* height: 50rem; */
 
       }
 
@@ -114,12 +138,82 @@
       #naslovOL{
             font-size: 2.3rem;
       }
+
+      .mainFooterFon{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      }
+      .brziMeniFon{
+            margin-top: 2rem;
+            height: 32rem;
+      }
+      .bmLinkoviFon{
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+      }
+
+      #tekstFon{
+            color: var(--bela);
+            text-align: left;
+            font-size: 1.4rem;
+            font-weight: 500;
+      }
+
+      .korisniLinkoviFon{
+            margin-top: 2rem;
+      }
+
+      .klinkFon{
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+      }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
 
 }
 @media only screen and (min-width: 768px) and (max-width: 1599px){
-      
+      .menu{
+            margin-left: 0.8rem;
+      }
+      .triLinije{
+            display: none;
+      }
+      #naziv{
+            font-size: 1.5rem;
+      }
+      #banerFon{
+            display: none;
+      }
+      .gornjideo{
+            padding-left: 1rem;
+            padding-right: 1rem;
+      }
+
+.gornjideo img{
+      width: 4rem;
+}
+#ulogujse{
+      font-size: 1rem;
+      border-radius: 0.7rem;
+}
+#logoGSS {
+	width: 17rem;
+}
+.logoIme p{
+      font-size: 1.2rem;
+      font-weight: 500;
+}
+      .mainFooterFon{
+            display: none;
+      }
+
+      .mainFooterPC{
+            display: none;
+      }
       #nebitno{
             padding: -3rem;
 
@@ -133,11 +227,12 @@
             margin-left: -15rem;
             
       }
+
       .ol1{
             width: 20rem;
           
       }
-      .donjiFooter{
+      .donjiFooterTablet{
             display:flex;
             flex-direction: row;
             justify-content: center;
@@ -145,19 +240,19 @@
             gap: 3rem;
             margin-top: 3rem;
       }
-      #ukratko{
+      .ukratkoTablet{
             width: 30rem;
             margin-left: 1;
       }
-      #brziMeni{
+      .brziMeniTablet{
             height: 30rem;
             width: 15rem;
       }
-      #korisniLinkovi{
+      .korisniLinkoviTablet{
             height: 30rem;
             width: 15rem;
       }
-      .mainFooter{
+      .mainFooterTablet{
             display:flex;
             flex-direction: column;
             justify-content: center;
@@ -173,7 +268,7 @@
             margin-left: 1rem;
       }
       .autoriBanera p{
-            font-size: 2.7rem;
+            font-size: 2.1rem;
             
       }
       .strana {
@@ -185,19 +280,24 @@
       }
 }
 
-
-
-
-      
-@media only screen and (min-width: 768px) and (max-width: 1660px){
-}
-
 @media only screen and (min-width: 1600px){
       .device{
             display: none;
       }
 
       .triLinije{
+            display: none;
+      }
+
+      .mainFooterFon{
+            display: none;
+      }
+
+      .mainFooterTablet{
+            display: none;
+      }
+
+      #banerFon{
             display: none;
       }
 }
