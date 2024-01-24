@@ -410,9 +410,9 @@ main {
 	margin-top: 4rem;
 	right: -100%;
 	width: 100%;
-	height: 95svh;
+	height: 94svh;
 	background-color: var(--svetloP);
-	transition: right 0.3s ease;
+	transition: right 0.5s ease;
 	display: flex;
 	list-style-type: none;
 }
@@ -722,8 +722,8 @@ a,
 
 
 .brziMeniFon {
-	border-radius: 1.5rem;
 	height: 27rem;
+	width: 90vw;
 }
 
 
@@ -742,21 +742,25 @@ a,
 .ukratkoFon,
 .brziMeniFon,
 .korisniLinkoviFon {
-	box-shadow: 0 0 5rem #0097d863;
 	padding: 1rem 1rem;
-	background-color: var(--svetloP);
 }
 
-
+.bmLinkoviFon{
+	padding: 1rem 2rem;
+}
 .korisniLinkoviFon {
 	border-radius: 1.5rem;
-	width: 18rem;
+	width: 90vw;
 }
 
 .linkovi {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.klinkFon{
+	padding: 1rem 2rem;
 }
 
 /* O gradjevinama */

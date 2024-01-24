@@ -5,7 +5,7 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="style/style.css" />
-      <link rel="stylesheet" href="style/resposive.css" />
+      <link rel="stylesheet" href="style/responsive.css" />
       <script src="script.js"></script>
       <title>Почетна</title>
 </head>
@@ -110,20 +110,57 @@
             </main>
       </div>
       <footer>
-            <div class="mainFooter">
-                  <div id="ukratko">
+            <div class="mainFooterTablet">
+                  <div class="ukratkoTablet">
                         <h1>УКРАТКО О ПРОЈЕКТУ</h1>
-                        <p id="tekst">Београд - Координате је платформа настала на основу
+                        <hr>
+                        <p>Београд - Координате је платформа настала на основу
                               резултата мултимедијалног пројекта
                               Европске метрополе - Београд, град из фрагмената усмереног
                               на област уметности, културе и друштва. Пројекат је одобрен од
                               Канцеларије за младе града Београда.</p>
                   </div>
-                  <div class="donjiFooter">
-
-                  <div id="brziMeni">
+                  <div class="donjiFooterTablet">
+                  
+                        <div class="brziMeniTablet">
+                              <h1>БРЗИ МЕНИ</h1>
+                        <hr>
+                        <div class="linkovi">
+                                    <a href="index.html">ПОЧЕТНА</a>
+                                    <a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
+                                    <a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
+                                    <a href="duh_metropole.html">ДУХ МЕТРОПОЛЕ</a>
+                                    <a href="fragmenti.html">ФРАГМЕНТИ</a>
+                                    <a href="kvizovi.html">КВИЗОВИ</a>
+                                    <a href="o_projektu.html">О ПРОЈЕКТУ</a>
+                              </div>
+                        </div>
+                        <div class="korisniLinkoviTablet">
+                              <h1>КОРИСНИ ЛИНКОВИ</h1>
+                              <hr>
+                              <div class="linkovi">
+                                    <a href="https://www.sveti-sava.edu.rs/">Гимназија <br> "Свети Сава"</a>
+                                    <a href="https://www.brodarska.edu.rs/">Школа за бродарство, <br>бродоградњу и хидроградњу</a>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      <div class="mainFooterFon">
+            <div id="ukratkoFon">
+                  <h1>УКРАТКО О ПРОЈЕКТУ</h1>
+                  <hr>
+                  <p id="tekstFon">Београд - Координате је платформа настала на основу
+                        резултата мултимедијалног пројекта
+                        Европске метрополе - Београд, град из фрагмената усмереног
+                        на област уметности, културе и друштва. Пројекат је одобрен од
+                        Канцеларије за младе града Београда.</p>
+            </div>
+            
+            <div class="donjiFooterFon">
+                  <div class="brziMeniFon">
                         <h1>БРЗИ МЕНИ</h1>
-                        <div class="content">
+                  <hr>
+                  <div class="bmLinkoviFon">
                               <a href="index.html">ПОЧЕТНА</a>
                               <a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
                               <a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
@@ -133,17 +170,50 @@
                               <a href="o_projektu.html">О ПРОЈЕКТУ</a>
                         </div>
                   </div>
-
-                  <div id="korisniLinkovi">
+                  <div class="korisniLinkoviFon">
                         <h1>КОРИСНИ ЛИНКОВИ</h1>
-                        <div class="content">
+                  <hr>
+                  <div class="klinkFon">
                               <a href="https://www.sveti-sava.edu.rs/">Гимназија "Свети Сава"</a>
                               <a href="https://www.brodarska.edu.rs/">Школа за бродарство, <br>бродоградњу и хидроградњу</a>
                         </div>
                   </div>
             </div>
+      </div>
+      <div class="mainFooterPC">
+            <div class="ukratkoPC">
+                  <h1>УКРАТКО О ПРОЈЕКТУ</h1>
+                  <hr>
+                  <p>Београд - Координате је платформа настала на основу
+                        резултата мултимедијалног пројекта
+                        Европске метрополе - Београд, град из фрагмената усмереног
+                        на област уметности, културе и друштва. Пројекат је одобрен од
+                        Канцеларије за младе града Београда.</p>
             </div>
-      </footer>
+            
+                  <div class="brziMeniPC">
+                        <h1>БРЗИ МЕНИ</h1>
+                  <hr>
+                  <div class="linkovi">
+                              <a href="index.html">ПОЧЕТНА</a>
+                              <a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
+                              <a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
+                              <a href="duh_metropole.html">ДУХ МЕТРОПОЛЕ</a>
+                              <a href="fragmenti.html">ФРАГМЕНТИ</a>
+                              <a href="kvizovi.html">КВИЗОВИ</a>
+                              <a href="o_projektu.html">О ПРОЈЕКТУ</a>
+                        </div>
+                  </div>
+                  <div class="korisniLinkoviPC">
+                        <h1>КОРИСНИ ЛИНКОВИ</h1>
+                        <hr>
+                        <div class="linkovi">
+                              <a href="https://www.sveti-sava.edu.rs/">Гимназија <br> "Свети Сава"</a>
+                              <a href="https://www.brodarska.edu.rs/">Школа за бродарство, <br>бродоградњу и хидроградњу</a>
+                        </div>
+                  </div>
+      </div>
+</footer>
 </body>
 <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";

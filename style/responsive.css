@@ -17,6 +17,8 @@
       }
       .triLinije{
             margin-right: 2rem;
+            overflow-y: hidden;
+            overflow-x: hidden;
       }
       .mainFooterTablet{
             display: none;
@@ -34,6 +36,7 @@
       }
       header{
             margin-top: -4rem;
+            width: 100vw;
       }
       .menu{
             display: none;
@@ -47,21 +50,20 @@
             display: none;
       }
       .gornjideo{
-            padding-left: 1rem;
-            padding-right: 1rem;
             background-color: var(--primary);
             height: 4rem;
             position: fixed;
-            width: 100%;
+            width: 100vw;
       }
 
       #naziv{
             color: var(--bela);
             font-size: 1.81rem;
+            margin-left: -3rem;
       }
 
       .strana {
-            width: 20%;
+            /* width: 95vw; */
             margin: 4rem auto;
             display: flex;
             flex-direction: column;
@@ -70,8 +72,8 @@
 
       .autoriBanera{
             width: 17rem;
-            margin-left: -10rem;
             height: 90rem;
+            margin-left: -7.5rem;
       }
 
       .autoriBanera h1{
@@ -96,23 +98,29 @@
       }
 
       .zgrada{
-            width: 6rem;
+            width: 17rem;
             margin-left:-6.5rem ;
-            padding: 0.8rem;
+            padding: 1.5rem;
+            height: 25rem;
       }
 
       .zgrade{
             margin-left: 6.9rem;
             display: grid;
-            grid-template-columns: repeat(2, minmax(10vw, 2fr));
+            grid-template-columns: repeat(1, minmax(10vw, 2fr));
             grid-template-rows: repeat(auto, 1fr);
             gap: 8rem;
       }
 
       .zgrada img{
-            width: 6rem;
+            width: 16rem;
+            margin-top: 0.5rem;
       }
 
+      .zgrada h1{
+            margin: 1rem;
+      }
+  
       .ogradjevinama p{
             margin-top:1rem;
             font-size: 1.8rem;
@@ -171,6 +179,15 @@
             display: flex;
             flex-direction: column;
       }
+      /* Uopsteno zasebne strane za gradjevine */
+      .beogradjanka h1{
+            font-size: 1rem;
+      }
+
+      /* .slider-container{
+            width: 15rem;
+      } */
+
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
 
@@ -191,6 +208,7 @@
       .gornjideo{
             padding-left: 1rem;
             padding-right: 1rem;
+            height: 7rem;
       }
 
 .gornjideo img{
@@ -220,12 +238,6 @@
       }
       .menu a{
             font-size: 1.2rem;
-      }
-
-      .autoriBanera{
-            width: 30rem;
-            margin-left: -15rem;
-            
       }
 
       .ol1{
@@ -277,6 +289,35 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+      }
+
+      .zgrada{
+            width: 20rem;
+            margin-left:-6.5rem ;
+            padding-top: 1rem;
+            height: 25rem;
+      }
+
+      .zgrade{
+            margin-left: -1rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(10vw, 2fr));
+            grid-template-rows: repeat(auto, 1fr);
+            row-gap: 5rem;
+            column-gap: 20rem;
+      }
+
+      .zgrada img{
+            width: 18rem;
+      }
+
+      .zgrada h1{
+            margin: 1rem;
+      }
+
+      .ogradjUvod{
+            margin-left: -10rem;
+            margin-right: -10rem;
       }
 }
 

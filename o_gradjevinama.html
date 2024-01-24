@@ -4,86 +4,113 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style/style.css" />
-		<link rel="stylesheet" href="style/resposive.css" />
+		<link rel="stylesheet" href="style/responsive.css" />
             <script src="https://kit.fontawesome.com/a0aad3ae93.js" crossorigin="anonymous"></script>
             <script src="script.js"></script>
 		<title>Почетна</title>
 	</head>
 	<body>
-			<header>
-				<div class="gornjideo">
-                              <a id="naziv" href="index.html">БЕОГРАД-КООРДИНАТЕ</a>
-                              <a id="link" href="https://www.sveti-sava.edu.rs/">
-                                    <div class="logoIme">
-                                          <img style="width: 25rem;" src="Materijal/Logo/logobeli.svg" alt="">
-                                    </div>
-                              </a>
-                              <a id="link" href="https://www.brodarska.edu.rs/">
-                                    <div class="logoIme">
-                                          <img src="Materijal/Logo/logo 2 ŠBBH logo -01.png" alt="">
-                                          <p>Школа за бродарство, <br> бродоградњу и хидроградњу</p>
-                                    </div>
-                              </a>
-                              <a id="ulogujse" href="login.html">ULOGUJ SE</a>
-				</div>
-				<ul class="menu cf">
-					<li>
-						<a href="index.html">ПОЧЕТНА</a>
-					</li>
-					<li id="activePage">
-						<a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
-						<ul class="submenu">
-                                          <li>
-                                                <a href="stara_zeleznicka_stanica.html">СТАРА ЖЕЛЕЗНИЧКА СТАНИЦА</a>
-                                          </li>
-                                          <li>
-                                                <a href="syudentski_kulturni_centar.html">СТУДЕНТСКИ КУЛТУРНИ ЦЕНТАР</a>
-                                          </li>
-							<li>
-								<a href="beogradjanka.html">БЕОГРАЂАНКА</a>
-							</li>
-							<li>
-								<a href="gradska_zadruga.html">ГРАДСКА ЗАДРУГА</a>
-							</li>
-							<li>
-                                                <a href="moderna_arhitektura.html">МОДЕРНА АРХИТЕКТУРА</a>
-							</li>
-							<li>
-                                                <a href="klasicizam.html">КЛАСИЦИЗАМ</a>
-							</li>
-
-						</ul>
-					</li>
-					<li>
-						<a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
-						<ul class="submenu">
-                                          <li>
-                                                <a href="milos_crnjanski.html">МИЛОШ ЦРЊАНСКИ</a>
-                                          </li>
-							<li>
-								<a href="">СИМА ПАНДУРОВИЋ</a>
-							</li>
-							<li>
-								<a href="">МОМЧИЛО НАСТАСИЈЕВИЋ</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="duh_metropole.html">ДУХ МЕТРОПОЛЕ</a>
-					</li>
-					<li>
-						<a href="fragmenti.html">ФРАГМЕНТИ</a>
-					</li>
-					<li>
-						<a href="kvizovi.html">КВИЗОВИ</a>
-					</li>
+            <header>
+                  <div class="gornjideo">
+                        <a id="naziv" href="index.html">БЕОГРАД-КООРДИНАТЕ</a>
+                        <a id="link" href="https://www.sveti-sava.edu.rs/">
+                              <div class="logoIme">
+                                    <img id="logoGSS" src="Materijal/Logo/logobeli.svg" alt="">
+                              </div>
+                        </a>
+                        <a id="link" href="https://www.brodarska.edu.rs/">
+                              <div class="logoIme">
+                                    <img src="Materijal/Logo/logo 2 ŠBBH logo -01.png" alt="">
+                                    <p>Школа за бродарство,<br> бродоградњу и хидроградњу</p>
+                              </div>
+                        </a>
+                        <a id="ulogujse" href="login.html">ULOGUJ SE</a>
+                        <div class="triLinije" onclick="menuBtnFunction(this)">
+                              <span></span>
+                        </div>
+                        <div id="sidemenu">
                               <li>
-                                    <a href="oprojektu.html">О ПРОЈЕКТУ</a>
+                                    <a href="index.html">ПОЧЕТНА</a>
                               </li>
-				</ul>
-                              <img id="baner" src="Materijal/Baneri/2. Baner - O građevinama.jpg" alt="">
-			</header>
-                  <div class="strana">
+                              <li>
+                                    <a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
+                              </li>
+                              <li>
+                                    <a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
+                              </li>
+                              <li>
+                                    <a href="duh_metropole.html">ДУХ МЕТРОПОЛЕ</a>
+                              </li>
+                              <li>
+                                    <a href="fragmenti.html">ФРАГМЕНТИ</a>
+                              </li>
+                              <li>
+                                    <a href="kvizovi.html">КВИЗОВИ</a>
+                              </li>
+                              <li>
+                                    <a href="o_gradjevinama.html">О ПРОЈЕКТУ</a>
+                              </li>
+                        </div>
+                  </div>
+                  <ul class="menu cf">
+                        <li id="nebitno">
+                              <a href="index.html">ПОЧЕТНА</a>
+                        </li>
+                        <li id="activePage">
+                              <a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
+                              <ul class="submenu">
+                                    <li>
+                                          <a href="stara_zeleznicka_stanica.html">СТАРА ЖЕЛЕЗНИЧКА СТАНИЦА</a>
+                                    </li>
+                                    <li>
+                                          <a href="studentski_kulturni_centar.html">СТУДЕНТСКИ КУЛТУРНИ ЦЕНТАР</a>
+                                    </li>
+                                    <li>
+                                          <a href="beogradjanka.html">БЕОГРАЂАНКА</a>
+                                    </li>
+                                    <li>
+                                          <a href="gradska_zadruga.html">ГРАДСКА ЗАДРУГА</a>
+                                    </li>
+                                    <li>
+                                          <a href="moderna_arhitektura.html">МОДЕРНА АРХИТЕКТУРА</a>
+                                    </li>
+                                    <li>
+                                          <a href="klasicizam.html">КЛАСИЦИЗАМ</a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li >
+                              <a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
+                              <ul class="submenu">
+                                    <li>
+                                          <a href="milos_crnjanski.html">МИЛОШ ЦРЊАНСКИ</a>
+                                    </li>
+                                    <li>
+                                          <a href="">СИМА ПАНДУРОВИЋ</a>
+                                    </li>
+                                    <li>
+                                          <a href="">МОМЧИЛО НАСТАСИЈЕВИЋ</a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li>
+                              <a href="duh_metropole.html">ДУХ МЕТРОПОЛЕ</a>
+                        </li>
+                        <li>
+                              <a href="fragmenti.html">ФРАГМЕНТИ</a>
+                        </li>
+                        <li>
+                              <a href="kvizovi.html">КВИЗОВИ</a>
+                        </li>
+                        <li>
+                              <a href="oprojektu.html">О ПРОЈЕКТУ</a>
+                        </li>
+                  </ul>
+                  <img id="baner" src="Materijal/Baneri/Baner - oznake.jpg" alt="">
+            </header>
+            <div class="strana">
+                  <img id="banerFon" src="Materijal/Baneri/Baner - oznake.jpg" alt="">
+                  <hr>
                         <main class="ogradjevinama">
                               <div class="ogradjUvod">
                                     <p>Нема  случајних грађевина, издвојених из људског друштва у коме су никле, и његових потреба, жеља и схватања, као што нема произвољних линија и безразложних облика у неимарству. А постанак и живот сваке велике, лепе и корисне грађевине, као и њен однос према насељу у коме је подигнута, често носе у себи сложене и тајанствене драме и историје.</p>
@@ -119,21 +146,58 @@
                         </div>
                         </main>
                   </div>
-			<footer>
-				<div class="mainFooter">
-                              <div id="ukratko">
+                  <footer>
+                        <div class="mainFooterTablet">
+                              <div class="ukratkoTablet">
                                     <h1>УКРАТКО О ПРОЈЕКТУ</h1>
-                                    <p id="tekst">Београд - Координате је платформа настала на основу
+                                    <hr>
+                                    <p>Београд - Координате је платформа настала на основу
                                           резултата мултимедијалног пројекта
                                           Европске метрополе - Београд, град из фрагмената усмереног
                                           на област уметности, културе и друштва. Пројекат је одобрен од
                                           Канцеларије за младе града Београда.</p>
                               </div>
-                              <div class="donjiFooter">
-
-                              <div id="brziMeni">
+                              <div class="donjiFooterTablet">
+                              
+                                    <div class="brziMeniTablet">
+                                          <h1>БРЗИ МЕНИ</h1>
+                                    <hr>
+                                    <div class="linkovi">
+                                                <a href="index.html">ПОЧЕТНА</a>
+                                                <a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
+                                                <a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
+                                                <a href="duh_metropole.html">ДУХ МЕТРОПОЛЕ</a>
+                                                <a href="fragmenti.html">ФРАГМЕНТИ</a>
+                                                <a href="kvizovi.html">КВИЗОВИ</a>
+                                                <a href="o_projektu.html">О ПРОЈЕКТУ</a>
+                                          </div>
+                                    </div>
+                                    <div class="korisniLinkoviTablet">
+                                          <h1>КОРИСНИ ЛИНКОВИ</h1>
+                                          <hr>
+                                          <div class="linkovi">
+                                                <a href="https://www.sveti-sava.edu.rs/">Гимназија <br> "Свети Сава"</a>
+                                                <a href="https://www.brodarska.edu.rs/">Школа за бродарство, <br>бродоградњу и хидроградњу</a>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+			<div class="mainFooterFon">
+                        <div id="ukratkoFon">
+                              <h1>УКРАТКО О ПРОЈЕКТУ</h1>
+                              <hr>
+                              <p id="tekstFon">Београд - Координате је платформа настала на основу
+                                    резултата мултимедијалног пројекта
+                                    Европске метрополе - Београд, град из фрагмената усмереног
+                                    на област уметности, културе и друштва. Пројекат је одобрен од
+                                    Канцеларије за младе града Београда.</p>
+                        </div>
+                        
+                        <div class="donjiFooterFon">
+                              <div class="brziMeniFon">
                                     <h1>БРЗИ МЕНИ</h1>
-                                    <div class="content">
+                              <hr>
+                              <div class="bmLinkoviFon">
                                           <a href="index.html">ПОЧЕТНА</a>
                                           <a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
                                           <a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
@@ -143,16 +207,49 @@
                                           <a href="o_projektu.html">О ПРОЈЕКТУ</a>
                                     </div>
                               </div>
-
-                              <div id="korisniLinkovi">
+                              <div class="korisniLinkoviFon">
                                     <h1>КОРИСНИ ЛИНКОВИ</h1>
-                                    <div class="content">
+                              <hr>
+                              <div class="klinkFon">
                                           <a href="https://www.sveti-sava.edu.rs/">Гимназија "Свети Сава"</a>
                                           <a href="https://www.brodarska.edu.rs/">Школа за бродарство, <br>бродоградњу и хидроградњу</a>
                                     </div>
                               </div>
                         </div>
+                  </div>
+			<div class="mainFooterPC">
+                        <div class="ukratkoPC">
+                              <h1>УКРАТКО О ПРОЈЕКТУ</h1>
+                              <hr>
+                              <p>Београд - Координате је платформа настала на основу
+                                    резултата мултимедијалног пројекта
+                                    Европске метрополе - Београд, град из фрагмената усмереног
+                                    на област уметности, културе и друштва. Пројекат је одобрен од
+                                    Канцеларије за младе града Београда.</p>
                         </div>
-			</footer>
+                        
+                              <div class="brziMeniPC">
+                                    <h1>БРЗИ МЕНИ</h1>
+                              <hr>
+                              <div class="linkovi">
+                                          <a href="index.html">ПОЧЕТНА</a>
+                                          <a href="o_gradjevinama.html">О ГРАЂЕВИНАМА</a>
+                                          <a href="o_licnostima.html">О ЛИЧНОСТИМА</a>
+                                          <a href="duh_metropole.html">ДУХ МЕТРОПОЛЕ</a>
+                                          <a href="fragmenti.html">ФРАГМЕНТИ</a>
+                                          <a href="kvizovi.html">КВИЗОВИ</a>
+                                          <a href="o_projektu.html">О ПРОЈЕКТУ</a>
+                                    </div>
+                              </div>
+                              <div class="korisniLinkoviPC">
+                                    <h1>КОРИСНИ ЛИНКОВИ</h1>
+                                    <hr>
+                                    <div class="linkovi">
+                                          <a href="https://www.sveti-sava.edu.rs/">Гимназија <br> "Свети Сава"</a>
+                                          <a href="https://www.brodarska.edu.rs/">Школа за бродарство, <br>бродоградњу и хидроградњу</a>
+                                    </div>
+                              </div>
+                  </div>
+		</footer>
 	</body>
-</html>white;white;
+</html>
