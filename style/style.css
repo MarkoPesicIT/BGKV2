@@ -832,7 +832,7 @@ a,
 	aspect-ratio: 16/9;
 	position: relative;
 	overflow: hidden;
-	width: 100%;
+	width: 100;
 	height: auto;
 	border: 0.3em solid var(--svetloP);
 	margin-bottom: 2rem;

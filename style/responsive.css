@@ -12,13 +12,14 @@
 
 @media only screen and (min-width: 320px) and (max-width: 479px){
       .sidemenu{
+            z-index: 1000;
             overflow-x: hidden;
             overflow-y: hidden;
       }
       .triLinije{
-            margin-right: 2rem;
             overflow-y: hidden;
             overflow-x: hidden;
+            margin-right: 2rem;
       }
       .mainFooterTablet{
             display: none;
@@ -50,16 +51,17 @@
             display: none;
       }
       .gornjideo{
+            padding-left: 1rem;     
+            padding-right: 1rem;
             background-color: var(--primary);
             height: 4rem;
             position: fixed;
-            width: 100vw;
+            width: 100%;
       }
 
       #naziv{
             color: var(--bela);
             font-size: 1.81rem;
-            margin-left: -3rem;
       }
 
       .strana {
@@ -99,33 +101,38 @@
 
       .zgrada{
             width: 17rem;
-            margin-left:-6.5rem ;
+            /* margin-left:-6.5rem ; */
             padding: 1.5rem;
-            height: 25rem;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
       }
 
       .zgrade{
-            margin-left: 6.9rem;
-            display: grid;
-            grid-template-columns: repeat(1, minmax(10vw, 2fr));
-            grid-template-rows: repeat(auto, 1fr);
-            gap: 8rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
       }
 
       .zgrada img{
-            width: 16rem;
-            margin-top: 0.5rem;
+            width: 17rem;
       }
 
       .zgrada h1{
+            font-size: 1.7rem;
             margin: 1rem;
+            margin-top: 1.5rem;
       }
   
       .ogradjevinama p{
             margin-top:1rem;
+            font-size: 1.5rem;
+      }
+      .ogradjUvod h1{
+            margin-top: -1rem;
             font-size: 1.8rem;
       }
-
       .ol{
            display:flex;
            flex-direction: column; 
@@ -181,12 +188,73 @@
       }
       /* Uopsteno zasebne strane za gradjevine */
       .beogradjanka h1{
-            font-size: 1rem;
+            font-size: 2.5rem;
+            margin: 0 auto;
+            margin-bottom: 3rem;
       }
 
-      /* .slider-container{
-            width: 15rem;
-      } */
+      .slider-container{
+            z-index: -1;
+      }
+
+      .image-container {
+            aspect-ratio: 16/9;
+            position: relative;
+            overflow: hidden;
+            /* max-width: 70vw; */
+            width: 25rem;
+            height: auto;
+            border: 2px solid var(--svetloP);
+            margin-bottom: 2rem;
+            box-shadow: 0 0 2rem rgba(0, 0, 0, 0.6);
+            border-radius: 2rem;
+            margin: 0 auto;
+      }
+      
+      .slider-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            display: flex;
+            overflow: hidden;
+      }
+      
+      .slider-container:has(.img.active) .img:not(.active) {
+            filter: grayscale(100%);
+            filter: brightness(60%);
+      }
+      
+      .slider-container img {
+            height: 100%;
+            width: calc(100% / 5);
+            object-fit: cover;
+            overflow: hidden;
+            border-left: 1px solid var(--svetloP);
+            border-right: 1px solid var(--svetloP);
+            transition: all 0.7s cubic-bezier(0.42, 0, 0, 0);
+            cursor: pointer;
+      }
+      
+      .slider-container img.active {
+            width: 400%;
+      }
+      
+      .beogradjanka {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            padding-left: 0%;
+            padding-right: 0%;
+      }
+      
+      .beogradjankaTekst {
+            margin-top: 5rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+      }
+      
+      .beogradjankaTekst p {
+            font-size: 1.5rem;
+      }
 
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
