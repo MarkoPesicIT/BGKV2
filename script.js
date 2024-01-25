@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       menuBtn.classList.toggle("active");
       var sidemenu = document.getElementById('sidemenu');
       var imageContainer = document.querySelector('.image-container');
-  
       if (sidemenu.style.right === '0%') {
           sidemenu.style.right = '-100%';
           
@@ -63,3 +62,23 @@ window.addEventListener('resize', handleResize);
 
 // Initial check on page load
 handleResize();
+function toggleSubMenu(strelica) {
+  const menuItem = strelica.closest('.menu-item');
+  const submenu = menuItem.querySelector('.sidesubmenu');
+  const icon = menuItem.querySelector('.arrow-icon');
+
+  menuItem.classList.toggle('active');
+  icon.classList.toggle('rotated');
+
+  if (menuItem.classList.contains('active')) {
+    submenu.style.display = 'flex';
+    setTimeout(() => {
+      submenu.style.maxHeight = '1000px';
+    }, 0);
+  } else {
+    submenu.style.maxHeight = '0';
+    setTimeout(() => {
+      submenu.style.display = 'none';
+    }, 500);
+  }
+}
