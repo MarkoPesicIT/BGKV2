@@ -32,12 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
           
           setTimeout(function() {
               imageContainer.style.zIndex = '';
+              document.body.style.overflow = 'auto';
           }, 400);
       } else {
           sidemenu.style.right = '0%';
           imageContainer.style.zIndex = '-1';
+          document.body.style.overflow = 'hidden';
       }
-  }
+    }
+    
 
   function updateZIndexOnScroll() {
     var imageContainer = document.querySelector('.image-container');
@@ -46,21 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 function handleResize() {
-    // Check the media query condition
     if (window.matchMedia('(min-width: 320px) and (max-width: 479px)').matches) {
-        // If the condition is true, attach the scroll event listener
         window.onscroll = updateZIndexOnScroll;
-        updateZIndexOnScroll(); // Call it once to set initial zIndex
+        updateZIndexOnScroll();
     } else {
-        // If the condition is false, remove the scroll event listener
         window.onscroll = null;
     }
-}
-
-// Attach the resize event listener
+} 
 window.addEventListener('resize', handleResize);
 
-// Initial check on page load
 handleResize();
 function toggleSubMenu(strelica) {
   const menuItem = strelica.closest('.menu-item');
@@ -79,6 +76,6 @@ function toggleSubMenu(strelica) {
     submenu.style.maxHeight = '0';
     setTimeout(() => {
       submenu.style.display = 'none';
-    }, 500);
+    }, 800);
   }
 }
