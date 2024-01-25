@@ -251,6 +251,10 @@
       }
       
       .beogradjankaTekst {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             margin-top: 5rem;
             margin-left: 2rem;
             margin-right: 2rem;
@@ -260,6 +264,15 @@
             font-size: 1.5rem;
       }
 
+      .tamoAmo{
+            display: flex;
+            flex-direction: column;
+      }
+
+      #zgradaimgPC{
+            display: none;
+      }
+      
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
 
@@ -390,6 +403,27 @@
       .ogradjUvod{
             margin-left: -10rem;
             margin-right: -10rem;
+      }
+
+      .tamoAmo{
+            display: flex;
+            flex-direction: column;
+      }
+
+      #zgradaimgPC{
+            display: none;
+      }
+
+      .beogradjanka{
+            display: flex;
+            flex-direction: column;
+            width: 90vw;
+            padding-left: 0%;
+            padding-right: 0%;
+      }
+
+      .beogradjanka h1{
+            margin: 0;
       }
 }
 
