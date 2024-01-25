@@ -438,10 +438,12 @@ main {
   .menu-item.active .sidesubmenu {
     display: flex;
 	max-height: 1000px;
-  }
+}
+
 .sidesubmenu li{
 	list-style-type: none;
 }
+
 .sidesubmenu a{
 	color: var(--bela);
 	font-size: 1.5rem;
