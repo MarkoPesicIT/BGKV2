@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
           
           setTimeout(function() {
               imageContainer.style.zIndex = '';
-              document.body.style.overflow = 'auto';
+              document.body.style.  overflow = 'auto';
           }, 400);
       } else {
           sidemenu.style.right = '0%';
