@@ -79,3 +79,57 @@ function toggleSubMenu(strelica) {
     }, 800);
   }
 }
+
+
+const mapa = {
+  "index.html": 1,
+  
+  // o gradjevinama
+  "o_gradjevinama.html": 2,
+  "moderna_arhitektura.html": 2,
+  "19vek.html": 2,
+  "20vek.html": 2,
+  "arhitektura.html": 2,
+  "izmedju2rata.html": 2,
+  
+  // o licnostima
+  "o_licnostima.html": 3,
+  "miloje_milojevic.html": 3,
+  "sima_markovic.html": 3,
+  "kosta_hakman.html": 3,
+  "marko_murat.html": 3,
+  "vasa_cuprilovic.html": 3,
+  "slavka_nastasijevic.html": 3,
+  "stevan_jakovljevic.html": 3,
+  "milos_crnjanski.html": 3,
+  "sima_pandurovic.html": 3,
+  "momclo_nastasijevic.html": 3,
+  
+  // duh metropole
+  "duh_metropole.html": 4,
+  "ulice.html": 4,
+  "arhitektura.html": 4,
+  "moda.html": 4,
+  "film.html": 4,
+  "festival.html": 4,
+
+  "fragmenti.html": 5,
+  
+  "kvizovi.html": 6,
+  
+  "oprojektu.html": 7,
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+  const currentPage = window.location.pathname.split("/").pop();
+  const menuPosition = mapa[currentPage];
+
+  if (menuPosition) {
+      const menuItems = document.querySelectorAll(".menu li");
+      const targetMenuItem = menuItems[menuPosition - 1];
+
+      if (targetMenuItem) {
+          targetMenuItem.classList.add("active");
+      }
+  }
+});
