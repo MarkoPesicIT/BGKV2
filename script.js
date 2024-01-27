@@ -42,23 +42,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
 
-  function updateZIndexOnScroll() {
-    var imageContainer = document.querySelector('.image-container');
-
-    imageContainer.style.zIndex = (window.scrollY > 0) ? '-1' : '';
-}
-
-function handleResize() {
-    if (window.matchMedia('(min-width: 320px) and (max-width: 479px)').matches) {
-        window.onscroll = updateZIndexOnScroll;
-        updateZIndexOnScroll();
-    } else {
-        window.onscroll = null;
-    }
-} 
-window.addEventListener('resize', handleResize);
-
-handleResize();
+    function updateZIndexOnScroll() {
+      var imageContainer = document.querySelector('.image-container');
+      if (imageContainer !== null) {
+          imageContainer.style.zIndex = (window.scrollY > 0) ? '-1' : '';
+      }
+  }
+  
+  function handleResize() {
+      if (window.matchMedia('(min-width: 320px) and (max-width: 479px)').matches) {
+          window.onscroll = updateZIndexOnScroll;
+          updateZIndexOnScroll();
+      } else {
+          window.onscroll = null;
+      }
+  }
+  
+  window.addEventListener('resize', handleResize);
+  
+  handleResize();
+  
 function toggleSubMenu(strelica) {
   const menuItem = strelica.closest('.menu-item');
   const submenu = menuItem.querySelector('.sidesubmenu');
@@ -81,19 +84,31 @@ function toggleSubMenu(strelica) {
 }
 
 
+// footer
+
+document.addEventListener("DOMContentLoaded", function() {
+  fetch("footer.html")
+      .then(response => response.text())
+      .then(html => {
+          document.querySelector("body").insertAdjacentHTML("beforeend", html);
+      });
+});
+
 const mapa = {
   "index.html": 1,
   
   // o gradjevinama
   "o_gradjevinama.html": 2,
+
   "moderna_arhitektura.html": 2,
   "19vek.html": 2,
   "20vek.html": 2,
-  "arhitektura.html": 2,
+  "savremena_arhitektura.html": 2,
   "izmedju2rata.html": 2,
   
   // o licnostima
   "o_licnostima.html": 3,
+
   "miloje_milojevic.html": 3,
   "sima_markovic.html": 3,
   "kosta_hakman.html": 3,
@@ -107,29 +122,67 @@ const mapa = {
   
   // duh metropole
   "duh_metropole.html": 4,
+
   "ulice.html": 4,
   "arhitektura.html": 4,
   "moda.html": 4,
   "film.html": 4,
   "festival.html": 4,
 
+// fragemnti
   "fragmenti.html": 5,
-  
+  // kvizovi
   "kvizovi.html": 6,
-  
+  // oprojektu
   "oprojektu.html": 7,
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-  const currentPage = window.location.pathname.split("/").pop();
-  const menuPosition = mapa[currentPage];
+  const currentPage = window.location.pathname.split("/").pop().trim();
+  console.log("Trenutna strana:", currentPage);
 
-  if (menuPosition) {
+  setTimeout(function() {
       const menuItems = document.querySelectorAll(".menu li");
-      const targetMenuItem = menuItems[menuPosition - 1];
+      console.log("Meni Itemi:", menuItems);
 
-      if (targetMenuItem) {
-          targetMenuItem.classList.add("active");
+      if (menuItems.length === 0) {
+          fetch("header.html")
+              .then(response => response.text())
+              .then(html => {
+                  document.querySelector("body").insertAdjacentHTML("afterbegin", html);
+                  applyActiveMenuItem(currentPage);
+              })
+              .catch(error => {
+                  console.error("Nema header.html:", error);
+              });
+      } else {
+          applyActiveMenuItem(currentPage);
       }
-  }
+  }, 100);
 });
+
+function applyActiveMenuItem(currentPage) {
+  const menuItems = document.querySelectorAll(".menu li");
+  console.log("Meni Itemi:", menuItems);
+
+  menuItems.forEach(function(menuItem) {
+      const menuItemAnchor = menuItem.querySelector("a");
+      const menuItemHref = menuItemAnchor.getAttribute("href");
+      
+      if (menuItemHref === currentPage) {
+          console.log("Ciljani meni item:", menuItem);
+          menuItem.classList.add("active-menu-item");
+      } else {
+          const submenuItems = menuItem.querySelectorAll("ul.submenu li");
+          submenuItems.forEach(function(submenuItem) {
+              const submenuItemAnchor = submenuItem.querySelector("a"); 
+              const submenuItemHref = submenuItemAnchor.getAttribute("href");
+              if (submenuItemHref === currentPage) {
+                  console.log("Ciljani submeni item:", submenuItem); 
+                  menuItem.classList.add("meni-active"); 
+                  submenuItem.classList.add("submeni-active"); 
+              }
+          });
+      }
+  });
+}
