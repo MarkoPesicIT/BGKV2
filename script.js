@@ -77,9 +77,7 @@ function toggleSubMenu(strelica) {
     }, 0);
   } else {
     submenu.style.maxHeight = '0';
-    setTimeout(() => {
       submenu.style.display = 'none';
-    }, 800);
   }
 }
 
@@ -171,7 +169,7 @@ function applyActiveMenuItem(currentPage) {
       
       if (menuItemHref === currentPage) {
           console.log("Ciljani meni item:", menuItem);
-          menuItem.classList.add("active-menu-item");
+          menuItem.classList.add("meni-active");
       } else {
           const submenuItems = menuItem.querySelectorAll("ul.submenu li");
           submenuItems.forEach(function(submenuItem) {
