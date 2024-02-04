@@ -1,461 +1,869 @@
-document.addEventListener("DOMContentLoaded", function () {
-      const images = document.querySelectorAll(".img");
-    
-      function clearActiveImage() {
-        images.forEach(function (image) {
-          image.classList.remove("active");
-        });
-      }
-    
-      images.forEach(function (image, index) {
-        image.onclick = function (event) {
-          event.stopPropagation();
-          if (images[index].classList.contains("active")) {
-            images[index].classList.remove("active");
-          } else {
-            clearActiveImage();
-            images[index].classList.add("active");
-          }
-        };
-      });
-    
-      document.addEventListener("click", function (event) {
-        clearActiveImage();
-      });
-    });
-    function menuBtnFunction(menuBtn) {
-      menuBtn.classList.toggle("active");
-      var sidemenu = document.getElementById('sidemenu');
-      var imageContainer = document.querySelector('.image-container');
-      if (sidemenu.style.right === '0%') {
-          sidemenu.style.right = '-100%';
-          
-          setTimeout(function() {
-              imageContainer.style.zIndex = '';
-              document.body.style.  overflow = 'auto';
-          }, 400);
-      } else {
-          sidemenu.style.right = '0%';
-          imageContainer.style.zIndex = '-1';
-          document.body.style.overflow = 'hidden';
-      }
-    }
-    
+document.addEventListener("DOMContentLoaded", function()
+{
+	const images = document.querySelectorAll(".img");
 
-    function updateZIndexOnScroll() {
-      var imageContainer = document.querySelector('.image-container');
-      if (imageContainer !== null) {
-          imageContainer.style.zIndex = (window.scrollY > 0) ? '-1' : '';
-      }
-  }
-  
-  function handleResize() {
-      if (window.matchMedia('(min-width: 320px) and (max-width: 479px)').matches) {
-          window.onscroll = updateZIndexOnScroll;
-          updateZIndexOnScroll();
-      } else {
-          window.onscroll = null;
-      }
-  }
-  
-  window.addEventListener('resize', handleResize);
-  
-  handleResize();
-  
-function toggleSubMenu(strelica) {
-  const menuItem = strelica.closest('.menu-item');
-  const submenu = menuItem.querySelector('.sidesubmenu');
-  const icon = menuItem.querySelector('.arrow-icon');
+	function clearActiveImage()
+	{
+		images.forEach(function(image)
+		{
+			image.classList.remove("active");
+		});
+	}
 
-  menuItem.classList.toggle('active');
-  icon.classList.toggle('rotated');
+	images.forEach(function(image, index)
+	{
+		image.onclick = function(event)
+		{
+			event.stopPropagation();
+			if (images[index].classList.contains("active"))
+			{
+				images[index].classList.remove("active");
+			}
+			else
+			{
+				clearActiveImage();
+				images[index].classList.add("active");
+			}
+		};
+	});
 
-  if (menuItem.classList.contains('active')) {
-    submenu.style.display = 'flex';
-    setTimeout(() => {
-      submenu.style.maxHeight = '1000px';
-    }, 0);
-  } else {
-    submenu.style.maxHeight = '0';
-      submenu.style.display = 'none';
-  }
+	document.addEventListener("click", function(event)
+	{
+		clearActiveImage();
+	});
+});
+
+function menuBtnFunction(menuBtn)
+{
+	menuBtn.classList.toggle("active");
+	var sidemenu = document.getElementById('sidemenu');
+	var imageContainer = document.querySelector('.image-container');
+	if (sidemenu.style.right === '0%')
+	{
+		sidemenu.style.right = '-100%';
+
+		setTimeout(function()
+		{
+			imageContainer.style.zIndex = '';
+			document.body.style.overflow = 'auto';
+		}, 400);
+	}
+	else
+	{
+		sidemenu.style.right = '0%';
+		imageContainer.style.zIndex = '-1';
+		document.body.style.overflow = 'hidden';
+	}
+}
+
+
+function updateZIndexOnScroll()
+{
+	var imageContainer = document.querySelector('.image-container');
+	if (imageContainer !== null)
+	{
+		imageContainer.style.zIndex = (window.scrollY > 0) ? '-1' : '';
+	}
+}
+
+function handleResize()
+{
+	if (window.matchMedia('(min-width: 320px) and (max-width: 479px)').matches)
+	{
+		window.onscroll = updateZIndexOnScroll;
+		updateZIndexOnScroll();
+	}
+	else
+	{
+		window.onscroll = null;
+	}
+}
+
+window.addEventListener('resize', handleResize);
+
+handleResize();
+
+function toggleSubMenu(strelica)
+{
+	const menuItem = strelica.closest('.menu-item');
+	const submenu = menuItem.querySelector('.sidesubmenu');
+	const icon = menuItem.querySelector('.arrow-icon');
+
+	menuItem.classList.toggle('active');
+	icon.classList.toggle('rotated');
+
+	if (menuItem.classList.contains('active'))
+	{
+		submenu.style.display = 'flex';
+		setTimeout(() =>
+		{
+			submenu.style.maxHeight = '1000px';
+		}, 0);
+	}
+	else
+	{
+		submenu.style.maxHeight = '0';
+		submenu.style.display = 'none';
+	}
 }
 
 
 // footer
 
-document.addEventListener("DOMContentLoaded", function() {
-  fetch("footer.html")
-      .then(response => response.text())
-      .then(html => {
-          document.querySelector("body").insertAdjacentHTML("beforeend", html);
-      });
+document.addEventListener("DOMContentLoaded", function()
+{
+	fetch("footer.html")
+		.then(response => response.text())
+		.then(html =>
+		{
+			document.querySelector("body").insertAdjacentHTML("beforeend", html);
+		});
 });
 
 const mapa = {
-  "index.html": 1,
-  
-  // o gradjevinama
-  "o_gradjevinama.html": 2,
+	"index.html": 1,
 
-  "moderna_arhitektura.html": 2,
-  "19vek.html": 2,
-  "20vek.html": 2,
-  "savremena_arhitektura.html": 2,
-  "izmedju2rata.html": 2,
-  
-  // o licnostima
-  "o_licnostima.html": 3,
+	// o gradjevinama
+	"o_gradjevinama.html": 2,
 
-  "miloje_milojevic.html": 3,
-  "sima_markovic.html": 3,
-  "kosta_hakman.html": 3,
-  "marko_murat.html": 3,
-  "vasa_cuprilovic.html": 3,
-  "slavka_nastasijevic.html": 3,
-  "stevan_jakovljevic.html": 3,
-  "milos_crnjanski.html": 3,
-  "sima_pandurovic.html": 3,
-  "momclo_nastasijevic.html": 3,
-  
-  // duh metropole
-  "duh_metropole.html": 4,
+	"moderna_arhitektura.html": 2,
+	"19vek.html": 2,
+	"20vek.html": 2,
+	"savremena_arhitektura.html": 2,
+	"izmedju2rata.html": 2,
 
-  "ulice.html": 4,
-  "arhitektura.html": 4,
-  "moda.html": 4,
-  "film.html": 4,
-  "festival.html": 4,
+	// o licnostima
+	"o_licnostima.html": 3,
 
-// fragemnti
-  "fragmenti.html": 5,
-  // kvizovi
-  "kvizovi.html": 6,
-  // oprojektu
-  "oprojektu.html": 7,
+	"miloje_milojevic.html": 3,
+	"sima_markovic.html": 3,
+	"kosta_hakman.html": 3,
+	"marko_murat.html": 3,
+	"vasa_cuprilovic.html": 3,
+	"slavka_nastasijevic.html": 3,
+	"stevan_jakovljevic.html": 3,
+	"milos_crnjanski.html": 3,
+	"sima_pandurovic.html": 3,
+	"momclo_nastasijevic.html": 3,
+
+	// duh metropole
+	"duh_metropole.html": 4,
+
+	"ulice.html": 4,
+	"arhitektura.html": 4,
+	"moda.html": 4,
+	"film.html": 4,
+	"festival.html": 4,
+
+	// fragemnti
+	"fragmenti.html": 5,
+	// kvizovi
+	"kvizovi.html": 6,
+	// oprojektu
+	"oprojektu.html": 7,
 };
 
-document.addEventListener("DOMContentLoaded", function() {
-  const currentPage = window.location.pathname.split("/").pop().trim();
-  console.log("Trenutna strana:", currentPage);
+document.addEventListener("DOMContentLoaded", function()
+{
+	const currentPage = window.location.pathname.split("/").pop().trim();
+	console.log("Trenutna strana:", currentPage);
 
-  setTimeout(function() {
-      const menuItems = document.querySelectorAll(".menu li");
-      console.log("Meni Itemi:", menuItems);
+	setTimeout(function()
+	{
+		const menuItems = document.querySelectorAll(".menu li");
+		console.log("Meni Itemi:", menuItems);
 
-      if (menuItems.length === 0) {
-          fetch("header.html")
-              .then(response => response.text())
-              .then(html => {
-                  document.querySelector("body").insertAdjacentHTML("afterbegin", html);
-                  applyActiveMenuItem(currentPage);
-              })
-              .catch(error => {
-                  console.error("Nema header.html:", error);
-              });
-      } else {
-          applyActiveMenuItem(currentPage);
-      }
-  }, 100);
+		if (menuItems.length === 0)
+		{
+			fetch("header.html")
+				.then(response => response.text())
+				.then(html =>
+				{
+					document.querySelector("body").insertAdjacentHTML("afterbegin", html);
+					applyActiveMenuItem(currentPage);
+				})
+				.catch(error =>
+				{
+					console.error("Nema header.html:", error);
+				});
+		}
+		else
+		{
+			applyActiveMenuItem(currentPage);
+		}
+	}, 100);
 });
 
-function applyActiveMenuItem(currentPage) {
-  const menuItems = document.querySelectorAll(".menu li");
-  console.log("Meni Itemi:", menuItems);
+function applyActiveMenuItem(currentPage)
+{
+	const menuItems = document.querySelectorAll(".menu li");
+	console.log("Meni Itemi:", menuItems);
 
-  menuItems.forEach(function(menuItem) {
-      const menuItemAnchor = menuItem.querySelector("a");
-      const menuItemHref = menuItemAnchor.getAttribute("href");
-      
-      if (menuItemHref === currentPage) {
-          console.log("Ciljani meni item:", menuItem);
-          menuItem.classList.add("meni-active");
-      } else {
-          const submenuItems = menuItem.querySelectorAll("ul.submenu li");
-          submenuItems.forEach(function(submenuItem) {
-              const submenuItemAnchor = submenuItem.querySelector("a"); 
-              const submenuItemHref = submenuItemAnchor.getAttribute("href");
-              if (submenuItemHref === currentPage) {
-                  console.log("Ciljani submeni item:", submenuItem); 
-                  menuItem.classList.add("meni-active"); 
-                  submenuItem.classList.add("submeni-active"); 
-              }
-          });
-      }
-  });
+	menuItems.forEach(function(menuItem)
+	{
+		const menuItemAnchor = menuItem.querySelector("a");
+		const menuItemHref = menuItemAnchor.getAttribute("href");
+
+		if (menuItemHref === currentPage)
+		{
+			console.log("Ciljani meni item:", menuItem);
+			menuItem.classList.add("meni-active");
+		}
+		else
+		{
+			const submenuItems = menuItem.querySelectorAll("ul.submenu li");
+			submenuItems.forEach(function(submenuItem)
+			{
+				const submenuItemAnchor = submenuItem.querySelector("a");
+				const submenuItemHref = submenuItemAnchor.getAttribute("href");
+				if (submenuItemHref === currentPage)
+				{
+					console.log("Ciljani submeni item:", submenuItem);
+					menuItem.classList.add("meni-active");
+					submenuItem.classList.add("submeni-active");
+				}
+			});
+		}
+	});
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  // creating an array and passing the number, questions, options, and answers
-  const questions = [
-      {
-          numb: 1,
-          question: "What challenge did codepen have in the month of March 2023?",
-          answer: "Buttons",
-          options: ["Shape", "Buttons", "Texture", "The typography of quotes"]
-      },
-      // {
-      //     numb: 2,
-      //     question: "What color shade is this hex #ffff00?",
-      //     answer: "yellow",
-      //     options: ["orange", "red", "yellow", "pink"]
-      // },
-      // {
-      //     numb: 3,
-      //     question: "How does a FOR loop start?",
-      //     answer: "for (i = 0; i <= 5; i++)",
-      //     options: [
-      //         "for (i = 0; i <= 5; i++)",
-      //         "for (i <= 5; i++)",
-      //         "for i = 1 to 5",
-      //         "for (i = 0; i <= 5)"
-      //     ]
-      // },
-      // {
-      //     numb: 4,
-      //     question: "How do you round the number 7.25, to the nearest integer?",
-      //     answer: "Math.round(7.25)",
-      //     options: ["Math.rnd(7.25)", "rnd(7.25)", "round(7.25)", "Math.round(7.25)"]
-      // },
-      // {
-      //     numb: 5,
-      //     question: "What is the default value of the position property?",
-      //     answer: "static",
-      //     options: ["relative", "fixed", "static", "absolute"]
-      // },
-      // {
-      //     numb: 6,
-      //     question: "How do you make each word in a text start with a capital letter?",
-      //     answer: "text-transform:capitalize",
-      //     options: [
-      //         "text-transform:capitalize",
-      //         "text-style:capitalize",
-      //         "transform:capitalize",
-      //         "You can't do that with css"
-      //     ]
-      // },
-      // {
-      //     numb: 7,
-      //     question: "How do you group selectors?",
-      //     answer: "Separate each selector with a comma",
-      //     options: [
-      //         "Separate each selector with a slash",
-      //         "Separate each selector with a plus sign",
-      //         "Separate each selector with a space",
-      //         "Separate each selector with a comma"
-      //     ]
-      // },
-      // {
-      //     numb: 8,
-      //     question: "How to write an IF statement in JavaScript?",
-      //     answer: "if (i == 5)",
-      //     options: ["if (i == 5)", "if i = 5 then", "if i = 5", "if i == 5 then"]
-      // },
-      // {
-      //     numb: 9,
-      //     question: "How do you select all p elements inside a div element?",
-      //     answer: "div p",
-      //     options: ["p,div", "div.p", "div + p", "div p"]
-      // },
-      {
-          numb: 10,
-          question: "How can you detect the client's browser name?",
-          answer: "navigator.appName",
-          options: ["client.browserName", "client.navName", "navigator.appName", "browser.name"]
-      }
-  ];
+document.addEventListener("DOMContentLoaded", function()
+{
+	const pitanjaNiz = [
+	{
+		pitanje: "Које од наведених дела је написао Момчило Настасијевић?",
+		tacanOdgovor: "Ране приче",
+		opcije: [
+			"Косовски сонети",
+			"Песме из Париза",
+			"Ламент над Београдом",
+			"Ране приче"
+		]
+	},
+	{
+		pitanje: "У својој поезији Момчило Настасијевић најчешће користи:",
+		tacanOdgovor: "архаизме",
+		opcije: [
+			"историзме",
+			"архаизме",
+			"неологизме",
+			"ништа од наведеног"
+		]
+	},
+	{
+		pitanje: "Која три наведена наслова припадају стваралачком опусу Момчила Настасијевића?",
+		tacanOdgovor: '"Међулошко благо", збирка приповедака "Из тамног вилајета","Пет лирских кругова"',
+		opcije: [
+			'"Међулошко благо", "Пет лирских кругова", "Сеобе"',
+			'"Љубав у Тоскани", "Сербиа", "Књига о Немачкој"',
+			'"Међулошко благо", збирка приповедака "Из тамног вилајета","Пет лирских кругова"',
+			"ништа од наведеног"
+		]
+	},
+	{
+		pitanje: "Поред српске књижевности, Момчило Настасијевић је дипломирао један страни језик. Који?",
+		tacanOdgovor: "француски",
+		opcije: [
+			"енглески",
+			"руски",
+			"француски",
+			"немачки"
+		]
+	},
+	{
+		pitanje: "Која два језика у Српској краљевској четвртој гимназији је предавао Момчило Настасијевић?",
+		tacanOdgovor: "српски и француски",
+		opcije: [
+			"немачки и српски",
+			"енглески и српски",
+			"немачки и руски",
+			"српски и француски"
+		]
+	},
+	{
+		pitanje: "Песник Момчило Настасијевић је имао три брата. Који од браће Настасијевић је био сликар?",
+		tacanOdgovor: "Живорад",
+		opcije: [
+			"Светомир",
+			"Славомир",
+			"Живорад",
+			"ништа од наведеног"
+		]
+	},
+	{
+		pitanje: 'Како се звала Гимназија "Свети Сава" у време када је професор био Момчило Настасијевић?',
+		tacanOdgovor: "Четврта мушка гимназија (1919-1929)",
+		opcije: [
+			"Српска краљевска четврта гимназија (1910-1919)",
+			"Државна четврта мушка гимназија (1945-1953)",
+			"Четврта мушка гимназија (1919-1929)",
+			"Трећа београдска гимназија (1956-1964)"
+		]
+	},
+	{
+		pitanje: "Предраг Милојевић је био легенда београдског...",
+		tacanOdgovor: "новинарства",
+		opcije: [
+			"новинарства",
+			"глумишта",
+			"песништва",
+			"шлагера"
+		]
+	},
+	{
+		pitanje: 'Предраг Милојевић је своје дело "Кажем ја себи" жанровски одредио као:',
+		tacanOdgovor: "антибиографију",
+		opcije: [
+			"мемоаре",
+			"поему",
+			"аутобиографију",
+			"антибиографију"
+		]
+	},
+	{
+		pitanje: "Који од наведених наслова је назив антибиографије Предрага Милојевића?",
+		tacanOdgovor: '"Кажем ја себи"',
+		opcije: [
+			'"О људима и ћудима"',
+			'"Био сам присутан"',
+			'"Кажем ја себи"',
+			"ништа од наведеног"
+		]
+	},
+	{
+		pitanje: 'Како се звала Гимназија "Свети Сава" у време када је ову школу похађао Предраг Милојевић?',
+		tacanOdgovor: "Српска краљевска четврта гимназија (1910-1919)",
+		opcije: [
+			"Српска краљевска четврта гимназија (1910-1919)",
+			"Четврта мушка гимназија (1919-1929)",
+			"Мушка гимназија Трећег реона (1944-1945)",
+			"Шеста београдска гимназија (1953-1956)"
+		]
+	},
+	{
+		pitanje: "Коју историјску личност је интервјуисао Предраг Милојевић?",
+		tacanOdgovor: "Адолфа Хитлера",
+		opcije: [
+			"Адолфа Хитлера",
+			"Јосифа Висарионовича Стаљина",
+			"Џона Кенедија",
+			"Шарл де Гола"
+		]
+	},
+	{
+		pitanje: "Сима Марковић је био познати:",
+		tacanOdgovor: "математичар и политичар",
+		opcije: [
+			"политичар и историчар",
+			"математичар и физичар",
+			"математичар и политичар",
+			"ништа од наведеног"
+		]
+	},
+	{
+		pitanje: "Које од наведених дела је написао математичар и политичар Сима Марковић?",
+		tacanOdgovor: "Из науке и филозофије",
+		opcije: [
+			"Мито о Сизифу",
+			"Руминације о предстојећој катастрофи",
+			"Ловац на змајеве",
+			"Из науке и филозофије"
+		]
+	},
+	{
+		pitanje: "Који од наведених наслова се односи на докторску дисертацију Симе Марковића из 1913. године?",
+		tacanOdgovor: "Општа Рикатијева једначина првог реда",
+		opcije: [
+			"Таутологија",
+			"Паралелопипед",
+			"Општа Рикатијева једначина првог реда",
+			"Тригонометрија"
+		]
+	},
+	{
+		pitanje: 'Како се звала Гимназија "Свети Сава" у време када је предавач био чувени математичар Сима Марковић?',
+		tacanOdgovor: "Српска краљевска четврта гимназија (1910-1919)",
+		opcije: [
+			"Српска краљевска четврта гимназија (1910-1919)",
+			"Српска краљевска мушка гимназија (1920-1928)",
+			"Државна четврта мушка гимназија (1929-1944)",
+			'Трећа гимназија "Владимир Иљич Лењин" (1970-1977)'
+		]
+	},
+	{
+		pitanje: "Који од наведених наслова се не односи на научне и преводилачке активности чувеног математичара и политичара Симе Марковића?",
+		tacanOdgovor: '„Од пашњака до научењака“',
+		opcije: [
+			'„Ајнштајнова теорија релативитета“',
+			'„Комунизам у Југославији“',
+			'„Од пашњака до научењака“',
+			'„О покрету за реформу математичке наставе“'
+		]
+	},
+	{
+		pitanje: "Са којом од наведених личности је током Првог светског рата Сима Марковић водио азил за ратну сирочад у Крагујевцу?",
+		tacanOdgovor: "са глумицом Жанком Стокић",
+		opcije: [
+			"са песником Момчилом Настасијевићем",
+			"са математичарем Михаилом Петровићем Аласом",
+			"са сликарком Надеждом Петровић",
+			"са глумицом Жанком Стокић"
+		]
+	},
+	{
+		pitanje: "Ко је био Милоје Милојевић?",
+		tacanOdgovor: "композитор",
+		opcije: [
+			"композитор",
+			"научник",
+			"сликар",
+			"писац"
+		]
+	},
+	{
+		pitanje: "Које Милојевићево дело представља његов искорак у експресионизам?",
+		tacanOdgovor: "Ритмичке гримасе",
+		opcije: [
+			"Смрт мајке Југовића",
+			"Ритмичке гримасе",
+			"Косовска свита",
+			"Гозба на ливади"
+		]
+	},
+	{
+		pitanje: "Коју од наведених композиција је компоновао Милоје Милојевић?",
+		tacanOdgovor: "Гозба на ливади",
+		opcije: [
+			"Руковети",
+			"Охридска легенда",
+			"Гозба на ливади",
+			"Хеј трубачу!"
+		]
+	},
+	{
+		pitanje: "У ком европском граду је докторирао и био професор Музичке академије композитор Милоје Милојевић?",
+		tacanOdgovor: "У Прагу",
+		opcije: [
+			"У Берлину",
+			"У Будимпешти",
+			"У Прагу",
+			"У Паризу"
+		]
+	},
+	{
+		pitanje: 'Како се звала Гимназија "Свети Сава" у време када је предавач био композитор Милоје Милојевић?',
+		tacanOdgovor: "Српска краљевска четврта гимназија (1910-1919)",
+		opcije: [
+			'Српска краљевска четврта гимназија (1910-1919)',
+			'Четврта мушка гимназија (1919-1929)',
+			'Државна четврта мушка гимназија (1929-1944)',
+			'Мушка гимназија Трећег реона (1944-1945)'
+		]
+	},
+	{
+		pitanje: "Шта је по занимању био Марко Мурат?",
+		tacanOdgovor: "сликар",
+		opcije: [
+			'писац',
+			'физичар',
+			'сликар',
+			'историчар'
+		]
+	},
+	{
+		pitanje: 'Ко је аутор слике „Долазак цара Душана у Дубровник“?',
+		tacanOdgovor: "Марко Мурат",
+		opcije: [
+			'Паја Јовановић',
+			'Урош Предић',
+			'Крсто Хегедушић',
+			'Марко Мурат'
+		]
+	},
+	{
+		pitanje: 'Како се звала Гимназија "Свети Сава" у време када је професор цртања био Марко Мурат?',
+		tacanOdgovor: "Српска краљевска четврта гимназија (1910-1919)",
+		opcije: [
+			'Српска краљевска четврта гимназија (1910-1919)',
+			'Четврта мушка гимназија (1919-1929)',
+			'Државна четврта мушка гимназија (1929-1944)',
+			'Мушка гимназија Трећег реона (1944-1945)'
+		]
+	},
+	{
+		pitanje: "Ког српског владара је портретисао сликар и професор цртања и лепог писања Марко Мурат?",
+		tacanOdgovor: "Александра Обреновића",
+		opcije: [
+			'Михаила Обреновића',
+			'Милана Обреновића',
+			'Александра Обреновића',
+			'Петра I Караорђевића'
+		]
+	},
+	{
+		pitanje: "Ког краљевића је подучавао цртању професор Марко Мурат?",
+		tacanOdgovor: "Александра I Карађорђевића",
+		opcije: [
+			'Александра Обреновића',
+			'Александра I Карађорђевића',
+			'кнеза Павла Карађорђевића',
+			'Петра II Карађорђевића'
+		]
+	},
+	{
+		pitanje: "Који предмет је у Четвртој мушкој гимназији предавао Васа Чубриловић?",
+		tacanOdgovor: "Историју",
+		opcije: [
+			'Српски језик',
+			'Историју',
+			'Веронауку',
+			'Земљопис'
+		]
+	},
+	{
+		pitanje: "На ком факултету је предавао Васа Чубриловић?",
+		tacanOdgovor: "Филозофском",
+		opcije: [
+			'Филозофском',
+			'Правном',
+			'Филолошком',
+			'Економском'
+		]
+	},
+	{
+		pitanje: "Васа Чубриловић је био члан које организације?",
+		tacanOdgovor: '"Млада Босна"',
+		opcije: [
+			'"Црна рука"',
+			'"Јавор"',
+			'"Млада Босна"',
+			'Ђачко друштво "Скерлић"'
+		]
+	},
+	{
+		pitanje: "У ком историјском догађају је као гимназијалац учествовао Васа Чубриловић?",
+		tacanOdgovor: "Срајевски атентат",
+		opcije: [
+			'Мајски преврат',
+			'Срајевски атентат',
+			'Анексија Босне',
+			'Кумановска битка'
+		]
+	},
+	{
+		pitanje: "Шта је предавао Коста Хакман у Четвртој мушкој гимназији?",
+		tacanOdgovor: "цртање и лепо писање",
+		opcije: [
+			'немачки језик',
+			'земљопис',
+			'јестаственицу',
+			'цртање и лепо писањег'
+		]
+	},
+	{
+		pitanje: 'Ко је за Милоша Црњанског рекао:“Сви смо ми талентовани, само је Црњански богом дан"?',
+		tacanOdgovor: "Иво Андрић",
+		opcije: [
+			'Сима Пандуровић',
+			'Момчило Настасијевић',
+			'Иво Андрић',
+			'Меша Селимовић'
+		]
+	},
+	{
+		pitanje: 'Како се звала Гимназија "Свети Сава" у време када је предавао Милош Црњански?',
+		tacanOdgovor: "Четврта мушка гимназија (1919-1929)",
+		opcije: [
+			'Српска краљевска четврта гимназија (1910-1919)',
+			'Четврта мушка гимназија (1919-1929)',
+			'Државна четврта мушка гимназија (1929-1944)',
+			'Мушка гимназија Трећег реона (1944-1945)'
+		]
+	},
+	{
+		pitanje: "Које предмете је предавао Милош Црњански у Четвртој мушкој гимназији између 1922. и 1932. године?",
+		tacanOdgovor: "српски (српско-хрватски-словеначки) језик, француски језик, историју и земљопис",
+		opcije: [
+			'српски (српско-хрватски-словеначки) језик, француски језик, историју и земљопис',
+			'српски (српско-хрватски-словеначки) језик, немачки језик, филозофију и земљопис',
+			'српски (српско-хрватски-словеначки) језик, француски језик, земљопис и гимнастику',
+			'српски (српско-хрватски-словеначки) језик и немачки језик'
+		]
+	},
+	{
+		pitanje: "У ком временском периоду је Милош Црњански предавао у Четвртој мушкој гимназији?",
+		tacanOdgovor: "од 1922. до 1932. године",
+		opcije: [
+			'од 1920. до 1935. године',
+			'од 1925. до 1932. године',
+			'од 1922. до 1932. године',
+			'Од 1920. до 1932. године'
+		]
+	},
+	{
+		pitanje: "У ком месту је рођен Милош Црњански",
+		tacanOdgovor: "у Чонграду",
+		opcije: [
+			'у Београду',
+			'у Чонграду',
+			'у Темишвару',
+			'у Букурешту'
+		]
+	},
+	{
+		pitanje: "Која од наведених књижевних дела је написао Милош Црњански?",
+		tacanOdgovor: '„Сеобе” и „Љубав у Тоскани”',
+		opcije: [
+			'„Сеобе” и „Љубав у Тоскани”',
+			'„Љубав у Тоскани” и „Живот и прикљученија”',
+			'„Живот и прикљученија” и „Проклета авлија”',
+			'„Проклета авлија” и „Сеобе”'
+		]
+	},
+	{
+		pitanje: '„Он је толико дрзак и безобразан да је чак почео и да учи!” био је коментар једног професора у Четвртој мушкој гимназији на рад и понашање свог ученика. О ком професору, чувеном књижевнику, је реч?',
+		tacanOdgovor: "Милошу Црњанском",
+		opcije: [
+			'Сими Пандуровићу',
+			'Момчилу Настасијевићу',
+			'Милошу Црњанском',
+			'Душану Матићу'
+		]
+	}];
+	pitanjaNiz.forEach((pitanje, index) =>
+	{
+		pitanje.numb = index + 1;
+	});
+	const start_dugme = document.querySelector(".start_btn button");
+	const pravila = document.querySelector(".info_box");
+	const izadji_dugme = pravila.querySelector(".buttons .quit");
+	const nastavi_dugme = pravila.querySelector(".buttons .restart");
+	const kviz = document.querySelector(".quiz_box");
+	const rezultati = document.querySelector(".result_box");
+	const opcije = document.querySelector(".option_list");
+	const vremeLinija = document.querySelector(".kviz-header .time_line");
+	const vremeTekst = document.querySelector(".timer .time_left_txt");
+	const vremeSekunde = document.querySelector(".timer .timer_sec");
+	const sledecePitanje = document.querySelector(".kviz-footer .next_btn");
+	const brojPitanja = document.querySelector(".kviz-footer .total_que");
+	const izadji = document.getElementById('izadji');
+	let tajmer = 15;
+	let broj_pitanja = 0;
+	let pocetno_pitanje = 1;
+	let bodovi = 0;
+	let counter;
+	let linija;
+	let duzina = 0;
 
-  const start_btn = document.querySelector(".start_btn button");
-  const info_box = document.querySelector(".info_box");
-  const exit_btn = info_box.querySelector(".buttons .quit");
-  const continue_btn = info_box.querySelector(".buttons .restart");
-  const quiz_box = document.querySelector(".quiz_box");
-  const result_box = document.querySelector(".result_box");
-  const option_list = document.querySelector(".option_list");
-  const time_line = document.querySelector(".kviz-header .time_line");
-  const timeText = document.querySelector(".timer .time_left_txt");
-  const timeCount = document.querySelector(".timer .timer_sec");
-  const next_btn = document.querySelector(".kviz-footer .next_btn");
-  const bottom_ques_counter = document.querySelector(".kviz-footer .total_que");
+	izadji.addEventListener("click", () =>
+	{
+		location.reload();
+	});
 
-  let timeValue = 15;
-  let que_count = 0;
-  let que_numb = 1;
-  let userScore = 0;
-  let counter;
-  let counterLine;
-  let widthValue = 0;
+	start_dugme.addEventListener("click", () =>
+	{
+		start_dugme.style.display = "none";
+		pravila.classList.add("activeInfo");
+	});
 
-  start_btn.addEventListener("click", () => {
-        start_btn.style.display = "none"; // Hide the start button
-        info_box.classList.add("activeInfo");
-    });
-    
+	izadji_dugme.addEventListener("click", () =>
+	{
+		pravila.classList.remove("activeInfo");
+		rezultati.classList.remove("activeResult");
+		start_dugme.style.display = "block";
+		resetQuiz();
+	});
 
-    exit_btn.addEventListener("click", () => {
-      info_box.classList.remove("activeInfo");
-      result_box.classList.remove("activeResult");
-      start_btn.style.display = "block";
-      resetQuiz();
-  });
-  
-  continue_btn.addEventListener("click", () => {
-      info_box.style.display = "none";
-      info_box.classList.remove("activeInfo");
-      quiz_box.classList.add("activeQuiz");
-      resetQuiz();
-      showQuestions(0);
-      queCounter(1);
-      startTimerAndLine(timeValue); // Start both timer and time line
-  });
-  
-  function resetQuiz() {
-      que_count = 0;
-      que_numb = 1;
-      userScore = 0;
-  }
+	nastavi_dugme.addEventListener("click", () =>
+	{
+		pravila.style.display = "none";
+		pravila.classList.remove("activeInfo");
+		kviz.classList.add("activeQuiz");
+		resetQuiz();
+		pokaziPitanje(0);
+		counterPitanja(0);
+		startTimerAndLine(tajmer);
+	});
 
-  next_btn.addEventListener("click", () => {
-      if (que_count < questions.length - 1) {
-          que_count++;
-          que_numb++;
-          showQuestions(que_count);
-          queCounter(que_numb);
-          clearInterval(counter);
-          clearInterval(counterLine);
-          startTimerAndLine(timeValue); // Start both timer and time line
-          timeText.textContent = "Time Left"; // Reset time text
-          next_btn.classList.remove("show");
-      } else {
-          clearInterval(counter);
-          clearInterval(counterLine);
-          showResult();
-      }
-  });
+	function resetQuiz()
+	{
+		broj_pitanja = 0;
+		pocetno_pitanje = 1;
+		bodovi = 0;
+	}
 
-  function showQuestions(index) {
-      const que_text = document.querySelector(".que_text");
-      let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
-      let option_tag = questions[index].options.map(option =>
-          '<div class="option"><span>' + option + '</span></div>'
-      ).join("");
-      que_text.innerHTML = que_tag;
-      option_list.innerHTML = option_tag;
-      const option = option_list.querySelectorAll(".option");
-      option.forEach(opt => {
-          opt.addEventListener("click", () => optionSelected(opt));
-      });
-  }
+	sledecePitanje.addEventListener("click", () =>
+	{
+		if (broj_pitanja < pitanjaNiz.length - 1)
+		{
+			broj_pitanja++;
+			pocetno_pitanje++;
+			pokaziPitanje(broj_pitanja);
+			counterPitanja(pocetno_pitanje);
+			clearInterval(counter);
+			clearInterval(linija);
+			startTimerAndLine(tajmer);
+			vremeTekst.textContent = "Преостало време";
+			sledecePitanje.classList.remove("show");
+		}
+		else
+		{
+			clearInterval(counter);
+			clearInterval(linija);
+			pokaziRezultat();
+		}
+	});
 
-  function optionSelected(answer, isTimeOut = false) {
-      clearInterval(counter);
-      clearInterval(counterLine);
-      const correctAns = questions[que_count].answer;
-      const allOptions = option_list.children.length;
-      if (isTimeOut) {
-          setTimeout(() => {
-              for (let i = 0; i < allOptions; i++) {
-                  if (option_list.children[i].textContent === correctAns) {
-                      option_list.children[i].classList.add("correct");
-                  }
-              }
-          }, 1000); // Delay execution by 1 second
-      } else {
-          // Handle user-selected answer
-          const selectedAns = answer.textContent;
-          if (selectedAns === correctAns) {
-              answer.classList.add("correct");
-              userScore++;
-          } else {
-              answer.classList.add("incorrect");
-          }
-      }
-      for (let i = 0; i < allOptions; i++) {
-          option_list.children[i].classList.add("disabled");
-      }
-      next_btn.classList.add("show");
-  }
-  
-  
-  
+	function pokaziPitanje(index)
+	{
+		const tekstPitanja = document.querySelector(".que_text");
+		let tagPitanja = '<span>' + pitanjaNiz[index].numb + ". " + pitanjaNiz[index].pitanje + '</span>';
+		let tagOpcije = pitanjaNiz[index].opcije.map(opcija =>
+			'<div class="option"><span>' + opcija + '</span></div>'
+		).join("");
+		tekstPitanja.innerHTML = tagPitanja;
+		opcije.innerHTML = tagOpcije;
+		const opcija = opcije.querySelectorAll(".option");
+		opcija.forEach(opt =>
+		{
+			opt.addEventListener("click", () => izabaranaOpcija(opt));
+		});
+	}
 
-  function showResult() {
-    info_box.classList.remove("activeInfo");
-    quiz_box.classList.remove("activeQuiz");
-    result_box.classList.add("activeResult");
-    const scoreText = result_box.querySelector(".score_text");
-    let scoreTag = "";
-    if (userScore > 3) {
-        scoreTag = '<span>Congrats!, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
-    } else if (userScore > 1) {
-        scoreTag = '<span>and nice 😎, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
-    } else {
-        scoreTag = '<span>and sorry 😐, You got only <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
-    }
-    scoreText.innerHTML = scoreTag;
-    quiz_box.style.display = "none";
+	function izabaranaOpcija(tacanOdgovor, istekloVreme = false)
+	{
+		clearInterval(counter);
+		clearInterval(linija);
+		const tacanOdg = pitanjaNiz[broj_pitanja].tacanOdgovor;
+		const sveOpcije = opcije.children.length;
+		if (istekloVreme)
+		{
+			setTimeout(() =>
+			{
+				for (let i = 0; i < sveOpcije; i++)
+				{
+					if (opcije.children[i].textContent === tacanOdg)
+					{
+						opcije.children[i].classList.add("correct");
+					}
+				}
+			}, 100);
+		}
+		else
+		{
+			const odabraniOdgovor = tacanOdgovor.textContent;
+			if (odabraniOdgovor === tacanOdg)
+			{
+				tacanOdgovor.classList.add("correct");
+				bodovi++;
+			}
+			else
+			{
+				tacanOdgovor.classList.add("incorrect");
+			}
+		}
+		for (let i = 0; i < sveOpcije; i++)
+		{
+			opcije.children[i].classList.add("disabled");
+		}
+		sledecePitanje.classList.add("show");
+	}
 
-    continue_btn.addEventListener("click", () => {
-        result_box.classList.remove("activeResult");
-        quiz_box.classList.add("activeQuiz");
-        que_count = 0;
-        que_numb = 1;
-        userScore = 0;
-        showQuestions(que_count);
-        queCounter(que_numb);
-        startTimerAndLine(timeValue);
-    });
+	function pokaziRezultat()
+	{
+		pravila.classList.remove("activeInfo");
+		kviz.classList.remove("activeQuiz");
+		rezultati.classList.add("activeResult");
+		const scoreText = rezultati.querySelector(".score_text");
 
-    exit_btn.addEventListener("click", () => {
-        location.reload(); // Reload the page to quit the quiz
-    });
-}
+		let bodoviTekst;
+		if (bodovi > 35)
+		{
+			bodoviTekst = 'Квиз је одлично урађен: имаш ' + bodovi + ' од ' + pitanjaNiz.length + ' бодова';
+		}
+		else if (bodovi > 20)
+		{
+			bodoviTekst = 'Добро је урађен: имаш ' + bodovi + ' од ' + pitanjaNiz.length + ' бодова';
+		}
+		else
+		{
+			bodoviTekst = 'Мораш да се потрудиш: имаш ' + bodovi + ' од ' + pitanjaNiz.length + ' бодова';
+		}
+		scoreText.innerHTML = '<span id="score">' + bodoviTekst + '</span>';
+		scoreText.textContent = bodoviTekst;
+		kviz.style.display = "none";
 
-  function queCounter(index) {
-      const totalQueCountTag = '<span><p>' + index + '</p> of <p>' + questions.length + '</p> Questions</span>';
-      bottom_ques_counter.innerHTML = totalQueCountTag;
-  }
+		nastavi_dugme.addEventListener("click", () =>
+		{
+			rezultati.classList.remove("activeResult");
+			kviz.classList.add("activeQuiz");
+			broj_pitanja = 0;
+			pocetno_pitanje = 1;
+			bodovi = 0;
+			pokaziPitanje(broj_pitanja);
+			counterPitanja(pocetno_pitanje);
+			startTimerAndLine(tajmer);
+		});
+	}
 
-  function startTimerAndLine(time) {
-      let initialTime = time;
-      let currentTime = time;
-      let duration = time * 1000; // Duration in milliseconds
-      let initialWidth = 0; // Initial width of the time line
-      let targetWidth = 30; // Target width of the time line (30rem)
-      let startTime = null;
-  
-      function animate(timeStamp) {
-          if (!startTime) startTime = timeStamp;
-          let elapsedTime = timeStamp - startTime;
-          let width = (elapsedTime / duration) * targetWidth; // Calculate the width based on elapsed time
-          time_line.style.width = width + "rem";
-  
-          if (elapsedTime < duration) {
-              requestAnimationFrame(animate);
-              
-              // Calculate remaining time to ensure accurate countdown
-              let remainingTime = Math.max(initialTime - Math.floor(elapsedTime / 1000), 0);
-              timeCount.textContent = remainingTime < 10 ? "0" + remainingTime : remainingTime;
-          } else {
-              setTimeout(() => {
-                  timeText.textContent = "Time Off";
-                  optionSelected(null, true); // Call optionSelected with null answer to show correct answer
-              }, 500); // Delay execution by 0.5 second to ensure animation completion
-          }
-      }
-  
-      counter = setInterval(() => {
-          if (currentTime > 0) {
-              currentTime--;
-              // Update the time count text
-              timeCount.textContent = currentTime < 10 ? "0" + currentTime : currentTime;
-          } else {
-              clearInterval(counter); // Stop the timer if currentTime reaches 0
-              clearInterval(counterLine); // Stop the time line animation as well
-          }
-      }, 1000);
-  
-      requestAnimationFrame(animate);
-  }
-  
+
+	function counterPitanja(index)
+	{
+		const ukBrPitanja = '<span id="brPTI"><p>' + index + '</p> oд <p>' + pitanjaNiz.length + '</p> питања </span>';
+		brojPitanja.innerHTML = ukBrPitanja;
+	}
+
+	function startTimerAndLine(time)
+	{
+		var element = document.querySelector('.quiz_box');
+		var duzinaQB = element.offsetWidth;
+		let pocetnoVreme = time;
+		let trenutnoVreme = time;
+		let duzinaTrajanja = time * 1000;
+		let pocetnaDuzina = 0;
+		let kranjaDuzina = duzinaQB;
+		let pocetakVremena = null;
+
+		function animate(vreme)
+		{
+			if (!pocetakVremena) pocetakVremena = vreme;
+			let protekloVreme = vreme - pocetakVremena;
+			let width = (protekloVreme / duzinaTrajanja) * duzinaQB - 7;
+			vremeLinija.style.width = width + "px";
+
+			if (protekloVreme < duzinaTrajanja)
+			{
+				requestAnimationFrame(animate);
+
+				let preostaloVreme = Math.max(pocetnoVreme - Math.floor(protekloVreme / 1000), 0);
+				vremeSekunde.textContent = preostaloVreme < 10 ? "0" + preostaloVreme : preostaloVreme;
+			}
+			else
+			{
+				setTimeout(() =>
+				{
+					vremeTekst.textContent = "Преостало време";
+					izabaranaOpcija(null, true);
+				}, 100);
+			}
+		}
+
+
+		counter = setInterval(() =>
+		{
+			if (trenutnoVreme > 0)
+			{
+				trenutnoVreme--;
+				vremeSekunde.textContent = trenutnoVreme < 10 ? "0" + trenutnoVreme : trenutnoVreme;
+			}
+			else
+			{
+				clearInterval(counter);
+				clearInterval(linija);
+			}
+		}, 1000);
+
+		requestAnimationFrame(animate);
+	}
+
 });
