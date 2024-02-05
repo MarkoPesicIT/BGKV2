@@ -227,7 +227,7 @@ function applyActiveMenuItem(currentPage)
 	});
 }
 // kviz
-document.addEventListener("DOMContentLoaded", function()
+	document.addEventListener("DOMContentLoaded", function()
 {
 	const pitanjaNiz = [
 	{
@@ -747,7 +747,7 @@ document.addEventListener("DOMContentLoaded", function()
 						opcije.children[i].classList.add("correct");
 					}
 				}
-			}, 100);
+			}, 500);
 		}
 		else
 		{
@@ -813,40 +813,40 @@ document.addEventListener("DOMContentLoaded", function()
 		brojPitanja.innerHTML = ukBrPitanja;
 	}
 
-	function startTimerAndLine(time)
+	function startTimerAndLine(tajmer)
 	{
-		var element = document.querySelector('.quiz_box');
-		var duzinaQB = element.offsetWidth;
-		let pocetnoVreme = time;
-		let trenutnoVreme = time;
-		let duzinaTrajanja = time * 1000;
+		let pocetnoVreme = tajmer;
+		let trenutnoVreme = tajmer;
+		let duzinaTrajanja = tajmer * 1000;
 		let pocetnaDuzina = 0;
-		let kranjaDuzina = duzinaQB;
+		let kranjaDuzina = 30;
 		let pocetakVremena = null;
 
-		function animate(vreme)
-		{
+		function animate(vreme) {
 			if (!pocetakVremena) pocetakVremena = vreme;
 			let protekloVreme = vreme - pocetakVremena;
 			let width = (protekloVreme / duzinaTrajanja) * duzinaQB - 7;
-			vremeLinija.style.width = width + "px";
-
-			if (protekloVreme < duzinaTrajanja)
-			{
-				requestAnimationFrame(animate);
-
-				let preostaloVreme = Math.max(pocetnoVreme - Math.floor(protekloVreme / 1000), 0);
-				vremeSekunde.textContent = preostaloVreme < 10 ? "0" + preostaloVreme : preostaloVreme;
+			vremeLinija.style.width = width + "rem";
+		  
+			let preostaloVreme = Math.max(pocetnoVreme - Math.floor(protekloVreme / 1000), 0);
+			vremeSekunde.textContent = preostaloVreme < 10 ? "0" + preostaloVreme : preostaloVreme;
+		  
+			if (preostaloVreme === 0) {
+			    vremeTekst.textContent = "Преостало време";
+			    clearInterval(counter);
+			    clearInterval(linija);
+			    izabaranaOpcija(null, true);
 			}
-			else
-			{
-				setTimeout(() =>
-				{
-					vremeTekst.textContent = "Преостало време";
-					izabaranaOpcija(null, true);
-				}, 100);
+		  
+			if (protekloVreme >= duzinaTrajanja) {
+			    clearInterval(counter);
+			    clearInterval(linija);
+			    izabaranaOpcija(null, true);
+			} else {
+			    requestAnimationFrame(animate);
 			}
-		}
+		  }
+		  
 
 
 		counter = setInterval(() =>
