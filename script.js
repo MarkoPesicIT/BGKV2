@@ -226,7 +226,7 @@ function applyActiveMenuItem(currentPage)
 		}
 	});
 }
-
+// kviz
 document.addEventListener("DOMContentLoaded", function()
 {
 	const pitanjaNiz = [
