@@ -1009,7 +1009,8 @@ a,
 	overflow: hidden;
 	width: 12vw;
 	padding: 1vw;
-	border-radius: 2em;
+	border-top-right-radius: 3rem;
+	border-bottom-left-radius: 3rem;
 	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
 	text-align: center;
 	aspect-ratio: 3/4;
@@ -1017,7 +1018,8 @@ a,
 
 .zgrada img
 {
-	border-radius: 1em;
+	border-top-right-radius: 1.5rem;
+	border-bottom-left-radius: 1.5rem;
 	width: 100%;
 	aspect-ratio: 1/1;
 	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
