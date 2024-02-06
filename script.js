@@ -659,6 +659,8 @@ function applyActiveMenuItem(currentPage)
 	let linija;
 	let duzina = 0;
 
+	
+	
 	izadji.addEventListener("click", () =>
 	{
 		location.reload();
@@ -718,61 +720,7 @@ function applyActiveMenuItem(currentPage)
 		}
 	});
 
-	function pokaziPitanje(index)
-	{
-		const tekstPitanja = document.querySelector(".que_text");
-		let tagPitanja = '<span>' + pitanjaNiz[index].numb + ". " + pitanjaNiz[index].pitanje + '</span>';
-		let tagOpcije = pitanjaNiz[index].opcije.map(opcija =>
-			'<div class="option"><span>' + opcija + '</span></div>'
-		).join("");
-		tekstPitanja.innerHTML = tagPitanja;
-		opcije.innerHTML = tagOpcije;
-		const opcija = opcije.querySelectorAll(".option");
-		opcija.forEach(opt =>
-		{
-			opt.addEventListener("click", () => izabaranaOpcija(opt));
-		});
-	}
-
-	function izabaranaOpcija(tacanOdgovor, istekloVreme = false)
-	{
-		
-		clearInterval(counter);
-		clearInterval(linija);
-		const tacanOdg = pitanjaNiz[broj_pitanja].tacanOdgovor;
-		const sveOpcije = opcije.children.length;
-		if (istekloVreme)
-		{
-			setTimeout(() =>
-			{
-				for (let i = 0; i < sveOpcije; i++)
-				{
-					if (opcije.children[i].textContent === tacanOdg)
-					{
-						opcije.children[i].classList.add("correct");
-					}
-				}
-			}, 500);
-		}
-		else
-		{
-			const odabraniOdgovor = tacanOdgovor.textContent;
-			if (odabraniOdgovor === tacanOdg)
-			{
-				tacanOdgovor.classList.add("correct");
-				bodovi++;
-			}
-			else
-			{
-				tacanOdgovor.classList.add("incorrect");
-			}
-		}
-		for (let i = 0; i < sveOpcije; i++)
-		{
-			opcije.children[i].classList.add("disabled");
-		}
-		sledecePitanje.classList.add("show");
-	}
+	
 
 	function pokaziRezultat()
 	{
@@ -818,56 +766,122 @@ function applyActiveMenuItem(currentPage)
 		brojPitanja.innerHTML = ukBrPitanja;
 	}
 
-	function startTimerAndLine(tajmer)
-	{
-		let pocetnoVreme = tajmer;
-		let trenutnoVreme = tajmer;
-		let duzinaTrajanja = tajmer * 1000;
-		let pocetnaDuzina = 0;
-		let kranjaDuzina = 30;
-		let pocetakVremena = null;
-
-		function animate(vreme) {
-			if (!pocetakVremena) pocetakVremena = vreme;
-			let protekloVreme = vreme - pocetakVremena;
-			vremeLinija.style.width = kranjaDuzina + "rem";
-		  
-			let preostaloVreme = Math.max(pocetnoVreme - Math.floor(protekloVreme / 1000), 0);
-			vremeSekunde.textContent = preostaloVreme < 10 ? "0" + preostaloVreme : preostaloVreme;
-		  
-			if (preostaloVreme === 0) {
-			    vremeTekst.textContent = "Преостало време";
-			    clearInterval(counter);
-			    clearInterval(linija);
-			    izabaranaOpcija(null, true);
-			}
-		  
-			if (protekloVreme >= duzinaTrajanja) {
-			    clearInterval(counter);
-			    clearInterval(linija);
-			    izabaranaOpcija(null, true);
+	function pokaziPitanje(index) {
+		const tekstPitanja = document.querySelector(".que_text");
+		let tagPitanja = '<span>' + pitanjaNiz[index].numb + ". " + pitanjaNiz[index].pitanje + '</span>';
+		let tagOpcije = pitanjaNiz[index].opcije.map(opcija =>
+			'<div class="option"><span>' + opcija + '</span></div>'
+		).join("");
+		tekstPitanja.innerHTML = tagPitanja;
+		opcije.innerHTML = tagOpcije;
+		const opcija = opcije.querySelectorAll(".option");
+		opcija.forEach(opt => {
+			opt.addEventListener("click", () => izabranaOpcija(opt)); 
+		});
+	}
+	function izabranaOpcija(tacanOdgovor, istekloVreme = false) {
+		clearInterval(counter);
+		clearInterval(linija);
+		const tacanOdg = pitanjaNiz[broj_pitanja].tacanOdgovor;
+		const sveOpcije = opcije.children.length;
+	
+		if (!istekloVreme) {
+			const odabraniOdgovor = tacanOdgovor.textContent;
+			if (odabraniOdgovor === tacanOdg) {
+				tacanOdgovor.classList.add("correct");
+				bodovi++;
 			} else {
-			    requestAnimationFrame(animate);
+				tacanOdgovor.classList.add("incorrect");
+				sledecePitanje.style.display='none';
+				
 			}
-		  }
-		  
-
-
-		counter = setInterval(() =>
-		{
-			if (trenutnoVreme > 0)
-			{
-				trenutnoVreme--;
-				vremeSekunde.textContent = trenutnoVreme < 10 ? "0" + trenutnoVreme : trenutnoVreme;
+	
+			for (let i = 0; i < sveOpcije; i++) {
+				opcije.children[i].classList.add("disabled");
 			}
-			else
-			{
+			sledecePitanje.classList.add("show");
+		} else {
+			for (let i = 0; i < sveOpcije; i++) {
+				opcije.children[i].classList.add("disabled"); // Dodaj klasu disabled svim opcijama
+				if (opcije.children[i].textContent === tacanOdg) {
+					opcije.children[i].classList.add("correct");
+				}
+			}
+		}
+	}
+	
+	function startTimerAndLine(timer) {
+		let initialTime = timer;
+		let remainingTime = timer;
+		let duration = timer * 1000;
+		let lineWidth = 0;
+		let maxLineWidth = 30;
+		let startTime = null;
+	
+		function animate(timestamp) {
+			if (!startTime) startTime = timestamp;
+			let elapsedTime = timestamp - startTime;
+	
+			// Update time line width
+			lineWidth = (elapsedTime / duration) * maxLineWidth;
+			vremeLinija.style.width = lineWidth + "rem";
+	
+			// Update remaining time display
+			let remainingSeconds = Math.max(initialTime - Math.floor(elapsedTime / 1000), 0);
+			vremeSekunde.textContent = remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
+	
+			// When time runs out
+			if (remainingSeconds === 0) {
+				vremeTekst.textContent = "Преостало време";
 				clearInterval(counter);
-				clearInterval(linija);
+				markCorrectAnswerOnTimeout(); // Dodat poziv funkcije za označavanje tačnog odgovora
+				izabranaOpcija(null, true);
+			}
+	
+			// When duration is exceeded
+			if (elapsedTime >= duration) {
+				clearInterval(counter);
+				markCorrectAnswerOnTimeout(); // Dodat poziv funkcije za označavanje tačnog odgovora
+				izabranaOpcija(null, true);
+			} else {
+				requestAnimationFrame(animate);
+			}
+		}
+	
+		counter = setInterval(() => {
+			if (remainingTime > 0) {
+				remainingTime--;
+				vremeSekunde.textContent = remainingTime < 10 ? "0" + remainingTime : remainingTime;
+			} else {
+				clearInterval(counter);
 			}
 		}, 1000);
-
+	
 		requestAnimationFrame(animate);
 	}
+	function markCorrectAnswerOnTimeout() {
+		setTimeout(() => {
+			const tacanOdg = pitanjaNiz[broj_pitanja].tacanOdgovor;
+			const sveOpcije = opcije.children;
+			for (let i = 0; i < sveOpcije.length; i++) {
+				if (sveOpcije[i].textContent === tacanOdg) {
+					sveOpcije[i].classList.add("correct");
+				}
+				sveOpcije[i].classList.add("disabled"); // Onemogući klikanje opcija nakon isteka vremena
+			}
+			sledecePitanje.style.display='block';
+			sledecePitanje.classList.add('show');
+			setTimeout(() => {
+				sledecePitanje.click(); 
+			}, 5000); 
+		}, 0); 
+	}
+	
+	
+	
+	
+	// Ostatak koda...
+	
+	
 
 });
