@@ -831,7 +831,7 @@ function applyActiveMenuItem(currentPage)
 			if (remainingSeconds === 0) {
 				vremeTekst.textContent = "Преостало време";
 				clearInterval(counter);
-				markCorrectAnswerOnTimeout();
+				markCorrectAnswerOnTimeout(); // Dodat poziv funkcije za označavanje tačnog odgovora
 				izabranaOpcija(null, true);
 			}
 	
@@ -862,14 +862,14 @@ function applyActiveMenuItem(currentPage)
 			for (let i = 0; i < sveOpcije.length; i++) {
 				if (sveOpcije[i].textContent === tacanOdg) {
 					sveOpcije[i].classList.add("correct");
-					sledecePitanje.style.display='block';
-					sledecePitanje.classList.add('show');
 				}
-				sveOpcije[i].classList.add("disabled");
+				sveOpcije[i].classList.add("disabled"); // Onemogući klikanje opcija nakon isteka vremena
 			}
-			// setTimeout(() => {
-			// 	sledecePitanje.click(); 
-			// }, 5000); 
-		},0); 
+			sledecePitanje.style.display='block';
+			sledecePitanje.classList.add('show');
+			setTimeout(() => {
+				sledecePitanje.click(); 
+			}, 5000); 
+		}, 0); 
 	}
 });
