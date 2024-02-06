@@ -802,7 +802,7 @@ function applyActiveMenuItem(currentPage)
 			sledecePitanje.classList.add("show");
 		} else {
 			for (let i = 0; i < sveOpcije; i++) {
-				opcije.children[i].classList.add("disabled"); // Dodaj klasu disabled svim opcijama
+				opcije.children[i].classList.add("disabled");
 				if (opcije.children[i].textContent === tacanOdg) {
 					opcije.children[i].classList.add("correct");
 				}
@@ -822,23 +822,19 @@ function applyActiveMenuItem(currentPage)
 			if (!startTime) startTime = timestamp;
 			let elapsedTime = timestamp - startTime;
 	
-			// Update time line width
 			lineWidth = (elapsedTime / duration) * maxLineWidth;
 			vremeLinija.style.width = lineWidth + "rem";
 	
-			// Update remaining time display
 			let remainingSeconds = Math.max(initialTime - Math.floor(elapsedTime / 1000), 0);
 			vremeSekunde.textContent = remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
 	
-			// When time runs out
 			if (remainingSeconds === 0) {
 				vremeTekst.textContent = "Преостало време";
 				clearInterval(counter);
-				markCorrectAnswerOnTimeout(); 
+				markCorrectAnswerOnTimeout(); // Dodat poziv funkcije za označavanje tačnog odgovora
 				izabranaOpcija(null, true);
 			}
 	
-			// When duration is exceeded
 			if (elapsedTime >= duration) {
 				clearInterval(counter);
 				markCorrectAnswerOnTimeout(); 
@@ -867,11 +863,13 @@ function applyActiveMenuItem(currentPage)
 				if (sveOpcije[i].textContent === tacanOdg) {
 					sveOpcije[i].classList.add("correct");
 				}
-				sveOpcije[i].classList.add("disabled"); 
+				sveOpcije[i].classList.add("disabled"); // Onemogući klikanje opcija nakon isteka vremena
 			}
 			sledecePitanje.style.display='block';
 			sledecePitanje.classList.add('show');
-
+			setTimeout(() => {
+				sledecePitanje.click(); 
+			}, 5000); 
 		}, 0); 
 	}
 });
