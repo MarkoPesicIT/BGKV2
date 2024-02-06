@@ -37,6 +37,7 @@ function menuBtnFunction(menuBtn)
 {
 	menuBtn.classList.toggle("active");
 	var sidemenu = document.getElementById('sidemenu');
+	const start_dugme = document.querySelector(".start_btn button");
 	var imageContainer = document.querySelector('.image-container');
 	if (sidemenu.style.right === '0%')
 	{
@@ -44,15 +45,18 @@ function menuBtnFunction(menuBtn)
 
 		setTimeout(function()
 		{
-			imageContainer.style.zIndex = '';
+			start_dugme.style.display = 'block';
 			document.body.style.overflow = 'auto';
-		}, 400);
+		}, 280);
 	}
 	else
 	{
+		setTimeout(function()
+		{
+			start_dugme.style.display = 'none';
+			document.body.style.overflow = 'hidden';
+		},280)
 		sidemenu.style.right = '0%';
-		imageContainer.style.zIndex = '-1';
-		document.body.style.overflow = 'hidden';
 	}
 }
 
@@ -732,6 +736,7 @@ function applyActiveMenuItem(currentPage)
 
 	function izabaranaOpcija(tacanOdgovor, istekloVreme = false)
 	{
+		
 		clearInterval(counter);
 		clearInterval(linija);
 		const tacanOdg = pitanjaNiz[broj_pitanja].tacanOdgovor;
@@ -825,8 +830,7 @@ function applyActiveMenuItem(currentPage)
 		function animate(vreme) {
 			if (!pocetakVremena) pocetakVremena = vreme;
 			let protekloVreme = vreme - pocetakVremena;
-			let width = (protekloVreme / duzinaTrajanja) * duzinaQB - 7;
-			vremeLinija.style.width = width + "rem";
+			vremeLinija.style.width = kranjaDuzina + "rem";
 		  
 			let preostaloVreme = Math.max(pocetnoVreme - Math.floor(protekloVreme / 1000), 0);
 			vremeSekunde.textContent = preostaloVreme < 10 ? "0" + preostaloVreme : preostaloVreme;
