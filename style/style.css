@@ -682,6 +682,8 @@ i
 	height: 0.3rem;
 	color: var(--primary);
 	background-color: var(--primary);
+	margin-bottom: 10rem;
+
 }
 
 .sekcija
@@ -2684,4 +2686,40 @@ section .option_list .option .icon
 .fire:nth-child(3)
 {
 	animation-delay: 0.08s;
+}
+
+.verticalIMGscroll {
+	width: 20vw;
+	height: 100vh; /* Set container height to viewport height */
+	overflow-y: scroll; /* Enable vertical scrolling */
+	scroll-snap-type: y mandatory; /* Enable snap scrolling */
+	display: flex;
+	flex-direction: column; /* Arrange images vertically */
+	gap: 2rem;
+  }
+  
+  .verticalIMGscroll img {
+	border-radius: 1rem;
+	width: 100%;
+	scroll-snap-align: start;
+  }
+  #naslovOlicnostima{
+	text-align: center;
+	font-size: 4rem;
+  }
+.ozasebLicnosti{
+	column-width: 50rem;
+	flex-direction: row;
+	display: flex;
+
+}
+.contentOlicnosti{
+	width: 80%;
+	column-width: 50rem;
+	flex-direction: column;
+	display: flex;
+}
+
+.contentOlicnosti p{
+	font-size: 1.5rem;
 }
