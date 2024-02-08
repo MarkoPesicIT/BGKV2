@@ -867,9 +867,6 @@ function applyActiveMenuItem(currentPage)
 				}
 				sveOpcije[i].classList.add("disabled");
 			}
-			// setTimeout(() => {
-			// 	sledecePitanje.click(); 
-			// }, 5000); 
 		},0); 
 	}
 });
