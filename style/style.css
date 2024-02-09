@@ -722,6 +722,7 @@ i
 	background-color: #00b3ff3a;
 	text-decoration: none;
 	margin-left: auto;
+	width: -moz-fit-content;
 	width: fit-content;
 	transition: 0.3s ease-in-out background-color, 0.3s ease-in-out scale, 0.3s ease-in-out color;
 }
@@ -836,6 +837,7 @@ a,
 	justify-content: center;
 	align-items: center;
 	padding: 2rem;
+	width: -moz-fit-content;
 	width: fit-content;
 	margin: 0 auto;
 }
@@ -1879,6 +1881,7 @@ svg text
 {
 	font-weight: 400;
 	font-size: 17px;
+	-webkit-user-select:none;
 	user-select: none;
 }
 
@@ -1894,6 +1897,7 @@ svg text
 	text-align: center;
 	background: #343a40;
 	border: 1px solid #343a40;
+	-webkit-user-select:none;
 	user-select: none;
 }
 
@@ -2017,6 +2021,7 @@ section .option_list .option .icon
 .kviz-footer .total_que span
 {
 	display: flex;
+	-webkit-user-select:none;
 	user-select: none;
 }
 
