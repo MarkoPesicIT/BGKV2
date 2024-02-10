@@ -49,7 +49,7 @@ hr
 
 .strana
 {
-	width: 80%;
+	width: 51%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -107,7 +107,7 @@ main
 
 .submeni-active
 {
-	background-color: #593166 !important;
+	background-color: #4d6993 !important;
 }
 
 .logoIme
@@ -1026,7 +1026,7 @@ a,
 	transform-origin: center;
     }
     .zgrada:hover {
-	transform: rotateY(180deg) scale(1.1); /* Combine transform properties */
+	transform: rotateY(180deg) scale(1.1);
     }
     .lice{
 	width: 100%;
@@ -1044,18 +1044,18 @@ a,
 	border-top-right-radius: 1.5rem;
 	border-bottom-left-radius: 1.5rem;
 	transition: opacity 0.5s ease-in-out;
-	background-color: #02bde2bb;
+	background-color: #93c0ff43;
     }
     
     .zgrada:hover .nalicje {
 	margin-top: -140%;
 	opacity: 1;
-	transition-delay: 0.15s; /* Adjust the delay for .nalicje */
+	transition-delay: 0.15s;
     }
     
     .nalicje p {
 	margin: 0 !important;
-	color: var(--bela);
+	color: var(--crna);
 	font-size: 1.4rem;
 	transform: rotateY(180deg);
     }
@@ -1869,12 +1869,14 @@ svg text
 	background: #cce5ff;
 	border: 1px solid #b8daff;
 	height: 45px;
-	padding: 0 8px;
-	border-radius: 5px;
+	padding: 0 0.5rem;
+	border-radius: 0.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 145px;
+	width: -moz-fit-content;
+	width: fit-content;
+	gap: 1rem;
 }
 
 .quiz_box .kviz-header .timer .time_left_txt
@@ -2748,17 +2750,17 @@ section .option_list .option .icon
 	background-color: var(--primary);
 	width: 80%;
 }
-.verticalIMGscroll {
+.galerijaOlicnostima {
 	width: 80%;
-	height: 20rem; /* Set container height to viewport height */
-	overflow-x: scroll; /* Enable vertical scrolling */
-	scroll-snap-type: x mandatory; /* Enable snap scrolling */
+	height: 20rem;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
 	display: flex;
-	flex-direction: row; /* Arrange images vertically */
+	flex-direction: row;
 	gap: 2rem;
   }
   
-  .verticalIMGscroll img {
+  .galerijaOlicnostima img {
 	border-radius: 1rem;
 	width: 30%;
 	aspect-ratio: 1/1;
@@ -2778,6 +2780,7 @@ section .option_list .option .icon
 }
 
 .contentOlicnosti p{
+
 	width: 75rem;
 	font-size: 1.5rem;
 }

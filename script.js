@@ -708,7 +708,7 @@ document.addEventListener("DOMContentLoaded", function()
 			lineWidth = 0;
 			vremeLinija.style.width = "0px";
 			startGlobalTimer();
-			vremeTekst.textContent = "Preostalo vreme:";
+			vremeTekst.textContent = "ВРЕМЕ:";
 			sledecePitanje.classList.remove("show");
 		}
 		else
@@ -798,60 +798,46 @@ document.addEventListener("DOMContentLoaded", function()
 				opcije.children[i].classList.add("incorrect");
 			}
 		}
-	}
-	
-	function startTimerAndLine(timer) {
-		let initialTime = timer;
-		let remainingTime = timer;
-		let duration = timer * 1000;
-		let lineWidth = 0;
-		let maxLineWidth = 30;
-		let startTime = null;
-	
-		function animate(timestamp) {
-			if (!startTime) startTime = timestamp;
-			let elapsedTime = timestamp - startTime;
-	
-			lineWidth = (elapsedTime / duration) * maxLineWidth;
-			vremeLinija.style.width = lineWidth + "rem";
-	
-			let remainingSeconds = Math.max(initialTime - Math.floor(elapsedTime / 1000), 0);
-			vremeSekunde.textContent = remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
-	
-			if (remainingSeconds === 0) {
-				vremeTekst.textContent = "Преостало време";
-				clearInterval(counter);
-				markCorrectAnswerOnTimeout(); // Dodat poziv funkcije za označavanje tačnog odgovora
-				izabranaOpcija(null, true);
-			}
-	
-			if (elapsedTime >= duration) {
-				clearInterval(counter);
-				markCorrectAnswerOnTimeout(); 
-				izabranaOpcija(null, true);
-			} else {
-				requestAnimationFrame(animate);
-			}
+
+		if (odabraniOdgovor === tacanOdg)
+		{
+			bodovi++;
 		}
 
 		sledecePitanje.classList.add("show");
 	}
-	function markCorrectAnswerOnTimeout() {
-		setTimeout(() => {
-			const tacanOdg = pitanjaNiz[broj_pitanja].tacanOdgovor;
-			const sveOpcije = opcije.children;
-			for (let i = 0; i < sveOpcije.length; i++) {
-				if (sveOpcije[i].textContent === tacanOdg) {
-					sveOpcije[i].classList.add("correct");
-				}
-				sveOpcije[i].classList.add("disabled"); // Onemogući klikanje opcija nakon isteka vremena
-			}
-			sledecePitanje.style.display='block';
-			sledecePitanje.classList.add('show');
-			setTimeout(() => {
-				sledecePitanje.click(); 
-			}, 5000); 
-		}, 0); 
-	}
 
+	function startGlobalTimer()
+	{
+		let remainingTime = tajmer;
+		const frameDuration = 1000 / 60;
+		const incrementWidth = maxLineWidth  / (tajmer * 60);
+
+		globalTimer = setInterval(() =>
+		{
+			remainingTime -= frameDuration / 1000;
+			lineWidth += incrementWidth;
+			vremeSekunde.textContent = Math.ceil(remainingTime);
+			vremeLinija.style.width = lineWidth + "px";
+
+			if (remainingTime <= 0)
+			{
+				clearInterval(globalTimer);
+				lineWidth = maxLineWidth;
+				vremeSekunde.textContent = "0";
+				vremeLinija.style.width = lineWidth + "px";
+				const tacanOdg = pitanjaNiz[broj_pitanja].tacanOdgovor;
+				const sveOpcije = opcije.children.length;
+				for (let i = 0; i < sveOpcije; i++)
+				{
+					if (opcije.children[i].textContent === tacanOdg)
+					{
+						opcije.children[i].classList.add("correct");
+						sledecePitanje.classList.add("show");
+					}
+					opcije.children[i].classList.add("disabled");
+				}
+			}
+		}, frameDuration);
+	}
 });
