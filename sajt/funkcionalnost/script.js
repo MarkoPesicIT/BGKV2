@@ -145,80 +145,6 @@ function toggleSubMenu(strelica)
 		submenu.style.display="none";
 	}
 }
-
-// footer
-// document.addEventListener("DOMContentLoaded", function()
-// {
-// 	fetch("../funkcionalnost/footer_header/footer.html")
-// 		.then(response => response.text())
-// 		.then(html =>
-// 		{
-// 			document.querySelector("body").insertAdjacentHTML("beforeend", html);
-// 		});
-// });
-// const mapa = {
-// 	"index.html": 1,
-// 	// o gradjevinama
-// 	"o_gradjevinama.html": 2,
-// 	"moderna_arhitektura.html": 2,
-// 	"19vek.html": 2,
-// 	"20vek.html": 2,
-// 	"savremena_arhitektura.html": 2,
-// 	"izmedju2rata.html": 2,
-// 	// o licnostima
-// 	"o_licnostima.html": 3,
-// 	"miloje_milojevic.html": 3,
-// 	"sima_markovic.html": 3,
-// 	"kosta_hakman.html": 3,
-// 	"marko_murat.html": 3,
-// 	"vasa_cuprilovic.html": 3,
-// 	"slavka_nastasijevic.html": 3,
-// 	"stevan_jakovljevic.html": 3,
-// 	"milos_crnjanski.html": 3,
-// 	"sima_pandurovic.html": 3,
-// 	"momclo_nastasijevic.html": 3,
-// 	// duh metropole
-// 	"duh_metropole.html": 4,
-// 	"ulice.html": 4,
-// 	"arhitektura.html": 4,
-// 	"moda.html": 4,
-// 	"film.html": 4,
-// 	"festival.html": 4,
-// 	//
-// 	"fragmenti.html": 5,
-// 	//
-// 	"kvizovi.html": 6,
-// 	//
-// 	"oprojektu.html": 7,
-// };
-// document.addEventListener("DOMContentLoaded", function()
-// {
-// 	const currentPage = window.location.pathname.split("/").pop().trim();
-// 	console.log("Trenutna strana:", currentPage);
-// 	setTimeout(function()
-// 	{
-// 		const menuItems = document.querySelectorAll(".menu li");
-// 		console.log("Meni Itemi:", menuItems);
-// 		if (menuItems.length === 0)
-// 		{
-// 			fetch("../funkcionalnost/footer_header/header.html")
-// 				.then(response => response.text())
-// 				.then(html =>
-// 				{
-// 					document.querySelector("body").insertAdjacentHTML("afterbegin", html);
-// 					applyActiveMenuItem(currentPage);
-// 				})
-// 				.catch(error =>
-// 				{
-// 					console.error("Nema header.html:", error);
-// 				});
-// 		}
-// 		else
-// 		{
-// 			applyActiveMenuItem(currentPage);
-// 		}
-// 	}, 100);
-// });
 document.addEventListener("DOMContentLoaded", function ()
 	{
 
@@ -271,8 +197,8 @@ document.addEventListener("DOMContentLoaded", function ()
 			"19vek.html": 2.01,
 			"20vek.html": 2.02,
 			"izmedju2rata.html": 2.03,
-			"moderna_arhitektura.html": 2.04,
-			"savremena_arhitektura.html": 2.05,
+			"modernaArhitektura.html": 2.04,
+			"savremenaArhitektura.html": 2.05,
 			// o licnostima
 			"o_licnostima.html": 3,
 			// o licnsotima submenu
