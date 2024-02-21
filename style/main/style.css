@@ -30,7 +30,7 @@ body
 {
 	background-color: var(--bela);
 	margin: 0;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 	width: 100%;
 }
 
@@ -597,12 +597,13 @@ main
 	align-items: center;
 }
 
-.link-icon a,
-i
+.link-icon a,i
 {
 	color: var(--bela);
 }
-
+.ogradjUvod italic{
+	font-style: italic;
+}
 .hidden
 {
 	z-index: -1;
@@ -990,12 +991,12 @@ a,
   }
   
   .zgrade > *:nth-last-child(2):only-child {
-	grid-column: 2 / 4; /* If there's only one item in the last row, it spans the second and third columns */
+	grid-column: 2 / 4;
   }
   
-  .zgrade > *:last-child {
-	grid-column: 2 / 4; /* If there are two items in the last row, both span the second and third columns */
-  }
+  /* .zgrade > *:last-child {
+	grid-column: 2 / 4;
+  } */
   
 .zgrade a
 {
@@ -1006,14 +1007,14 @@ a,
 {
 	text-align: center;
 	color: var(--crna);
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	margin-top: 1vw;
 	justify-content: center;
 }
 
 .zgrada h2
 {
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-weight: 500;
 	margin-top: -0.5vw;
 }
@@ -1053,7 +1054,9 @@ a,
 	border-top-right-radius: 1.5rem;
 	border-bottom-left-radius: 1.5rem;
 	transition: opacity 0.5s ease-in-out;
-	background-color: #93c0ff43;
+	box-shadow: 
+	0 0 2rem rgba(0, 0, 0, 0.5),
+	inset 0 0 2rem rgba(6, 130, 156, 0.5);
     }
     
     .zgrada:hover .nalicje {
@@ -1065,7 +1068,7 @@ a,
     .nalicje p {
 	margin: 0 !important;
 	color: var(--crna);
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	transform: rotateY(180deg);
     }
     
@@ -2665,7 +2668,7 @@ section .option_list .option .icon
 
 .ozasebLicnosti{
 	margin: 0 auto;
-	width: 80%;
+	width: 50%;
 	gap: 5rem;
 	flex-direction: column;
 	display: flex;
@@ -2680,7 +2683,7 @@ section .option_list .option .icon
 }
 .galerijaOlicnostima {
 	width: 80%;
-	height: 20rem;
+	height: 22rem;
 	overflow-x: scroll;
 	scroll-snap-type: x mandatory;
 	display: flex;
@@ -2690,8 +2693,9 @@ section .option_list .option .icon
   
   .galerijaOlicnostima img {
 	border-radius: 1rem;
-	width: 30%;
-	aspect-ratio: 1/1;
+	width: 20rem;
+	height: 20rem;
+	aspect-ratio: 1/1 !important;
 	scroll-snap-align: start;
   }
   #naslovOlicnostima{
@@ -2709,7 +2713,6 @@ section .option_list .option .icon
 
 .contentOlicnosti p{
 
-	width: 75rem;
 	font-size: 1.5rem;
 }
 .sliketekstOgradj{
@@ -2748,16 +2751,17 @@ section .option_list .option .icon
 	gap: 2rem;
 }
 .zstanica{
-	height: 50rem;
+	height: 60rem;
 }
 .gradjevina img{
+	margin-right: 3rem;
 	border-radius: 1rem;
 	width: 20rem;
 	aspect-ratio: 1/1;
 	scroll-snap-align: start;
 }
 .skc{
-	height: 60rem;
+	height: 75rem;
 }
 .ljudi {
 	margin-top: 20rem;
@@ -2829,4 +2833,30 @@ section .option_list .option .icon
     .ljudi button {
 	background-color: transparent !important;
 	border: none;
+    }
+
+    .ivicaImarica{
+	margin-top: -10rem;
+	margin-left: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+    }
+    .ivicaImarica p{
+	font-size: 2rem;
+	margin: 0.5rem;
+    }
+    .ivicaImarica li{
+	list-style-type: none;
+	border-radius: 0.5rem;
+	transition: 0.5s ease-in-out background-color;
+    }
+    .ivicaImarica li:hover{
+	    background-color: #59e3ff;
+    }
+    .ivicaImarica li a{
+	padding: 1rem;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: var(--crna);
     }
