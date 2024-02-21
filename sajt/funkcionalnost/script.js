@@ -10,11 +10,22 @@ function dodajCSS(cssFiles)
 	);
 }
 
-dodajCSS([ "../../style/main/style.css",
-	"../../style/responsive/responsive.css",
-	"../../style/responsive/tablet_vertikalno/tablet_vertikalno.css",
-	"../../style/responsive/telefon_vertikalno/telefon_vertikalno.css",
-	]);
+dodajCSS
+([ 
+	"../../style/main/style.css",
+	"../../style/responsive/tablet/mali/tablet_mali_vertikalno.css",
+	"../../style/responsive/tablet/mali/tablet_mali_vodoravno.css",
+	"../../style/responsive/tablet/mali/tablet_srednji_vertikalno.css",
+	"../../style/responsive/tablet/mali/tablet_srednji_vodoravno.css",
+	"../../style/responsive/tablet/mali/tablet_veliki_vertikalno.css",
+	"../../style/responsive/tablet/mali/tablet_veliki_vodoravno.css",
+	"../../style/responsive/tablet/mali/telefon_mali_vertikalno.css",
+	"../../style/responsive/tablet/mali/telefon_mali_vodoravno.css",
+	"../../style/responsive/tablet/mali/tablet_srednji_vertikalno.css",
+	"../../style/responsive/tablet/mali/telefon_srednji_vodoravno.css",
+	"../../style/responsive/tablet/mali/telefon_veliki_vertikalno.css",
+	"../../style/responsive/tablet/mali/telefon_veliki_vodoravno.css"
+]);
 
 document.addEventListener("DOMContentLoaded", function ()
 	{
