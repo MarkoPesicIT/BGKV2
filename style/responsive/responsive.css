@@ -38,6 +38,9 @@
 
 @media only screen and (min-width: 320px) and (max-width: 479px)
 {
+	.ivicaImarica{
+		display: none !important;
+	}
 	.blacksmith
 	{
 		width: 90% !important;
@@ -70,6 +73,10 @@
 		display: none;
 	}
 
+		#asideSAB
+	{
+		display: none;
+	}
 	#SABTablet
 	{
 		display: none;
@@ -101,6 +108,7 @@
 
 	#banerFon
 	{
+		margin-top: 4rem;
 		width: 100vw;
 	}
 
@@ -138,7 +146,6 @@
 		height: 4rem !important;
 		width: 100vw !important;
 		box-shadow: inset 0 0 1.5rem rgba(0, 167, 196, 1) !important;
-		margin-top: -4rem !important;
 	}
 
 	#naziv

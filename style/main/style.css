@@ -51,26 +51,10 @@ hr
 }
 .strana
 {
-	width: 60%;
+	width: 50%;
 	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
-}
-.centralno{
-	margin: 0 auto;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-aside
-{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 50rem;
-	margin-left: 1rem;
-	width: 30%;
 }
 
 main
@@ -698,32 +682,52 @@ main
 	margin-bottom: 10rem;
 
 }
-
-.sekcija
-{
-	margin-top: 2rem;
+.procitajvise{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.pocetnaMain{
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 2rem;
-	padding-left: 2rem;
-	padding-right: 2rem;
-	padding-bottom: 2rem;
+	justify-content: space-between;
+}
+.centralno {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
+  }
+  
+  .main-content {
+	display: grid;
+	grid-template-rows: repeat(5, auto);
+	gap: 2rem;
+	align-content: space-between;
+  }
+  
+  .sidebar {
+	display: grid;
+	align-content: start; 
+  }
+  
+  .sekcija {
+	padding: 2rem;
 	border-radius: 1.5rem;
 	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
-}
-
-.glavno h1
-{
+	background-color: var(--bela);
+  }
+  
+  .glavno h1 {
+	margin: 1rem;
 	font-size: 2.5rem;
-}
-
-.glavno p
-{
+  }
+  
+  .glavno p {
 	font-size: 1.5rem;
-}
-
-.sekcija a
-{
+  }
+  
+  .sekcija a {
 	font-size: 1.5rem;
 	color: #252525;
 	font-weight: 600;
@@ -732,32 +736,45 @@ main
 	border-radius: 0.8rem;
 	background-color: #00b3ff3a;
 	text-decoration: none;
-	margin-left: auto;
 	width: -moz-fit-content;
 	width: fit-content;
 	transition: 0.3s ease-in-out background-color, 0.3s ease-in-out scale, 0.3s ease-in-out color;
-}
-
-.sekcija a:hover
-{
+  }
+  
+  .sekcija a:hover {
 	color: var(--bela);
 	background-color: #0083bb7b;
 	scale: 1.1;
-}
-.autoriBanera{
-	width: 100%;
-}
-.autoriBanera h1
-{
+  }
+  
+  .autoriBanera h1 {
+	margin: 1rem;
 	text-align: center;
 	font-size: 2.5rem;
-}
-
-.autoriBanera p
-{
+  }
+  
+  .autoriBanera p {
 	font-size: 1.5rem;
+  }
+  .kreatori{
+	margin-top: 2rem !important;
+	margin: 0 auto;
+	text-align: center;
 }
 
+.kreatori h1{
+	font-size: 2.5rem;
+	font-weight: 500;
+}
+
+.kreatori h2{
+	line-height: 1rem;
+	font-size: 2rem;
+}
+
+#bold{
+	font-weight: 500;
+}
 /* Footer */
 /* PC Footer */
 .mainFooterPC
@@ -1005,11 +1022,6 @@ a,
   .zgrade > *:nth-last-child(2):only-child {
 	grid-column: 2 / 4;
   }
-  
-  /* .zgrade > *:last-child {
-	grid-column: 2 / 4;
-  } */
-  
 .zgrade a
 {
 	text-decoration: none;
@@ -2869,22 +2881,3 @@ section .option_list .option .icon
 	text-decoration: none;
 	color: var(--crna);
     }
-
-.kreatori{
-	margin: 0 auto;
-	text-align: center;
-}
-
-.kreatori h1{
-	font-size: 2.5rem;
-	font-weight: 500;
-}
-
-.kreatori h2{
-	line-height: 0.3rem;
-	font-size: 2rem;
-}
-
-#bold{
-	font-weight: 500;
-}
