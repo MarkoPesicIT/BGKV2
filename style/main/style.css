@@ -46,21 +46,31 @@ hr
 {
 	margin: 0;
 }
-
+#italic{
+	font-style: italic;
+}
 .strana
 {
-	width: 51%;
+	width: 60%;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+}
+.centralno{
+	margin: 0 auto;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
 }
-
 aside
 {
-	height: 100%;
-	padding: 1em;
-	width: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50rem;
+	margin-left: 1rem;
+	width: 30%;
 }
 
 main
@@ -704,12 +714,12 @@ main
 
 .glavno h1
 {
-	font-size: 3rem;
+	font-size: 2.5rem;
 }
 
 .glavno p
 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 .sekcija a
@@ -734,16 +744,18 @@ main
 	background-color: #0083bb7b;
 	scale: 1.1;
 }
-
+.autoriBanera{
+	width: 100%;
+}
 .autoriBanera h1
 {
 	text-align: center;
-	font-size: 3rem;
+	font-size: 2.5rem;
 }
 
 .autoriBanera p
 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 /* Footer */
@@ -1041,9 +1053,6 @@ a,
     .lice{
 	width: 100%;
     }
-    .nalicje {
-		margin-top: 1rem;
-     }
     .zgrada .nalicje {
 	height: 100%;
 	display: flex;
@@ -1060,7 +1069,6 @@ a,
     }
     
     .zgrada:hover .nalicje {
-	margin-top: -140%;
 	opacity: 1;
 	transition-delay: 0.15s;
     }
@@ -1078,8 +1086,9 @@ a,
     }
     
     .zgrada:hover .lice {
+		display: none;
 	    opacity: 0;
-	    transition-delay: 0.1s;
+	    transition-delay: 1s;
     }
 .zgrada img
 {
@@ -2860,3 +2869,22 @@ section .option_list .option .icon
 	text-decoration: none;
 	color: var(--crna);
     }
+
+.kreatori{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.kreatori h1{
+	font-size: 2.5rem;
+	font-weight: 500;
+}
+
+.kreatori h2{
+	line-height: 0.3rem;
+	font-size: 2rem;
+}
+
+#bold{
+	font-weight: 500;
+}
