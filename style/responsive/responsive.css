@@ -30,6 +30,10 @@
 		display: none;
 	}
 
+	#SABFon{
+		display: none;
+	}
+
 	#zgradaimgFon
 	{
 		display: none;
@@ -45,7 +49,10 @@
 	{
 		width: 90% !important;
 	}
-
+.centralno{
+	display: flex;
+	flex-direction: column;
+}
 	.bg
 	{
 		width: 100% !important;
