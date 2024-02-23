@@ -38,10 +38,17 @@
 	{
 		display: none;
 	}
+
+	#kreatoriFon{
+		display: none;
+	}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px)
 {
+	#kreatoriPCTablet{
+		display: none;
+	}
 	.ivicaImarica{
 		display: none !important;
 	}
@@ -100,7 +107,7 @@
 	{
 		overflow-y: hidden;
 		overflow-x: hidden;
-		margin-right: 2rem;
+		margin-right: 1rem;
 	}
 
 	.mainFooterTablet
@@ -147,8 +154,8 @@
 	.gornjideo
 	{
 		position: fixed;
-		padding-left: 1rem !important;
-		padding-right: 1rem !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
 		background-color: var(--primary) !important;
 		height: 4rem !important;
 		width: 100vw !important;
@@ -157,30 +164,48 @@
 
 	#naziv
 	{
+		margin-left: 1rem !important;
 		color: var(--bela);
 		font-size: 1.81rem !important;
 	}
-
+.wrapper{
+	width: 100%;
+}
+svg{
+	width: 100%;
+}
+svg text{
+	text-align: center;
+	letter-spacing: 0.7rem !important;
+}
+.quiz_box{
+	max-width: min-content;
+}
+.result_box{
+	max-width: min-content;
+}
 	.strana
 	{
         width: 90%;
-		margin: 4rem auto;
+		margin: 0rem auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	.autoriBanera
 	{
-		width: 17rem;
 		height: -moz-fit-content;
 		height: fit-content;
 	}
-
+	.pocetnaMain > div:first-child {
+		margin-top: 0;
+	}
+	
 	.autoriBanera h1
 	{
 		font-size: 2rem;
 	}
-
+	
     aside{
         display: flex;
         justify-content: center;
@@ -189,12 +214,10 @@
 
 	.autoriBanera p
 	{
-		font-size: 1.2rem;
+		font-size: 1.5rem;
 	}
-
-	.glavno
-	{
-		width: 17rem;
+	.autoriBanera{
+		margin-top: 0 !important;
 	}
 
     .glavno a{
@@ -208,7 +231,7 @@
 
 	.glavno p
 	{
-		font-size: 1.2rem
+		font-size: 1.5rem
 	}
 
 	.zgrada
