@@ -464,7 +464,7 @@ main
 	right: -100%;
 	width: 100%;
 	transition: padding-top 1s ease-in-out;
-	height: 100svh;
+	height: 110svh;
 	background-color: var(--svetloP);
 	transition: right 0.5s ease-in-out;
 	list-style-type: none;
@@ -1038,6 +1038,7 @@ a,
 	gap: 3rem;
 	justify-content: space-evenly;
 	align-items: center;
+	align-items: center;
   }
   
   .zgrade > *:nth-last-child(2):only-child {
@@ -1087,6 +1088,7 @@ a,
 	width: 100%;
     }
     .zgrada .nalicje {
+	background-color: white !important;
 	height: 100%;
 	display: flex;
 	justify-content: center;
@@ -1096,9 +1098,7 @@ a,
 	border-top-right-radius: 1.5rem;
 	border-bottom-left-radius: 1.5rem;
 	transition: opacity 0.5s ease-in-out;
-	box-shadow: 
-	0 0 2rem rgba(0, 0, 0, 0.5),
-	inset 0 0 2rem rgba(6, 130, 156, 0.5);
+	box-shadow: inset 0 0 1rem rgba(6, 130, 156, 0.5);
     }
     
     .zgrada:hover .nalicje {
@@ -2900,3 +2900,22 @@ section .option_list .option .icon
 	text-decoration: none;
 	color: var(--crna);
     }
+    .galerija {
+	column-count: 3;
+	gap: 2rem;
+  }
+  .slikaGalerija{
+	margin-bottom: 2rem;
+	width: 100%;
+  }
+  .slikaGalerija img {
+	border-radius: 1rem;
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  	width: 100%;
+	transition: 0.5s ease-in-out scale;
+  }
+
+  .slikaGalerija img:hover{
+	scale: 2.5;
+  }
+  
