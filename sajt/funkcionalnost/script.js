@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function() {
+
 function dodajCSS(cssFiles)
 {
 	cssFiles.forEach((cssFile)=>
@@ -27,6 +29,30 @@ dodajCSS
 	// "../../style/responsive/tablet/mali/telefon_veliki_vertikalno.css",
 	// "../../style/responsive/tablet/mali/telefon_veliki_vodoravno.css"
 ]);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the button element
+    var button = document.querySelector('.start_btn');
+
+    // Function to handle scroll event
+    function handleScroll() {
+        // Calculate the distance of the button from the top of the viewport
+        var buttonRect = button.getBoundingClientRect();
+        var distanceFromTop = buttonRect.top;
+
+        // Check if the button is 4rem from the top
+        if (distanceFromTop <= 64) { // 4rem = 64px (assuming default font size)
+            button.style.zIndex = '-1'; // Set z-index to -1 when the button reaches 4rem from the top
+        } else {
+            button.style.zIndex = '1'; // Set z-index back to 1 if the button is not at 4rem from the top
+        }
+    }
+
+    // Add scroll event listener to the window
+    window.addEventListener('scroll', handleScroll);
+});
+
 
 document.addEventListener("DOMContentLoaded", function ()
 	{
@@ -75,7 +101,7 @@ function menuBtnFunction(menuBtn)
 {
 	menuBtn.classList.toggle("active");
 	var sidemenu=document.getElementById("sidemenu");
-	const start_dugme=document.querySelector(".start_btn button");
+	const start_dugme=document.querySelector(".start_btn");
 	var imageContainer=document.querySelector(".image-container");
 
 	if (sidemenu.style.right==="0%")
@@ -84,22 +110,22 @@ function menuBtnFunction(menuBtn)
 
 		setTimeout(function ()
 			{
-				start_dugme.style.display="block";
+				start_dugme.style.zIndex="1";
 				document.body.style.overflow="auto";
 			}
 
-			, 280);
+			, 300);
 	}
 
 	else
 	{
 		setTimeout(function ()
 			{
-				start_dugme.style.display="none";
+				start_dugme.style.zIndex="-1";
 				document.body.style.overflow="hidden";
 			}
 
-			, 280);
+			, 0);
 		sidemenu.style.right="0%";
 	}
 }
@@ -710,7 +736,7 @@ document.addEventListener("DOMContentLoaded", function ()
 		let bodovi=0;
 		let globalTimer=null;
 		let lineWidth=0;
-		const maxLineWidth=kviz.offsetWidth - 7;
+		const maxLineWidth=30*16;
 
 		izadji.addEventListener("click", ()=>
 			{

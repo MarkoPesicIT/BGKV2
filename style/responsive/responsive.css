@@ -173,6 +173,7 @@
 }
 svg{
 	width: 100%;
+	margin-left: 0.6rem;
 }
 svg text{
 	text-align: center;
@@ -435,6 +436,20 @@ svg text{
 	{
 		display: none;
 	}
+
+	#naslovOlicnostima{
+		font-size: 3rem;
+		width: fit-content;
+	}
+
+	.ozasebLicnosti{
+		width: 20%;
+	}
+	.contentOlicnosti{
+		font-size: 1rem;
+	}
+
+
 }
 @media only screen and (min-width: 730px) and (max-width: 819px)
 {

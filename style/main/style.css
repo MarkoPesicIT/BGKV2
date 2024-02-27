@@ -1032,13 +1032,12 @@ a,
 }
 
 .zgrade {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(10vw, 2fr));
-	grid-template-rows: 1fr;
+	width: 100%;
+	display: flex;
 	gap: 3rem;
-	justify-content: space-evenly;
+	flex-wrap: wrap;
 	align-items: center;
-	align-items: center;
+	justify-content: center;
   }
   
   .zgrade > *:nth-last-child(2):only-child {
@@ -1493,6 +1492,7 @@ svg
 	font-family: 'Monoton', cursive;
 	width: 50vw;
 	height: 100%;
+	margin-left: 3rem;
 }
 
 #stranaKvizovi
@@ -1505,9 +1505,7 @@ svg
 
 svg text
 {
-	margin: 20rem;
 	text-anchor: middle;
-	margin-top: 0rem;
 	width: 10rem;
 	animation: stroke 4s infinite alternate;
 	stroke-width: 2;
@@ -1577,20 +1575,19 @@ svg text
 	transform: scale(1);
 }
 
-.start_btn
-{
-	/* z-index: -1; */
-	margin-top: 5rem;
-	box-shadow: none;
-	-webkit-animation-name: bounceInUp;
-	animation-name: bounceInUp;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;
-	position: relative;
-	bottom: 0;
-}
+.start_btn {
+    z-index: 1;
+    margin-top: 5rem;
+    box-shadow: none;
+    -webkit-animation-name: bounceInUp;
+    animation-name: bounceInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    position: relative;
+    bottom: 0;
+  }
 
 @-webkit-keyframes bounceInUp
 {
@@ -2923,4 +2920,5 @@ section .option_list .option .icon
   .slikaGalerija img:hover{
 	scale: 2.5;
   }
+
   
