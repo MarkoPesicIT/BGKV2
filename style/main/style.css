@@ -1115,13 +1115,13 @@ a,
     
     .zgrada .lice {
 	opacity: 1;
-	transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out, display 0.5s ease-in-out;
     }
     
     .zgrada:hover .lice {
 		display: none;
 	    opacity: 0;
-	    transition-delay: 1s;
+	    transition-delay: 0.5s;
     }
 .zgrada img
 {
@@ -1135,7 +1135,7 @@ a,
 .ogradjUvod
 {
 	margin-bottom: 5rem;
-	width: 85%;
+	width: 100%;
 }
 
 .ogradjUvod>p
@@ -1147,6 +1147,11 @@ a,
 {
 	text-align: right;
 	font-weight: 500;
+}
+
+.ogradjUvod h3{
+	font-size: 5rem;
+	text-align: center;
 }
 
 .image-container
