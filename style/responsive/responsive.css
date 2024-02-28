@@ -1110,13 +1110,6 @@ svg text{
 		padding: 1rem;
 	}
 
-	.zgrade
-	{
-		display: grid;
-		grid-template-columns: repeat(2, minmax(10vw, 2fr));
-		row-gap: 2rem;
-        column-gap: 2rem;
-	}
     .ogradjUvod p{
         font-size: 1.4rem;
     }
