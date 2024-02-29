@@ -2,7 +2,7 @@
 
 :root
 {
-	--primary: #06829C;
+	--primary:  #06829C;
 	--secondary: #c99802;
 	--svetloP: #0093b0;
 	--svetloP2: #02bde2;
@@ -18,7 +18,10 @@
 	--clr-moon: #b7bfc8;
 	--button-width: 2.5em;
 }
-@media (prefers-color-scheme: dark) {
+.netrebadasevidi{
+	display: none;
+}
+/* @media (prefers-color-scheme: dark) {
 	*{
 		color: white !important; 
 	}
@@ -44,7 +47,7 @@
 	.sekcija{
 		box-shadow: 0 0 2rem rgba(255, 255, 255, 0.2) !important;
 	}
-}
+} */
 .clearfix::after
 {
 	content: "";
@@ -257,18 +260,6 @@ main
 	padding: 0.5rem;
 }
 
-.submenu
-{
-	position: absolute;
-	width: 18rem;
-	height: 8rem;
-	left: 70%;
-	margin-left: -100px;
-	transform: skewX(35deg);
-	transform-origin: left top;
-	z-index: 1000;
-}
-
 .dodajKarticu
 {
 	display: flex;
@@ -282,6 +273,18 @@ main
 	color: var(--bela);
 	margin-right: 0.5rem;
 }
+.submenu
+{
+	position: absolute;
+	width: 18rem;
+	height: 8rem;
+	left: 70%;
+	margin-left: -100px;
+	transform: skewX(35deg);
+	transform-origin: left top;
+	z-index: 1000;
+}
+
 
 .submenu>li:nth-child(odd),
 .submenu>li:nth-child(even)
@@ -531,7 +534,6 @@ main
 
 #sidemenu>li
 {
-	padding: 0.5rem;
 	box-shadow: inset 0 0 1.5rem rgba(0, 167, 196, 1);
 	display: flex;
 	justify-content: space-between;
@@ -541,34 +543,39 @@ main
 	padding-left: 2rem;
 }
 
-.sidesubmenu
-{
-	display: none;
-	flex-direction: column;
+.sidesubmenu {
 	width: 100%;
+	margin-bottom: -0.5rem;
+	grid-template-rows: 0fr;
+	flex-direction: column;
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 800ms ease-in;
-}
-
-.menu-item.active .sidesubmenu
-{
+	transition: max-height 300ms ease-in-out;
+  }
+  
+  .menu-item.active .sidesubmenu {
+	display: grid;
+	grid-template-rows: 1fr;
 	display: flex;
 	max-height: 1000px;
-}
-
-.sidesubmenu li
-{
+	transition: max-height 500ms ease-in-out;
+  }
+  
+  .sidesubmenu li {
 	list-style-type: none;
-}
-
-.sidesubmenu a
-{
+  }
+  
+  .menu-item.active .sidesubmenu {
+	display: flex;
+  }
+  
+  .sidesubmenu a {
 	color: var(--bela);
 	font-size: 2rem;
 	text-align: left;
 	line-height: 2.5rem;
-}
+  }
+  
 
 #linijassm
 {
@@ -581,11 +588,6 @@ main
 	width: 95%;
 	margin-bottom: 1rem;
 	margin-top: 1rem;
-}
-
-.menu-item.active .sidesubmenu
-{
-	display: flex;
 }
 
 .arrow-icon
@@ -1762,7 +1764,6 @@ svg text
 	font-weight: 500;
 	font-size: 2rem;
 	justify-content: center;
-	width: 90%;
 }
 
 .info_box .info-list
@@ -2802,6 +2803,7 @@ section .option_list .option .icon
 	margin-bottom: 5rem;
 }
 .gradjevina h1{
+	width: fit-content;
 	font-size: 3rem;
 	text-align: center;
 }
@@ -2960,3 +2962,24 @@ section .option_list .option .icon
 	justify-content: center;
 	align-items: center;
  }
+
+ .micaPopovic img{
+	transition: all 0.5s ease-in-out;
+	margin-bottom: 3rem;
+	width: 50%;
+ }
+
+ .micaPopovic img:hover{
+	scale: 1.7;
+ }
+.micaPopovic h1{
+	font-size: 3rem;
+}
+ .micaPopovic p{
+	text-align: center;
+	font-size: 2rem;
+ }
+
+.DM{
+	width: 70%;
+}

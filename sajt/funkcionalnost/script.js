@@ -15,6 +15,7 @@ function dodajCSS(cssFiles)
 dodajCSS
 ([ 
 	"../../style/main/style.css",
+	"../../style/main/darkmode.css",
 	"../../style/responsive/responsive.css"
 	// "../../style/responsive/tablet/mali/tablet_mali_vertikalno.css",
 	// "../../style/responsive/tablet/mali/tablet_mali_vodoravno.css",
@@ -32,26 +33,28 @@ dodajCSS
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Get the button element
-    var button = document.querySelector('.start_btn');
-
-    // Function to handle scroll event
-    function handleScroll() {
-        // Calculate the distance of the button from the top of the viewport
-        var buttonRect = button.getBoundingClientRect();
-        var distanceFromTop = buttonRect.top;
-
-        // Check if the button is 4rem from the top
-        if (distanceFromTop <= 64) { // 4rem = 64px (assuming default font size)
-            button.style.zIndex = '-1'; // Set z-index to -1 when the button reaches 4rem from the top
-        } else {
-            button.style.zIndex = '1'; // Set z-index back to 1 if the button is not at 4rem from the top
-        }
-    }
-
-    // Add scroll event listener to the window
-    window.addEventListener('scroll', handleScroll);
-});
+	const naziv = document.getElementById('nazivKviSVG');
+	const kviz = document.getElementById('mainKvizovi');
+	var button = document.querySelector('.start_btn');
+  
+	if (button) {
+	    function handleScroll() {
+		  var buttonRect = button.getBoundingClientRect();
+		  var distanceFromTop = buttonRect.top;
+  
+		  if (distanceFromTop <= 64) 
+		  {
+			kviz.style.zIndex = '-1';
+			button.style.zIndex = '-1';
+		  } else {
+			kviz.style.zIndex = '1';
+			button.style.zIndex = '1';
+		  }
+	    }
+	    window.addEventListener('scroll', handleScroll);
+	}
+  });
+  
 
 
 document.addEventListener("DOMContentLoaded", function ()
@@ -99,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function ()
 
 function menuBtnFunction(menuBtn)
 {
+	const kviz = document.getElementById('mainKvizovi');
 	menuBtn.classList.toggle("active");
 	var sidemenu=document.getElementById("sidemenu");
 	const start_dugme=document.querySelector(".start_btn");
@@ -110,17 +114,19 @@ function menuBtnFunction(menuBtn)
 
 		setTimeout(function ()
 			{
+				kviz.style.zIndex="1";
 				start_dugme.style.zIndex="1";
 				document.body.style.overflow="auto";
 			}
 
-			, 300);
+			, 500);
 	}
 
 	else
 	{
 		setTimeout(function ()
 			{
+				kviz.style.zIndex="-1";
 				start_dugme.style.zIndex="-1";
 				document.body.style.overflow="hidden";
 			}
@@ -157,32 +163,20 @@ function handleResize()
 window.addEventListener("resize", handleResize);
 handleResize();
 
-function toggleSubMenu(strelica)
-{
-	const menuItem=strelica.closest(".menu-item");
-	const submenu=menuItem.querySelector(".sidesubmenu");
-	const icon=menuItem.querySelector(".arrow-icon");
+function toggleSubMenu(strelica) {
+	const menuItem = strelica.closest(".menu-item");
+	const submenu = menuItem.querySelector(".sidesubmenu");
+	const icon = menuItem.querySelector(".arrow-icon");
 	menuItem.classList.toggle("active");
 	icon.classList.toggle("rotated");
-
-	if (menuItem.classList.contains("active"))
-	{
-		submenu.style.display="flex";
-
-		setTimeout(()=>
-			{
-				submenu.style.maxHeight="1000px";
-			}
-
-			, 0);
+  
+	if (menuItem.classList.contains("active")) {
+	    submenu.style.maxHeight = submenu.scrollHeight + "px";
+	} else {
+	    submenu.style.maxHeight = "0";
 	}
-
-	else
-	{
-		submenu.style.maxHeight="0";
-		submenu.style.display="none";
-	}
-}
+  }
+  
 document.addEventListener("DOMContentLoaded", function ()
 	{
 
@@ -229,41 +223,6 @@ document.addEventListener("DOMContentLoaded", function ()
 		const mapa=
 		{
 			"index.html": 1,
-			// o gradjevinama
-			"o_gradjevinama.html": 2,
-			// o gradjevinama submenu
-			"19vek.html": 2.01,
-			"20vek.html": 2.02,
-			"izmedju2rata.html": 2.03,
-			"modernaArhitektura.html": 2.04,
-			"savremenaArhitektura.html": 2.05,
-			// o licnostima
-			"o_licnostima.html": 3,
-			// o licnsotima submenu
-			"miloje_milojevic.html": 3.01,
-			"sima_markovic.html": 3.02,
-			"kosta_hakman.html": 3.03,
-			"marko_murat.html": 3.04,
-			"vasa_cuprilovic.html": 3.05,
-			"slavka_nastasijevic.html": 3.06,
-			"stevan_jakovljevic.html": 3.07,
-			"milos_crnjanski.html": 3.08,
-			"sima_pandurovic.html": 3.09,
-			"momclo_nastasijevic.html": 3.1,
-			// duh metropole
-			"duh_metropole.html": 4,
-			// duh metropole subemnu
-			"ulice.html": 4.01,
-			"arhitektura.html": 4.02,
-			"moda.html": 4.03,
-			"film.html": 4.04,
-			"festival.html": 4.05,
-			// fragmenti
-			"fragmenti.html": 5,
-			// kvizovi
-			"kvizovi.html": 6,
-			// o porjektu
-			"oprojektu.html": 7,
 		}
 
 		;
@@ -736,7 +695,13 @@ document.addEventListener("DOMContentLoaded", function ()
 		let bodovi=0;
 		let globalTimer=null;
 		let lineWidth=0;
-		const maxLineWidth=30*16;
+		function setMaxLineWidth() {
+			const screenWidth = window.innerWidth;
+			const sirina= screenWidth-screenWidth*0.15;
+			maxLineWidth = Math.min(30 * 16, sirina);
+		    }
+		    setMaxLineWidth();
+		    window.addEventListener('resize', setMaxLineWidth);
 
 		izadji.addEventListener("click", ()=>
 			{

@@ -46,6 +46,9 @@
 
 @media only screen and (min-width: 320px) and (max-width: 479px)
 {
+	footer{
+		margin-top: 2rem !important;
+	}
 	#kreatoriPCTablet{
 		display: none;
 	}
@@ -79,6 +82,7 @@
 
 	.text
 	{
+		top: 25%;
 		font-size: 3rem !important;
 	}
 
@@ -168,6 +172,10 @@
 		color: var(--bela);
 		font-size: 1.81rem !important;
 	}
+
+	#mainKvizovi{
+		width: 100%;
+	}
 .wrapper{
 	width: 100%;
 }
@@ -179,11 +187,18 @@ svg text{
 	text-align: center;
 	letter-spacing: 0.7rem !important;
 }
+.info_box{
+	width: 100%;
+}
 .quiz_box{
-	max-width: min-content;
+	width: 90%;
 }
 .result_box{
-	max-width: min-content;
+	width: 90%;
+}
+
+.time_line{
+	display: none !important;
 }
 	.strana
 	{
@@ -213,7 +228,22 @@ svg text{
         justify-content: center;
         width: 100% !important;
     }
+    .micaPopovic img{
+	width: 100%;
+}
+.ivicaImarica{
+	margin-top: 20rem;
+}
+.micaPopovic img:hover{
+	scale: 1;
+}
+.DM{
+	width: 100%;
+}
 
+.DM img:hover{
+	scale: 1;
+}
 	.autoriBanera p
 	{
 		font-size: 1.5rem;
@@ -449,6 +479,41 @@ svg text{
 		font-size: 1rem;
 	}
 
+	.sliketekstOgradj{
+		flex-direction: column;
+	  }
+    
+	  .ogradjTekst{
+		width: 100%;
+		font-size: 1.3rem;
+		padding-left: 0;
+	  }
+    
+	  .ogradjSlike{
+		border-radius: 1rem;
+		flex-direction: row;
+		overflow-y: hidden !important;
+		overflow-x: scroll !important;
+		width: 20rem;
+	  }
+	  .gradjevina{
+		margin: 0 auto;
+	  }
+	  .gradjevina img{
+		width: 14rem !important;
+		aspect-ratio: 1/1 !important;
+	  }
+	  .zstanica{
+		height: 15rem !important;
+	  }
+    
+	  .skc{
+		height: 15rem !important;
+	  }
+	  .galerija{
+		margin-top: 5rem;
+		column-count: 1;
+	  }
 
 }
 @media only screen and (min-width: 730px) and (max-width: 819px)

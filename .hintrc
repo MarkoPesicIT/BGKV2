@@ -9,7 +9,8 @@
       {
         "ignore": [
           "scale",
-          "height: fit-content"
+          "height: fit-content",
+          "width: fit-content"
         ]
       }
     ],
@@ -39,6 +40,12 @@
         "button-name": "off"
       }
     ],
-    "button-type": "off"
+    "button-type": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ]
   }
 }
