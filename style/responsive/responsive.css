@@ -677,8 +677,6 @@ svg text{
 
 	.zgrade
 	{
-		display: grid;
-		grid-template-columns: repeat(2, minmax(10vw, 2fr));
 		row-gap: 2rem;
 	}
 
@@ -952,23 +950,16 @@ svg text{
 
 	.zgrada
 	{
-		width: 10rem;
+		width: 30%;
         aspect-ratio: 3/4;
 		padding-top: 1rem;
+		padding: 1rem;
 	}
 
 	.zgrade
 	{
-		display: grid;
-		grid-template-columns: repeat(2, minmax(10vw, 2fr));
-		grid-template-rows: repeat(auto, 1fr);
 		row-gap: 2rem;
 		width: 100%;
-	}
-
-	.zgrada img
-	{
-		width: 18rem;
 	}
 
 	.zgrada h1

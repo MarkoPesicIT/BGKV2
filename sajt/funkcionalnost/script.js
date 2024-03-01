@@ -902,3 +902,15 @@ document.addEventListener("DOMContentLoaded", function ()
 		}
 	}
 );
+
+document.addEventListener("DOMContentLoaded", function(){
+
+	document.getElementById('baner').addEventListener('mousemove', function(e) {
+		const { left, top, width, height } = this.getBoundingClientRect();
+		const x = (e.clientX - left) / width;
+		const y = (e.clientY - top) / height;
+		
+		this.style.transformOrigin = `${x * 100}% ${y * 100}%`;
+	});
+});
+  

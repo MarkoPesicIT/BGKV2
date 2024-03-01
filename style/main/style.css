@@ -21,7 +21,7 @@
 .netrebadasevidi{
 	display: none;
 }
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	*{
 		color: white !important; 
 	}
@@ -47,7 +47,7 @@
 	.sekcija{
 		box-shadow: 0 0 2rem rgba(255, 255, 255, 0.2) !important;
 	}
-} */
+}
 .clearfix::after
 {
 	content: "";
@@ -702,11 +702,21 @@ main
 	margin-top: 0;
 	overflow-x: hidden;
 }
-
+.baner-container {
+	position: relative;
+  	overflow: hidden;
+  	width: 100%;
+  }
 #baner
 {
 	width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
 }
+
+#baner:hover {
+	transform: scale(1.8);
+  }
 
 #banerHR
 {
@@ -2983,3 +2993,4 @@ section .option_list .option .icon
 .DM{
 	width: 70%;
 }
+  
