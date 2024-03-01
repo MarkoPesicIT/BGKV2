@@ -1,5 +1,11 @@
 @media only screen and (min-width: 1600px)
 {
+	.zgrada h1{
+		font-size: 1.8rem;
+	}
+	.zgrada h2{
+		font-size: 1.7rem;
+	}
 	.device
 	{
 		display: none;
@@ -998,12 +1004,13 @@ svg text{
 		margin: 0;
 	}
 }
-@media only screen and (min-width: 900px) and (max-width: 1599px)
-{
-	#brodarska
-	{
+@media only screen and (min-width: 0px) and (max-width: 1050px){
+	#brodarska{
 		display: none;
 	}
+}
+@media only screen and (min-width: 900px) and (max-width: 1599px)
+{
 
 	#asideSAB
 	{

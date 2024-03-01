@@ -706,6 +706,7 @@ main
 	position: relative;
   	overflow: hidden;
   	width: 100%;
+	z-index: -1;
   }
 #baner
 {
@@ -1084,7 +1085,9 @@ a,
 	align-items: center;
 	justify-content: center;
   }
-  
+  .zgrade > * {
+	border: 1px solid black;
+}
   .zgrade > *:nth-last-child(2):only-child {
 	grid-column: 2 / 4;
   }
@@ -1097,14 +1100,14 @@ a,
 {
 	text-align: center;
 	color: var(--crna);
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	margin-top: 1vw;
 	justify-content: center;
 }
 
 .zgrada h2
 {
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	font-weight: 500;
 	margin-top: -0.5vw;
 }
