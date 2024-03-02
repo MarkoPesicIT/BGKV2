@@ -1,17 +1,29 @@
-@media only screen and (min-width: 900px) and (max-width: 1599px) and (orientation: landscape){
-	header, footer{
+@media only screen and (min-width: 900px) and (max-width: 1599px) and (orientation: landscape)
+{
+
+	header,
+	footer
+	{
 		width: 100% !important;
 	}
-	#banerHR{
+
+	#banerHR
+	{
 		margin-top: 0.5rem;
 	}
-	#hrFON{
+
+	#hrFON
+	{
 		display: none;
 	}
-	#sidemenu{
+
+	#sidemenu
+	{
 		display: none !important;
 	}
-	.centralno{
+
+	.centralno
+	{
 		display: flex;
 		flex-direction: column;
 	}
