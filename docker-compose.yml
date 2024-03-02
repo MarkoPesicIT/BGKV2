@@ -14,4 +14,4 @@ services:
 
 networks:
   svetisavasajt_default:
-    internal: true
+    external: true
