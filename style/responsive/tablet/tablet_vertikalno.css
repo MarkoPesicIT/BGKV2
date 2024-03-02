@@ -1,91 +1,92 @@
 @media only screen and (min-width: 768px) and (max-width: 1599px)
 {
-	#brodarska
-	{
+	.kreatori{
+		margin: 0;
+	}
+	#banerHR{
+		margin: 0;
+	}
+	#hrFON{
 		display: none;
 	}
-
-	#asideSAB
-	{
+	.centralno{
+		width: 100%;
+		margin-top: 0rem;
+		display: block;
+	}
+	#SABFon{
 		display: none;
 	}
-
-	.menu
-	{
-		margin-left: 0.8rem;
-	}
-
-	.triLinije
-	{
+	#kreatoriFon{
 		display: none;
 	}
-
-	#naziv
-	{
+	
+	#asideSAB {
+		display: none;
+	}
+	
+	.menu li {
+		width: 8rem;
+	}
+	
+	.triLinije {
+		display: none;
+	}
+	
+	#naziv {
 		font-size: 2rem !important;
 	}
-
-	#banerFon
-	{
+	
+	#banerFon {
 		display: none;
 	}
-
-	.gornjideo
-	{
+	
+	.gornjideo {
 		padding-left: 1rem !important;
 		padding-right: 1rem !important;
 		height: 7rem !important;
 	}
-
-	.gornjideo img
-	{
+	
+	.gornjideo img {
 		width: 4rem;
 	}
-
-	#ulogujse
-	{
+	
+	#ulogujse {
 		font-size: 1.5rem;
 		border-radius: 0.7rem;
 	}
-
-	#logoGSS
-	{
-		width: 20rem !important;
+	
+	#logoGSS {
+		height: 5rem;
+		width: 15rem !important;
 	}
-
-	.logoIme p
-	{
+	
+	.logoIme p {
 		font-size: 1.2rem;
 		font-weight: 500;
 	}
-
-	.mainFooterFon
-	{
+	
+	.mainFooterFon {
 		display: none !important;
 	}
-
-	.mainFooterPC
-	{
+	
+	.mainFooterPC {
 		display: none !important;
 	}
-
-	#nebitno
-	{
+	
+	#nebitno {
 		padding: -3rem;
 	}
-
-	.menu a
-	{
-		font-size: 1.2rem !important;
+	
+	.menu a {
+		font-size: 1rem !important;
 	}
-
-	.ol1
-	{
+	
+	.ol1 {
 		width: 20rem;
 	}
-
-	.donjiFooterTablet
-	{
+	
+	.donjiFooterTablet {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -93,118 +94,190 @@
 		gap: 3rem;
 		margin-top: 3rem;
 	}
-
-	.ukratkoTablet
-	{
+	
+	.ukratkoTablet {
 		width: 35rem;
 		margin-left: 1;
 	}
-
-	.brziMeniTablet
-	{
+	
+	.brziMeniTablet {
 		height: 30rem;
 		width: 15rem;
 	}
-
-	.korisniLinkoviTablet
-	{
+	
+	.korisniLinkoviTablet {
 		height: 30rem;
 		width: 15rem;
 	}
-
-	.mainFooterTablet
-	{
+	
+	.mainFooterTablet {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
-
-	.glavno a
-	{
-		font-size: 2rem;
+	
+	.glavno a {
+		font-size: 1.5rem;
 		font-weight: 300;
 		padding: 0.8rem;
 	}
-
-	.glavno
-	{
-		width: 30rem;
+	
+	.glavno p {
+		font-size: 1.5rem;
 	}
-
-	.autoriBanera
-	{
-		width: 30rem;
+	
+	.glavno {
+		line-height: 2rem;
+		width: auto;
 	}
-
-	.autoriBanera p
-	{
-		font-size: 2.1rem;
+	
+	.glavno h1 {
+		font-size: 2.5rem;
 	}
-
-	.strana
-	{
+	
+	.autoriBanera h1 {
+		font-size: 2.5rem;
+	}
+	
+	.autoriBanera {
+		width:auto !important;
+	}
+	
+	.autoriBanera p {
+		column-count: 2;
+		font-size:1.4rem;
+	}
+	
+	.strana {
 		width: 70%;
 		margin: 5rem auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-
-	.zgrada
-	{
-		width: 20rem;
-		padding-top: 1rem;
-		height: 25rem;
+	
+	.zgrada {
+		width: 15rem;
+		aspect-ratio: 3/4.5;
+		padding: 1rem;
 	}
-
-	.zgrade
-	{
-		display: grid;
-		grid-template-columns: repeat(2, minmax(10vw, 2fr));
-		grid-template-rows: repeat(auto, 1fr);
-		row-gap: 2rem;
-		width: 100%;
+	
+	.ogradjUvod p {
+		font-size: 1.4rem;
 	}
-
-	.zgrada img
-	{
-		width: 18rem;
+	
+	.zgrada h1 {
+		margin: 2rem auto;
 	}
-
-	.zgrada h1
-	{
-		margin: 1rem;
-	}
-
-	.ogradjUvod
-	{
+	
+	.ogradjUvod {
 		margin-left: -10rem;
 		margin-right: -10rem;
 	}
-
-	.tamoAmo
-	{
+	
+	.tamoAmo {
 		display: flex;
 		flex-direction: column;
 	}
-
-	#zgradaimgPC
-	{
+	
+	#zgradaimgPC {
 		display: none;
 	}
-
-	.beogradjanka
-	{
+	
+	.beogradjanka {
 		display: flex;
 		flex-direction: column;
 		width: 90vw;
 		padding-left: 0%;
 		padding-right: 0%;
 	}
-
-	.beogradjanka h1
-	{
+	
+	.beogradjanka h1 {
 		margin: 0;
+	}
+	
+	.sliketekstOgradj {
+		flex-direction: column;
+	}
+	
+	.ogradjTekst {
+		width: 100%;
+		font-size: 1.3rem;
+		padding-left: 0;
+	}
+	
+	.ogradjSlike {
+		border-radius: 1rem;
+		flex-direction: row;
+		overflow-y: hidden !important;
+		overflow-x: scroll !important;
+		width: 45rem;
+	}
+	
+	.gradjevina {
+		margin: 0 auto;
+	}
+	
+	.gradjevina img {
+		width: 14rem !important;
+		aspect-ratio: 1/1 !important;
+	}
+	
+	.zstanica {
+		height: 15rem !important;
+	}
+	
+	.skc {
+		height: 15rem !important;
+	}
+	
+	.zOL {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.zOL h1 {
+		margin: 1rem !important;
+	}
+	
+	.ozasebLicnosti {
+		width: 30%;
+	}
+	
+	#wp {
+		height: 1svh !important;
+		padding-top: 52rem;
+	}
+	
+	#wp, #wp1 .text {
+		margin-top: -10rem;
+	}
+	
+	#wp1 {
+		height: 1svh !important;
+		padding-top: 52rem;
+	}
+	
+	#wp1 .text {
+		top: 50%;
+	}
+	
+	#wp1 .containerWP {
+		top: 80% !important;
+	}
+	
+	#wp .containerWP {
+		margin-top: 10rem;
+	}
+	
+	.text {
+		top: 40%;
+	}
+	
+	.containerWP {
+		top: 70% !important;
 	}
 }

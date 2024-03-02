@@ -16,19 +16,11 @@ dodajCSS
 ([ 
 	"../../style/main/style.css",
 	"../../style/main/darkmode.css",
-	"../../style/responsive/responsive.css"
-	// "../../style/responsive/tablet/mali/tablet_mali_vertikalno.css",
-	// "../../style/responsive/tablet/mali/tablet_mali_vodoravno.css",
-	// "../../style/responsive/tablet/mali/tablet_srednji_vertikalno.css",
-	// "../../style/responsive/tablet/mali/tablet_srednji_vodoravno.css",
-	// "../../style/responsive/tablet/mali/tablet_veliki_vertikalno.css",
-	// "../../style/responsive/tablet/mali/tablet_veliki_vodoravno.css",
-	// "../../style/responsive/tablet/mali/telefon_mali_vertikalno.css",
-	// "../../style/responsive/tablet/mali/telefon_mali_vodoravno.css",
-	// "../../style/responsive/tablet/mali/tablet_srednji_vertikalno.css",
-	// "../../style/responsive/tablet/mali/telefon_srednji_vodoravno.css",
-	// "../../style/responsive/tablet/mali/telefon_veliki_vertikalno.css",
-	// "../../style/responsive/tablet/mali/telefon_veliki_vodoravno.css"
+	"../../style/responsive/responsive.css",
+	"../../style/responsive/telefon/telefon_horizontalno.css",
+	"../../style/responsive/telefon/telefon_vertikalno.css",
+	"../../style/responsive/tablet/tablet_horizontalno.css",
+	"../../style/responsive/tablet/tablet_vertikalno.css"
 ]);
 });
 
