@@ -1,0 +1,817 @@
+@media only screen and (min-width: 1600px)
+{
+	#hrFON{
+		display: none;
+	}
+	.zgrada h1{
+		font-size: 1.8rem;
+	}
+	.zgrada h2{
+		font-size: 1.7rem;
+	}
+	.device
+	{
+		display: none;
+	}
+
+	.triLinije
+	{
+		display: none;
+	}
+
+	.mainFooterFon
+	{
+		display: none !important;
+	}
+
+	.mainFooterTablet
+	{
+		display: none !important;
+	}
+
+	#banerFon
+	{
+		display: none;
+	}
+
+	#SABTablet
+	{
+		display: none;
+	}
+
+	#SABFon{
+		display: none;
+	}
+
+	#zgradaimgFon
+	{
+		display: none;
+	}
+
+	#kreatoriFon{
+		display: none;
+	}
+}
+
+
+@media only screen and (min-width: 730px) and (max-width: 819px)
+{
+    .ivicaImarica{
+        margin-top: 0rem;
+    }
+    main{
+        width: 100%;
+    }
+    #brodarska
+	{
+		display: none;
+	}
+    #banerHR{
+        margin-bottom: 0;
+    }
+	#asideSAB
+	{
+		display: none;
+	}
+    .menu{
+        width: 100% !important;
+    }
+    .menu li{
+        width: 6.5rem;
+    }
+
+	.triLinije
+	{
+		display: none;
+	}
+
+	#naziv
+	{
+		font-size: 1.5rem !important;
+	}
+
+	#banerFon
+	{
+		display: none;
+	}
+
+	.gornjideo
+	{
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+		height: 7rem !important;
+	}
+
+	.gornjideo img
+	{
+		width: 4rem;
+	}
+
+	#ulogujse
+	{
+        padding: 0.5rem;
+		font-size: 1rem;
+		border-radius: 0.5rem;
+	}
+
+	#logoGSS
+	{
+        height: 4rem;
+		width: 12rem !important;
+	}
+
+	.logoIme p
+	{
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+
+	.mainFooterFon
+	{
+		display: none !important;
+	}
+
+	.mainFooterPC
+	{
+		display: none !important;
+	}
+
+	#nebitno
+	{
+		padding: -3rem;
+	}
+
+	.menu a
+	{
+		font-size: 0.76rem !important;
+        font-weight: 500;
+	}
+	.ol1
+	{
+		width: 20rem;
+	}
+
+	.donjiFooterTablet
+	{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+		margin-top: 3rem;
+	}
+
+	.mainFooterTablet
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.glavno a
+	{
+		font-size: 1.3rem;
+		font-weight: 300;
+		padding: 0.5rem;
+	}
+    .glavno p{
+        font-size: 1.3rem;
+    }
+	.glavno
+	{
+        line-height: 2rem;
+	}
+
+    .glavno h1{
+        font-size: 2rem;
+    }
+    .autoriBanera h1{
+        font-size: 2.5rem;
+    }
+
+	.autoriBanera p
+	{
+		font-size: 1.7rem;
+	}
+
+	.strana
+	{
+		width: 90%;
+		margin: 5rem auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.zgrada
+	{
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+		width: 15rem;
+		padding: 1rem;
+        aspect-ratio: 3/4.5;
+	}
+
+	.zgrade
+	{
+		row-gap: 2rem;
+	}
+
+	.zgrada h1
+	{
+		margin: 1rem;
+	}
+
+	.ogradjUvod
+	{
+		margin-left: -10rem;
+		margin-right: -10rem;
+	}
+
+	.tamoAmo
+	{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#zgradaimgPC
+	{
+		display: none;
+	}
+
+	.beogradjanka
+	{
+		display: flex;
+		flex-direction: column;
+		width: 90vw;
+		padding-left: 0%;
+		padding-right: 0%;
+	}
+
+	.beogradjanka h1
+	{
+		margin: 0;
+	}
+    .mainFooterTablet{
+        width: 70%;
+    }
+    .mainFooterTablet h1{
+        font-size: 1.5rem;
+    }
+    .mainFooterTablet p{
+        font-size: 1rem;
+    }
+    .brziMeniTablet,.korisniLinkoviTablet {
+        width: 50%;
+        height: 25rem;
+    }
+    .korisniLinkoviTablet a{
+        font-size: 1.6rem;
+    }
+    .brziMeniTablet a{
+        font-size: 1.6rem;
+    }
+    .sliketekstOgradj{
+        flex-direction: column;
+    }
+
+    .ogradjTekst{
+        width: 90%;
+        font-size: 1.3rem;
+        padding-left: 0;
+    }
+
+    .ogradjSlike{
+        border-radius: 1rem;
+        flex-direction: row;
+        overflow-y: hidden !important;
+        overflow-x: scroll !important;
+        width: 35rem;
+    }
+    .gradjevina{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .gradjevina img{
+        width: 14rem !important;
+        aspect-ratio: 1/1 !important;
+    }
+    .zstanica{
+        height: 15rem !important;
+    }
+    .gradjevina hr{
+        width: 130%;
+    }
+    .skc{
+        height: 15rem !important;
+    }
+    .zOL{
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        align-items: center;
+    }
+    .zOL h1{
+        margin: 1rem !important;
+    }
+    .ozasebLicnosti{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 820px) and (max-width: 899px)
+{
+    #brodarska
+	{
+		display: none;
+	}
+    #banerHR{
+        margin-bottom: 0;
+    }
+	#asideSAB
+	{
+		display: none;
+	}
+    .menu{
+        width: 100% !important;
+    }
+    .menu li{
+        width: 7rem;
+    }
+
+	.triLinije
+	{
+		display: none;
+	}
+
+	#naziv
+	{
+		font-size: 2rem !important;
+	}
+
+	#banerFon
+	{
+		display: none;
+	}
+
+	.gornjideo
+	{
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+		height: 7rem !important;
+	}
+
+	.gornjideo img
+	{
+		width: 4rem;
+	}
+
+	#ulogujse
+	{
+		font-size: 1.5rem;
+		border-radius: 0.7rem;
+        margin-right: 1.5rem;
+	}
+
+	#logoGSS
+	{
+        height: 5rem;
+		width: 15rem !important;
+	}
+
+	.logoIme p
+	{
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+
+	.mainFooterFon
+	{
+		display: none !important;
+	}
+
+	.mainFooterPC
+	{
+		display: none !important;
+	}
+
+	#nebitno
+	{
+		padding: -3rem;
+	}
+
+	.menu a
+	{
+		font-size: 0.9rem !important;
+        font-weight: 500;
+	}
+	.ol1
+	{
+		width: 20rem;
+	}
+
+	.donjiFooterTablet
+	{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+		margin-top: 3rem;
+	}
+
+	.ukratkoTablet
+	{
+		width: 35rem;
+		margin-left: 1;
+	}
+
+	.brziMeniTablet
+	{
+		height: 30rem;
+		width: 15rem;
+	}
+
+	.korisniLinkoviTablet
+	{
+		height: 30rem;
+		width: 15rem;
+	}
+
+	.mainFooterTablet
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.glavno a
+	{
+		font-size: 1.3rem;
+		font-weight: 300;
+		padding: 0.5rem;
+	}
+    .glavno p{
+        font-size: 1.3rem;
+    }
+	.glavno
+	{
+        line-height: 2rem;
+		width: 30rem;
+	}
+
+    .glavno h1{
+        font-size: 2rem;
+    }
+    .autoriBanera h1{
+        font-size: 2.5rem;
+    }
+	.autoriBanera
+	{
+		width: 30rem;
+	}
+
+	.autoriBanera p
+	{
+		font-size: 1.7rem;
+	}
+
+	.strana
+	{
+		width: 70%;
+		margin: 5rem auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.zgrada
+	{
+		width: 30%;
+        aspect-ratio: 3/4;
+		padding-top: 1rem;
+		padding: 1rem;
+	}
+
+	.zgrade
+	{
+		row-gap: 2rem;
+		width: 100%;
+	}
+
+	.zgrada h1
+	{
+		margin: 1rem;
+	}
+
+	.ogradjUvod
+	{
+		margin-left: -10rem;
+		margin-right: -10rem;
+	}
+
+	.tamoAmo
+	{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#zgradaimgPC
+	{
+		display: none;
+	}
+
+	.beogradjanka
+	{
+		display: flex;
+		flex-direction: column;
+		width: 90vw;
+		padding-left: 0%;
+		padding-right: 0%;
+	}
+
+	.beogradjanka h1
+	{
+		margin: 0;
+	}
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1050px){
+	#brodarska{
+		display: none;
+	}
+}
+@media only screen and (min-width: 900px) and (max-width: 1599px)
+{
+
+	#asideSAB
+	{
+		display: none;
+	}
+
+    .menu li{
+        width: 8rem;
+    }
+
+	.triLinije
+	{
+		display: none;
+	}
+
+	#naziv
+	{
+		font-size: 2rem !important;
+	}
+
+	#banerFon
+	{
+		display: none;
+	}
+
+	.gornjideo
+	{
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+		height: 7rem !important;
+	}
+
+	.gornjideo img
+	{
+		width: 4rem;
+	}
+
+	#ulogujse
+	{
+		font-size: 1.5rem;
+		border-radius: 0.7rem;
+	}
+
+	#logoGSS
+	{
+        height: 5rem;
+		width: 15rem !important;
+	}
+
+	.logoIme p
+	{
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+
+	.mainFooterFon
+	{
+		display: none !important;
+	}
+
+	.mainFooterPC
+	{
+		display: none !important;
+	}
+
+	#nebitno
+	{
+		padding: -3rem;
+	}
+
+	.menu a
+	{
+		font-size: 1rem !important;
+	}
+	.ol1
+	{
+		width: 20rem;
+	}
+
+	.donjiFooterTablet
+	{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+		margin-top: 3rem;
+	}
+
+	.ukratkoTablet
+	{
+		width: 35rem;
+		margin-left: 1;
+	}
+
+	.brziMeniTablet
+	{
+		height: 30rem;
+		width: 15rem;
+	}
+
+	.korisniLinkoviTablet
+	{
+		height: 30rem;
+		width: 15rem;
+	}
+
+	.mainFooterTablet
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.glavno a
+	{
+		font-size: 1.5rem;
+		font-weight: 300;
+		padding: 0.8rem;
+	}
+    .glavno p{
+        font-size: 1.5rem;
+    }
+	.glavno
+	{
+        line-height: 2rem;
+		width: 30rem;
+	}
+
+    .glavno h1{
+        font-size: 2.5rem;
+    }
+    .autoriBanera h1{
+        font-size: 2.5rem;
+    }
+	.autoriBanera
+	{
+		width: 30rem;
+	}
+
+	.autoriBanera p
+	{
+		font-size: 1.7rem;
+	}
+
+	.strana
+	{
+		width: 70%;
+		margin: 5rem auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.zgrada
+	{
+		width: 15rem;
+        aspect-ratio: 3/4.5;
+		padding: 1rem;
+	}
+
+    .ogradjUvod p{
+        font-size: 1.4rem;
+    }
+	.zgrada h1
+	{
+        margin: 2rem auto;
+	}
+
+	.ogradjUvod
+	{
+		margin-left: -10rem;
+		margin-right: -10rem;
+	}
+
+	.tamoAmo
+	{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#zgradaimgPC
+	{
+		display: none;
+	}
+
+	.beogradjanka
+	{
+		display: flex;
+		flex-direction: column;
+		width: 90vw;
+		padding-left: 0%;
+		padding-right: 0%;
+	}
+
+	.beogradjanka h1
+	{
+		margin: 0;
+	}
+
+    .sliketekstOgradj{
+        flex-direction: column;
+    }
+
+    .ogradjTekst{
+        width: 100%;
+        font-size: 1.3rem;
+        padding-left: 0;
+    }
+
+    .ogradjSlike{
+        border-radius: 1rem;
+        flex-direction: row;
+        overflow-y: hidden !important;
+        overflow-x: scroll !important;
+        width: 45rem;
+    }
+    .gradjevina{
+        margin: 0 auto;
+    }
+    .gradjevina img{
+        width: 14rem !important;
+        aspect-ratio: 1/1 !important;
+    }
+    .zstanica{
+        height: 15rem !important;
+    }
+
+    .skc{
+        height: 15rem !important;
+    }
+    .zOL{
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        align-items: center;
+    }
+    .zOL h1{
+        margin: 1rem !important;
+    }
+    .ozasebLicnosti{
+        width: 30%;
+    }
+    #wp{
+        height: 1svh !important;
+        padding-top: 52rem;
+    }
+    #wp, #wp1 .text{
+        margin-top: -10rem;
+    }
+    #wp1{
+        height: 1svh !important;
+        padding-top: 52rem;
+    }
+    #wp1 .text{
+        top: 50%;
+    }
+    #wp1 .containerWP{
+        top: 80% !important;
+    }
+    #wp .containerWP{
+        margin-top: 10rem;
+    }
+    .text{
+        top: 40%;
+    }
+    .containerWP{
+        top: 70% !important;
+    }
+}
