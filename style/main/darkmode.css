@@ -1,16 +1,16 @@
-:root
-{
-	--primary: #04414e;
-	--secondary: #c99802;
-	--svetloP: #005a6c;
-	--svetloP2: #006579;
-	--bela: #252525;
-	--crna: #f5f5f5;
-	--boxshadow: 0 0 2rem #ffffff;
-}
 
 @media (prefers-color-scheme: dark)
 {
+	:root
+	{
+		--primary: #04414e;
+		--secondary: #c99802;
+		--svetloP: #005a6c;
+		--svetloP2: #006579;
+		--bela: #252525;
+		--crna: #f5f5f5;
+		--boxshadow: 0 0 2rem #ffffff;
+	}
 	*
 	{
 		color: white !important;
