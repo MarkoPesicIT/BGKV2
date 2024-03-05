@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1600px) and (max-width:1920)
+@media only screen and (min-width: 1600px)
 {
 	#hrFON
 	{
@@ -65,12 +65,12 @@
 {
 	.zgrada h1
 	{
-		font-size: 1.8rem;
+		font-size: 1.8rem !important;
 	}
 
 	.zgrada h2
 	{
-		font-size: 1.6rem;
+		font-size: 1.6rem !important;
 	}
 
 	#hrFON
