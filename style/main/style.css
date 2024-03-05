@@ -792,7 +792,7 @@ i
 	transition: 0.3s ease-in-out background-color, 0.3s ease-in-out scale, 0.3s ease-in-out color;
 }
 
-.sekcija a:hover
+.sekcija a:hover 
 {
 	color: var(--bela);
 	background-color: #0083bb7b;

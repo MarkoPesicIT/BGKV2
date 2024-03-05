@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1600px)
+@media only screen and (min-width: 1600px) and (max-width:1920)
 {
 	#hrFON
 	{
@@ -7,12 +7,75 @@
 
 	.zgrada h1
 	{
+		font-size: 1.3rem !important;
+	}
+
+	.zgrada h2
+	{
+		font-size: 1.2rem !important;
+	}
+
+	.device
+	{
+		display: none;
+	}
+
+	.triLinije
+	{
+		display: none;
+	}
+
+	.mainFooterFon
+	{
+		display: none !important;
+	}
+
+	.mainFooterTablet
+	{
+		display: none !important;
+	}
+
+	#banerFon
+	{
+		display: none;
+	}
+
+	#SABTablet
+	{
+		display: none;
+	}
+
+	#SABFon
+	{
+		display: none;
+	}
+
+	#zgradaimgFon
+	{
+		display: none;
+	}
+
+	#kreatoriFon
+	{
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1921px)
+{
+	.zgrada h1
+	{
 		font-size: 1.8rem;
 	}
 
 	.zgrada h2
 	{
-		font-size: 1.7rem;
+		font-size: 1.6rem;
+	}
+
+	#hrFON
+	{
+		display: none;
 	}
 
 	.device
