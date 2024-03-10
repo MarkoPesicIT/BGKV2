@@ -1,32 +1,34 @@
 document.addEventListener("DOMContentLoaded", function()
 {
-
-	function dodajCSS(cssFiles)
-	{
-		cssFiles.forEach((cssFile) =>
-		{
-			const link = document.createElement("link");
-			link.rel = "stylesheet";
-			link.href = cssFile;
-			document.head.appendChild(link);
-		});
-	}
-
-	dodajCSS([
-		"../../style/main/style.css",
-		"../../style/main/darkmode.css",
-		"../../style/responsive/responsive.css",
-		"../../style/responsive/telefon/telefon_horizontalno.css",
-		"../../style/responsive/telefon/telefon_vertikalno.css",
-		"../../style/responsive/tablet/tablet_horizontalno.css",
-		"../../style/responsive/tablet/tablet_vertikalno.css"
-	]);
-
-	const faviconLink = document.createElement("link");
+// Function to add CSS file dynamically
+function addCSS(filename) {
+	var cssLink = document.createElement("link");
+	cssLink.rel = "stylesheet";
+	cssLink.href = filename;
+	document.head.appendChild(cssLink);
+  }
+  
+  // Function to add favicon dynamically
+  function addFavicon(filename) {
+	var faviconLink = document.createElement("link");
 	faviconLink.rel = "icon";
 	faviconLink.type = "image/x-icon";
-	faviconLink.href = "../../Materijal/Logo/favicon.ico";
+	faviconLink.href = filename;
 	document.head.appendChild(faviconLink);
+  }
+  
+  // Add favicon
+  addFavicon("Materijal/Logo/favicon.ico");
+  
+  // Add CSS files
+  addCSS("style/main/style.css");
+  addCSS("style/main/darkmode.css");
+  addCSS("style/responsive/responsive.css");
+  addCSS("style/responsive/telefon/telefon_horizontalno.css");
+  addCSS("style/responsive/telefon/telefon_vertikalno.css");
+  addCSS("style/responsive/tablet/tablet_horizontalno.css");
+  addCSS("style/responsive/tablet/tablet_vertikalno.css");
+  
 
 });
 
@@ -191,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function()
 
 			if (menuItems.length === 0)
 			{
-				fetch("../funkcionalnost/footer_header/header.html").then((response) => response.text()).then((html) =>
+				fetch("header.html").then((response) => response.text()).then((html) =>
 					{
 						document.querySelector("body").insertAdjacentHTML("afterbegin", html);
 						applyActiveMenuItem();
@@ -212,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function()
 		, 100);
 
 	// Fetch footer
-	fetch("../funkcionalnost/footer_header/footer.html").then((response) => response.text()).then((html) =>
+	fetch("footer.html").then((response) => response.text()).then((html) =>
 		{
 			document.querySelector("body").insertAdjacentHTML("beforeend", html);
 		}
