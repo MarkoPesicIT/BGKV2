@@ -2831,9 +2831,13 @@ section .option_list .option .icon
 	aspect-ratio: 1/1 !important;
 	scroll-snap-align: start;
 }
-
+.probaox{
+	width: 100%;
+	overflow-x: hidden;
+}
 #naslovOlicnostima
 {
+	width: 10rem;
 	text-align: center;
 	font-size: 4rem;
 	margin-bottom: 5rem;
@@ -2841,7 +2845,6 @@ section .option_list .option .icon
 
 .contentOlicnosti
 {
-	width: 80%;
 	column-width: 50rem;
 	flex-direction: column;
 	display: flex;
@@ -2864,6 +2867,8 @@ section .option_list .option .icon
 
 .gradjevina
 {
+	border-radius: 2rem;
+	padding: 2rem;
 	margin-bottom: 5rem;
 }
 
