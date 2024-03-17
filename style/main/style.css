@@ -109,12 +109,12 @@ main
 
 #link
 {
-	transition: 0.3s ease-in-out scale;
+	transition: transform 0.3s ease-in-out scale;
 }
 
 #link:hover
 {
-	scale: 1.05;
+	transform: scale(1.05);
 }
 
 .meni-active
@@ -160,12 +160,12 @@ main
 	width: 6rem;
 	height: auto;
 	aspect-ratio: 1/1;
-	transition: 0.2s ease-in-out scale;
+	transition: 0.2s ease-in-out transform;
 }
 
 .link:hover
 {
-	scale: 1.1;
+	transform: scale(1.1);
 }
 
 #ulogujse
@@ -178,13 +178,13 @@ main
 	border: 0;
 	background-color: var(--primary);
 	width: auto;
-	transition: background-color 0.2s ease-in-out, 0.2s ease-in-out scale;
+	transition: background-color 0.2s ease-in-out, 0.2s ease-in-out transform;
 }
 
 #ulogujse:hover
 {
 	background-color: var(--svetloP);
-	scale: 1.07;
+	transform: scale(1.07);
 	cursor: pointer;
 }
 
@@ -791,14 +791,14 @@ i
 	text-decoration: none;
 	width: -moz-fit-content;
 	width: fit-content;
-	transition: 0.3s ease-in-out background-color, 0.3s ease-in-out scale, 0.3s ease-in-out color;
+	transition: 0.3s ease-in-out background-color, 0.3s ease-in-out transform, 0.3s ease-in-out color;
 }
 
 .sekcija a:hover 
 {
 	color: var(--bela);
 	background-color: #0083bb7b;
-	scale: 1.1;
+	transform: scale(1.1);
 }
 zz
 .autoriBanera h1
