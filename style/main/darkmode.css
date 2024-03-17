@@ -206,4 +206,8 @@
 	.ogradjSlike{
 		background-color: #323232;
 	}
+
+	.linijaOZL{
+		background-color: var(--crna);
+	}
 }
