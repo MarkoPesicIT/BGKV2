@@ -224,9 +224,25 @@
 		width: 100%;
 	}
 
-	.ivicaImarica
+	.ivicaImaricaFON{
+		width: 100vw;
+	}
+
+	.ivicaImaricaFON a, .ivicaImaricaFON p
 	{
-		margin-top: 20rem;
+		font-size: 0.9rem !important;
+	}
+	
+	.ivicaImaricaFON p{
+		margin: 0 !important;
+	}
+
+	.ivicaImarica li a
+	{
+		padding: 0.1rem !important;
+		font-size: 1.5rem;
+		text-decoration: none;
+		color: var(--crna);
 	}
 
 	.micaPopovic img:hover
@@ -475,7 +491,9 @@
 		margin-bottom: 0rem;
 		font-size: 3rem;
 	}
-
+	.ozasebLicnosti{
+		gap: 2rem;
+	}
 	.contentOlicnosti
 	{
 		font-size: 1rem;
