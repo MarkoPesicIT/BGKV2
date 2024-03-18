@@ -500,12 +500,9 @@
 	}
 
 	.galerijaOlicnostima{
-		width: 90vw;
+		width: 20rem;
 	}
 
-	.contentOlicnosti p{
-		width: 90vw;
-	}
 	.linijaOZL{
 		width: 90vw;
 	}
@@ -569,6 +566,10 @@
 	{
 		margin-top: 5rem;
 		column-count: 1;
+	}
+
+	.slikaGalerija img:hover{
+		scale: 1;
 	}
 }
 

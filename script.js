@@ -190,61 +190,61 @@ function toggleSubMenu(strelica)
 
 document.addEventListener("DOMContentLoaded", function()
 	{
-
+		
 		// Fetch header if not already present
 		setTimeout(function()
+		{
+			const menuItems=document.querySelectorAll(".menu li");
+			
+			if (menuItems.length===0)
 			{
-				const menuItems=document.querySelectorAll(".menu li");
-
-				if (menuItems.length===0)
+				fetch("header.html").then((response)=> response.text()).then((html)=>
 				{
-					fetch("header.html").then((response)=> response.text()).then((html)=>
-						{
 							document.querySelector("body").insertAdjacentHTML("afterbegin", html);
 							applyActiveMenuItem();
 						}
-
-					).catch((error)=>
+						
+						).catch((error)=>
 						{
 							console.error("Failed to fetch header:", error);
 						}
-					);
-				}
+						);
+					}
 
-				else
-				{
-					applyActiveMenuItem();
+					else
+					{
+						applyActiveMenuItem();
+					}
 				}
-			}
-
-			, 100);
+				
+				, 100);
 
 		// Fetch footer
 		fetch("footer.html").then((response)=> response.text()).then((html)=>
 			{
 				document.querySelector("body").insertAdjacentHTML("beforeend", html);
 			}
-
-		).catch((error)=>
+			
+			).catch((error)=>
 			{
 				console.error("Failed to fetch footer:", error);
 			}
-		);
-
-		const mapa=
-		{
-			"index.html": 1,
-		}
-
-		;
-
-		function applyActiveMenuItem()
-		{
-			const currentPage=window.location.pathname.split("/").pop().trim();
-			console.log("Current Page:", currentPage);
-			const menuItems=document.querySelectorAll(".menu > li");
-
-			menuItems.forEach((item)=>
+			);
+			
+			const mapa=
+			{
+				"index.html": 1,
+			}
+			
+			;
+			
+			function applyActiveMenuItem()
+			{
+				const currentPage=window.location.pathname.split("/").pop().trim();
+				console.log("Current Page:", currentPage);
+				const menuItems=document.querySelectorAll(".menu > li");
+				
+				menuItems.forEach((item)=>
 				{
 					const link=item.querySelector("a").getAttribute("href");
 					console.log("Menu Item Link:", link);
@@ -254,50 +254,51 @@ document.addEventListener("DOMContentLoaded", function()
 						console.log("Adding meni-active class to menu item:", item);
 						item.classList.add("meni-active");
 					}
-
+					
 					else
 					{
 						const submenuItems=item.querySelectorAll(".submenu a");
-
+						
 						submenuItems.forEach((subitem)=>
+						{
+							const subLink=subitem.getAttribute("href");
+							console.log("Submenu Item Link:", subLink);
+							
+							if (subLink.endsWith (currentPage))
 							{
-								const subLink=subitem.getAttribute("href");
-								console.log("Submenu Item Link:", subLink);
-
-								if (subLink.endsWith (currentPage))
-								{
-									console.log("Adding meni-active class to parent menu item:", item);
-									item.classList.add("meni-active");
-									console.log("Adding submeni-active class to submenu item:", subitem.parentNode);
-									subitem.parentNode.classList.add("submeni-active");
-								}
+								console.log("Adding meni-active class to parent menu item:", item);
+								item.classList.add("meni-active");
+								console.log("Adding submeni-active class to submenu item:", subitem.parentNode);
+								subitem.parentNode.classList.add("submeni-active");
 							}
+						}
 						);
 					}
 				}
-			);
-		}
+				);
+			}
 	}
 );
 
 // kviz
 document.addEventListener("DOMContentLoaded", function()
-	{
+{
+	if (window.location.pathname.endsWith('/kvizovi.html')) {
 		                const pitanjaNiz=[
                 {
-                        pitanje: "Које од наведених дела је написао Момчило Настасијевић?",
-                        tacanOdgovor: "Ране приче",
-                        opcije: ["Косовски сонети",
+			    pitanje: "Које од наведених дела је написао Момчило Настасијевић?",
+			    tacanOdgovor: "Ране приче",
+			    opcije: ["Косовски сонети",
                         "Песме из Париза",
                         "Ламент над Београдом",
                         "Ране приче",
-                        ],
-                }
+			],
+		}
 
-                ,
-                {
-                        pitanje: "У својој поезији Момчило Настасијевић најчешће користи:",
-                        tacanOdgovor: "архаизме",
+		,
+		{
+			pitanje: "У својој поезији Момчило Настасијевић најчешће користи:",
+			tacanOdgovor: "архаизме",
                         opcije: ["историзме", "архаизме", "неологизме", "ништа од наведеног"],
                 }
 
@@ -687,19 +688,21 @@ document.addEventListener("DOMContentLoaded", function()
 				pitanje.numb=index + 1;
 			}
 		);
-		const start_dugme=document.querySelector(".start_btn button");
-		const pravila=document.querySelector(".info_box");
-		const izadji_dugme=pravila.querySelector(".buttons .quit");
-		const nastavi_dugme=pravila.querySelector(".buttons .restart");
-		const kviz=document.querySelector(".quiz_box");
-		const rezultati=document.querySelector(".result_box");
-		const opcije=document.querySelector(".option_list");
-		const vremeLinija=document.querySelector(".kviz-header .time_line");
-		const vremeTekst=document.querySelector(".timer .time_left_txt");
-		const vremeSekunde=document.querySelector(".timer .timer_sec");
-		const sledecePitanje=document.querySelector(".kviz-footer .next_btn");
-		const brojPitanja=document.querySelector(".kviz-footer .total_que");
-		const izadji=document.getElementById("izadji");
+			const start_dugme=document.querySelector(".start_btn button");
+			const pravila=document.querySelector(".info_box");
+			const izadji_dugme=pravila.querySelector(".buttons .quit");
+			const nastavi_dugme=pravila.querySelector(".buttons .restart");
+			const kviz=document.querySelector(".quiz_box");
+			const rezultati=document.querySelector(".result_box");
+			const opcije=document.querySelector(".option_list");
+			const vremeLinija=document.querySelector(".kviz-header .time_line");
+			const vremeTekst=document.querySelector(".timer .time_left_txt");
+			const vremeSekunde=document.querySelector(".timer .timer_sec");
+			const sledecePitanje=document.querySelector(".kviz-footer .next_btn");
+			const brojPitanja=document.querySelector(".kviz-footer .total_que");
+			const izadji=document.getElementById("izadji");
+		  
+		  
 		let tajmer=30;
 		let broj_pitanja=0;
 		let pocetno_pitanje=1;
@@ -914,6 +917,7 @@ document.addEventListener("DOMContentLoaded", function()
 
 				, frameDuration);
 		}
+	}
 	}
 );
 
