@@ -1574,7 +1574,9 @@ a
 	align-items: center;
 	height: 100svh;
 }
-
+#nazivKviSVG{
+	z-index: -1 !important;
+}
 svg
 {
 	font-family: 'Monoton', cursive;
