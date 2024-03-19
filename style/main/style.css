@@ -2770,7 +2770,7 @@ section .option_list .option .icon {
 	padding: 12px 20px;
 	background: transparent;
 	border: 2px solid var(--primary);
-	border-radius: 40px;
+	border-radius: 3rem;
 	font-size: 1.2rem;
 	letter-spacing: 0rem;
 	font-weight: 600;
@@ -2789,5 +2789,5 @@ section .option_list .option .icon {
 	cursor: pointer;
 	color: white;
 	padding: 1rem 1.5rem;
-	border-radius: 1rem;
+	border-radius: 3rem;
 }

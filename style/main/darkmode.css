@@ -219,4 +219,8 @@
 	.login .inputBx input::placeholder {
 		color: white;
 	}
+
+      #password::-ms-reveal{
+            filter: invert(100%);
+      }
 }
