@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wdth,wght@0,100..200,100..900;1,100..200,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
 :root
 {
@@ -11,12 +12,6 @@
 	--boxshadow: 0 0 2rem #008fcc46;
 	--ljubicasta: #c966c1;
 	--ease: cubic-bezier(0.4, -0.3, 0.6, 1.3);
-	--clr-background-day: #1b7fcc;
-	--clr-background-night: #070b34;
-	--clr-sun: #FCE570;
-	--clr-sun-lgt: #ffffe3;
-	--clr-moon: #b7bfc8;
-	--button-width: 2.5em;
 }
 
 .netrebadasevidi
@@ -3140,3 +3135,113 @@ section .option_list .option .icon
 	text-decoration: none;
 	color: var(--crna);
 }
+.krug1{
+	--clr:#79b2d2;
+}
+
+.krug2{
+	--clr:#c579d2;
+}
+
+.krug3{
+	--clr:#79d2ae;
+}
+.ring {
+	margin: 10rem auto;
+	position: relative;
+	width: 40rem;
+	aspect-ratio: 1/1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    }
+    .ring i {
+	position: absolute;
+	inset: 0;
+	border: 2px solid #707070;
+	transition: 0.5s;
+    }
+    .ring i:nth-child(1) {
+	border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+	animation: animate 4.5s linear infinite;
+    }
+    .ring i:nth-child(2) {
+	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+	animation: animate 9s linear infinite;
+    }
+    .ring i:nth-child(3) {
+	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+	animation: animate2 3s linear infinite;
+    }
+    .ring:hover i {
+	border: 6px solid var(--clr);
+	filter: drop-shadow(0 0 20px var(--clr));
+    }
+    @keyframes animate {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+    }
+    @keyframes animate2 {
+	0% {
+	  transform: rotate(360deg);
+	}
+	100% {
+	  transform: rotate(0deg);
+	}
+    }
+    .login {
+	margin-top: -20%;
+	position: absolute;
+	width: 25rem;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+    }
+    .login h2 {
+	font-size: 2em;
+	color: #000000;
+    }
+    .login .inputBx {
+	position: relative;
+	width: 100%;
+    }
+    .login .inputBx input {
+	position: relative;
+	width: 100%;
+	padding: 12px 20px;
+	background: transparent;
+	border: 2px solid var(--primary);
+	border-radius: 40px;
+	font-size: 1.2rem;
+	letter-spacing: 0.rem;
+	font-weight: 600;
+	color: var(--primary);
+	box-shadow: none;
+	outline: none;
+    }
+
+    .login .inputBx button {
+	font-weight: 600;
+	font-size: 1.2em;
+	letter-spacing: 0.5rem;
+	width: 110%;
+	background: #0078ff;
+	background: linear-gradient(45deg, #79b1d2ca, #79d2aeca);
+	border: none;
+	cursor: pointer;
+	color: white;
+	padding: 1rem 1.5rem;
+	border-radius: 1rem;
+  }
+  
+    .login .inputBx input::placeholder {
+	color: var(--primary);
+    }
+    

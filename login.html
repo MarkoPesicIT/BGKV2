@@ -36,81 +36,101 @@
       </div> -->
       <img id="baner" src="Materijal/Pocetna/Baner-pocetna.jpg" alt="">
       <hr id="banerHR">
-      <div id="wp" class="strana" style="height: 62vh;">
-            <img id="banerFon" src="Materijal/Pocetna/Baner-pocetna.jpg" alt="" />
-            <main>
-              <p class="text">УПС . . .<br/>Страна у изради</p>
-              <div class="containerWP">
-                  <div class="bg"></div>
-                  <div class="arm-left"></div>
-                  <div class="blacksmith">
-                    <div class="shape">
-                        <div class="dress"></div>
-                        <div class="dress"></div>
-                    </div>
-                    <div class="head">
-                        <div class="moustache"></div>
-                        <div class="moustache"></div>
-                        <div class="eye"></div>
-                    </div>
-                    <div class="arm-right">
-                        <div class="hammer"></div>
-                    </div>
+      <div class="strana">
+            <!-- <img id="banerFon" src="Materijal/Baneri/Baner - oznake.jpg" alt="">
+            <hr>
+            <main style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                  <div class="login-container">
+                        <div class="screen">
+                              <div class="screen__content">
+                                    <form class="login">
+                                          <div class="login__field">
+                                                <i class="login__icon fas fa-user" aria-hidden="true"></i>
+                                                <input type="text" class="login__input" placeholder="Корисничко име / E-маил">
+                                          </div>
+                                          <div class="login__field">
+                                                <i class="login__icon fas fa-lock" aria-hidden="true"></i>
+                                                <input type="password" class="login__input" placeholder="Шифра">
+                                          </div>
+                                          <button class="button login__submit">
+                                                <span class="button__text">ПРИЈАВИ СЕ</span>
+                                                <i class="button__icon fas fa-chevron-right" aria-hidden="true"></i>
+                                          </button>				
+                                    </form>
+                                    <div class="social-login">
+                                          <h3>Пријави се помоћу:</h3>
+                                          <div class="social-icons">
+                                                <a href="#" class="social-login__icon fab fa-instagram" aria-hidden="true"></a>
+                                                <a href="#" class="social-login__icon fab fa-facebook" aria-hidden="true"></a>
+                                                <a href="#" class="social-login__icon fa-solid fa-g" aria-hidden="true"></a>
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="screen__background">
+                                    <span class="screen__background__shape screen__background__shape4"></span>
+                                    <span class="screen__background__shape screen__background__shape3"></span>		
+                                    <span class="screen__background__shape screen__background__shape2"></span>
+                                    <span class="screen__background__shape screen__background__shape1"></span>
+                              </div>		
+                        </div>
                   </div>
-                  <div class="sword">
-                    <div class="handle"></div>
-                  </div>
-                  <div class="anvil"></div>
-                  <div class="fire-box">
-                    <div class="fire"></div>
-                    <div class="fire"></div>
-                    <div class="fire"></div>
-                    <div class="fire"></div>
+            </main> -->
+            <div class="ring">
+                  <i class="krug1"></i>
+                  <i class="krug2"></i>
+                  <i class="krug3"></i>
+                  <div class="login">
+                      <h2>Пријави се</h2>
+                      <div class="inputBx">
+                          <input type="text" id="username" placeholder="Корисничко име">
+                      </div>
+                      <div class="inputBx">
+                          <input type="password" id="password" placeholder="Шифра">
+                      </div>
+                      <div class="inputBx">
+                          <button onclick="signIn()">Пријави се</button>
+                      </div>
                   </div>
               </div>
-              
-            </main>
-        </div>
-</body>
-<script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-      import { getDatabse, set, ref } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-databse.js"
-      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
-
-
+              <script type="module">
+                  import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+      // Your Firebase configuration
       const firebaseConfig = {
-            apiKey: "AIzaSyAwmEWumYAYJ5_1dw_s1STaGlwshvzibCQ",
-            authDomain: "beograd-koordinate.firebaseapp.com",
-            databaseURL: "https://beograd-koordinate-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "beograd-koordinate",
-            storageBucket: "beograd-koordinate.appspot.com",
-            messagingSenderId: "265886337687",
-            appId: "1:265886337687:web:0ba1b0af919092d2f377d2",
-            measurementId: "G-HJJLW6820Y"
-      };
+            apiKey: "AIzaSyCttdTmQbpirrtL8h6rztxzz2rY7-cxxh0",
+            authDomain: "bg-koordinate.firebaseapp.com",
+            databaseURL: "https://bg-koordinate-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "bg-koordinate",
+    storageBucket: "bg-koordinate.appspot.com",
+    messagingSenderId: "16168187625",
+    appId: "1:16168187625:web:9d9734146515b514d16278",
+    measurementId: "G-7WGDCSB8WG"
+};
 
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const db = getDatabse();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+// Function to handle sign in
+function signIn() {
+      const email = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
       const auth = getAuth();
-
-      let EmailInp = document.getElementById('emailInp');
-      let PassInp = document.getElementById('passwordInp');
-      let FnameInp = document.getElementById('fnameInp');
-      let LnameInp = document.getElementById('lnameInp');
-      let MainForm = document.getElementById('MainForm');
-      let RegisterUser = evt => {
-            evt.preventDefault();
-
-            createUserWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
-            .then((credentials) => {})
-            .catch((error) => {
-                        alert(error.message);
-                        console.log(error.code);
-                        console.log(error.message);
-                  })
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+        })
+        .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              console.error(errorMessage);
+            });
       }
-
-</script>
+              </script>
+      </div>
+</body>
 
 </html>
