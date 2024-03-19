@@ -2685,6 +2685,11 @@ section .option_list .option .icon {
 	--clr: #79d2ae;
 }
 
+.krug4 {
+	--clr: #ceb893;
+	rotate: 40deg;
+}
+
 .krug {
 	margin: 10rem auto;
 	position: relative;
@@ -2704,19 +2709,22 @@ section .option_list .option .icon {
 
 .krug i:nth-child(1) {
 	border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-	animation: animate 4.5s linear infinite;
+	animation: animate 5s linear infinite;
 }
 
 .krug i:nth-child(2) {
 	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-	animation: animate 9s linear infinite;
+	animation: animate 8s linear infinite;
 }
 
 .krug i:nth-child(3) {
 	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
 	animation: animate2 3s linear infinite;
 }
-
+.krug i:nth-child(4) {
+	border-radius: 51% 54% 66% 69%/28% 52% 53% 27%;
+	animation: animate2 11s linear infinite;
+}
 .krug:hover i {
 	border: 6px solid var(--clr);
 	filter: drop-shadow(0 0 20px var(--clr));
@@ -2743,11 +2751,10 @@ section .option_list .option .icon {
 }
 
 .login {
-	margin-top: -20%;
+	margin-top: -30%;
 	position: absolute;
 	width: 25rem;
 	height: 100%;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -2766,7 +2773,7 @@ section .option_list .option .icon {
 
 .login .inputBx input {
 	position: relative;
-	width: 100%;
+	width: 90%;
 	padding: 12px 20px;
 	background: transparent;
 	border: 2px solid var(--primary);
@@ -2783,7 +2790,7 @@ section .option_list .option .icon {
 	font-weight: 600;
 	font-size: 1.2em;
 	letter-spacing: 0.5rem;
-	width: 110%;
+	width: 100%;
 	background: linear-gradient(45deg, #79b1d2ca, #79d2aeca);
 	border: none;
 	cursor: pointer;
@@ -2791,3 +2798,46 @@ section .option_list .option .icon {
 	padding: 1rem 1.5rem;
 	border-radius: 3rem;
 }
+
+.login .links {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+    }
+
+    .activeForm{
+	display: flex;
+    }
+
+    .notActiveForm{
+	display: none;
+    }
+
+    .links button{
+	background-color: var(--bela);
+	letter-spacing: 0.1rem;
+	font-size: 1rem;
+	width: fit-content;
+	padding: 7px 20px;
+	color: var(--crna);
+	border-radius: 2rem;
+	border: 2px solid var(--primary);
+	transition: all 0.3s ease-in-out;
+    }
+
+    .links button:hover{
+	background-color: #02bde25d;
+	scale: 1.1;
+    }
+
+    #nazadnaPrijavu{
+	margin: 0 auto;
+    }
+    #regstrujse, #signInDugme{
+	transition: all 0.3s ease-in-out;
+    }
+    #regstrujse:hover, #signInDugme:hover{
+	scale: 1.05;
+    }

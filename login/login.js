@@ -74,3 +74,39 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+      const loginForm = document.getElementById('loginForm');
+      const registracijaForm = document.getElementById('registracijaForm');
+      const registracijaButton = document.getElementById('registracija');
+  
+      // Initially, set loginForm as active and registracijaForm as inactive
+      loginForm.classList.add('activeForm');
+      registracijaForm.classList.add('notActiveForm');
+  
+      // Add event listener to the registracija button
+      registracijaButton.addEventListener('click', function () {
+          // Toggle active and inactive classes between loginForm and registracijaForm
+          loginForm.classList.toggle('activeForm');
+          registracijaForm.classList.toggle('activeForm');
+          loginForm.classList.toggle('notActiveForm');
+          registracijaForm.classList.toggle('notActiveForm');
+      });
+  });
+  
+  document.addEventListener('DOMContentLoaded', function () {
+        const loginForm = document.getElementById('loginForm');
+        const registracijaForm = document.getElementById('registracijaForm');
+        const registracijaButton = document.getElementById('nazadnaPrijavu');
+    
+        loginForm.classList.add('activeForm');
+        registracijaForm.classList.add('notActiveForm');
+    
+        registracijaButton.addEventListener('click', function () {
+            registracijaForm.classList.toggle('activeForm');
+            loginForm.classList.toggle('activeForm');
+            registracijaForm.classList.toggle('notActiveForm');
+            loginForm.classList.toggle('notActiveForm');
+        });
+    });
