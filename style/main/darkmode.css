@@ -210,4 +210,13 @@
 	.linijaOZL{
 		background-color: var(--crna);
 	}
+
+	.login .inputBx input {
+		border: 2px solid white !important;
+		color: white !important;
+	}
+
+	.login .inputBx input::placeholder {
+		color: white;
+	}
 }

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="https://kit.fontawesome.com/a0aad3ae93.js" crossorigin="anonymous"></script>
-		<script src="script.js"></script>
-		<title>САВРЕМЕНА АРХИТЕКТУРА</title>
-	</head>
+      <head>
+            <meta charset="UTF-8" />
+            <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1.0" />
+            <script
+                  src="https://kit.fontawesome.com/a0aad3ae93.js"
+                  crossorigin="anonymous"></script>
+            <script src="script.js"></script>
+            <title>ПРИЈАВИ СЕ</title>
+      </head>
 
-<body>
-      <!-- <div class="strana">
+      <body>
+            <!-- <div class="strana">
             <main class="beogradjanka">
                   <h1>Улогуј се</h1>
                   <form id="MainForm" class="w-25 m-4">
@@ -34,103 +38,41 @@
                         </form>
             </main>
       </div> -->
-      <img id="baner" src="Materijal/Pocetna/Baner-pocetna.jpg" alt="">
-      <hr id="banerHR">
-      <div class="strana">
-            <!-- <img id="banerFon" src="Materijal/Baneri/Baner - oznake.jpg" alt="">
-            <hr>
-            <main style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                  <div class="login-container">
-                        <div class="screen">
-                              <div class="screen__content">
-                                    <form class="login">
-                                          <div class="login__field">
-                                                <i class="login__icon fas fa-user" aria-hidden="true"></i>
-                                                <input type="text" class="login__input" placeholder="Корисничко име / E-маил">
-                                          </div>
-                                          <div class="login__field">
-                                                <i class="login__icon fas fa-lock" aria-hidden="true"></i>
-                                                <input type="password" class="login__input" placeholder="Шифра">
-                                          </div>
-                                          <button class="button login__submit">
-                                                <span class="button__text">ПРИЈАВИ СЕ</span>
-                                                <i class="button__icon fas fa-chevron-right" aria-hidden="true"></i>
-                                          </button>				
-                                    </form>
-                                    <div class="social-login">
-                                          <h3>Пријави се помоћу:</h3>
-                                          <div class="social-icons">
-                                                <a href="#" class="social-login__icon fab fa-instagram" aria-hidden="true"></a>
-                                                <a href="#" class="social-login__icon fab fa-facebook" aria-hidden="true"></a>
-                                                <a href="#" class="social-login__icon fa-solid fa-g" aria-hidden="true"></a>
-                                          </div>
+            <img id="baner" src="Materijal/Pocetna/Baner-pocetna.jpg" alt="" />
+            <hr id="banerHR" />
+            <div class="strana">
+                  <img
+                        id="banerFon"
+                        src="Materijal/Baneri/Baner - oznake.jpg"
+                        alt="" />
+                  <hr />
+                  <main>
+                        <div class="krug">
+                              <i class="krug1"></i>
+                              <i class="krug2"></i>
+                              <i class="krug3"></i>
+                              <div class="login">
+                                    <h2>Пријави се</h2>
+                                    <div class="inputBx">
+                                          <input
+                                                type="text"
+                                                id="username"
+                                                placeholder="Корисничко име" />
+                                    </div>
+                                    <div class="inputBx">
+                                          <input
+                                                type="password"
+                                                id="password"
+                                                placeholder="Шифра" />
+                                    </div>
+                                    <div class="inputBx">
+                                          <button onclick="signIn()">
+                                                Пријави се
+                                          </button>
                                     </div>
                               </div>
-                              <div class="screen__background">
-                                    <span class="screen__background__shape screen__background__shape4"></span>
-                                    <span class="screen__background__shape screen__background__shape3"></span>		
-                                    <span class="screen__background__shape screen__background__shape2"></span>
-                                    <span class="screen__background__shape screen__background__shape1"></span>
-                              </div>		
                         </div>
-                  </div>
-            </main> -->
-            <div class="ring">
-                  <i class="krug1"></i>
-                  <i class="krug2"></i>
-                  <i class="krug3"></i>
-                  <div class="login">
-                      <h2>Пријави се</h2>
-                      <div class="inputBx">
-                          <input type="text" id="username" placeholder="Корисничко име">
-                      </div>
-                      <div class="inputBx">
-                          <input type="password" id="password" placeholder="Шифра">
-                      </div>
-                      <div class="inputBx">
-                          <button onclick="signIn()">Пријави се</button>
-                      </div>
-                  </div>
-              </div>
-              <script type="module">
-                  import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-      // Your Firebase configuration
-      const firebaseConfig = {
-            apiKey: "AIzaSyCttdTmQbpirrtL8h6rztxzz2rY7-cxxh0",
-            authDomain: "bg-koordinate.firebaseapp.com",
-            databaseURL: "https://bg-koordinate-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "bg-koordinate",
-    storageBucket: "bg-koordinate.appspot.com",
-    messagingSenderId: "16168187625",
-    appId: "1:16168187625:web:9d9734146515b514d16278",
-    measurementId: "G-7WGDCSB8WG"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-// Function to handle sign in
-function signIn() {
-      const email = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      
-      const auth = getAuth();
-      signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user);
-        })
-        .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              console.error(errorMessage);
-            });
-      }
-              </script>
-      </div>
-</body>
-
+                  </main>
+            </div>
+      </body>
 </html>
