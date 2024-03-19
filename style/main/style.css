@@ -2564,78 +2564,6 @@ section .option_list .option .icon {
 	height: 75rem;
 }
 
-.ljudi {
-	margin-top: 20rem;
-	margin-bottom: 20rem;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr;
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
-	justify-content: center;
-	align-items: center;
-	transition: transform 0.5s ease-in-out;
-	/* Add transition for smooth rotation */
-}
-
-.par img {
-	width: 10rem;
-	aspect-ratio: 1/1;
-	border-radius: 50%;
-	border: 5px solid var(--primary);
-	transition: 0.25s ease-in-out scale;
-}
-
-.par img:hover {
-	scale: 1.2;
-}
-
-.par {
-	grid-area: 1 / 1 / 2 / 2;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 50rem;
-}
-
-.br1 {
-	transform: rotate(45deg);
-}
-
-.br1 img {
-	transform: rotate(-45deg);
-}
-
-.br2 {
-	transform: rotate(90deg);
-}
-
-.br2 img {
-	transform: rotate(-90deg);
-}
-
-.br3 {
-	transform: rotate(135deg);
-}
-
-.br3 img {
-	transform: rotate(-135deg);
-}
-
-.krug {
-	grid-area: 1 / 1 / 2 / 2;
-	aspect-ratio: 1/1;
-	border-radius: 50%;
-	width: 40rem;
-	margin-left: 10.5%;
-	border: 0.5rem solid var(--primary);
-}
-
-.ljudi button {
-	background-color: transparent !important;
-	border: none;
-}
-
 .ivicaImarica {
 	margin-left: 1rem;
 	display: flex;
@@ -2757,7 +2685,7 @@ section .option_list .option .icon {
 	--clr: #79d2ae;
 }
 
-krug {
+.krug {
 	margin: 10rem auto;
 	position: relative;
 	width: 40rem;
@@ -2767,29 +2695,29 @@ krug {
 	align-items: center;
 }
 
-krug i {
+.krug i {
 	position: absolute;
 	inset: 0;
 	border: 2px solid #707070;
 	transition: 0.5s;
 }
 
-krug i:nth-child(1) {
+.krug i:nth-child(1) {
 	border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
 	animation: animate 4.5s linear infinite;
 }
 
-krug i:nth-child(2) {
+.krug i:nth-child(2) {
 	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
 	animation: animate 9s linear infinite;
 }
 
-krug i:nth-child(3) {
+.krug i:nth-child(3) {
 	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
 	animation: animate2 3s linear infinite;
 }
 
-krug:hover i {
+.krug:hover i {
 	border: 6px solid var(--clr);
 	filter: drop-shadow(0 0 20px var(--clr));
 }
@@ -2863,11 +2791,3 @@ krug:hover i {
 	padding: 1rem 1.5rem;
 	border-radius: 1rem;
 }
-
-.login .inputBx input::placeholder {
-	color: var(--primary);
-}
-
-    .login .inputBx button::-ms-reveal {
-      filter: invert(100%);
-    }
