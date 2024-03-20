@@ -905,3 +905,28 @@ document.addEventListener("DOMContentLoaded", function()
 		}
 	}
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+      const loginForm = document.getElementById('loginForm');
+      const registracijaForm = document.getElementById('registracijaForm');
+      const registracijaButton = document.getElementById('registracija');
+      const nazadnaPrijavuButton = document.getElementById('nazadnaPrijavu');
+
+      loginForm.classList.add('activeForm');
+      registracijaForm.classList.add('notActiveForm');
+
+      registracijaButton.addEventListener('click', function () {
+          toggleForms();
+      });
+
+      nazadnaPrijavuButton.addEventListener('click', function () {
+          toggleForms();
+      });
+
+      function toggleForms() {
+          loginForm.classList.toggle('activeForm');
+          registracijaForm.classList.toggle('activeForm');
+          loginForm.classList.toggle('notActiveForm');
+          registracijaForm.classList.toggle('notActiveForm');
+      }
+  });

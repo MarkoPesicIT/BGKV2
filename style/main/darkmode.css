@@ -223,4 +223,12 @@
       #password::-ms-reveal{
             filter: invert(100%);
       }
+
+      #regpassword::-ms-reveal{
+            filter: invert(100%);
+      }
+
+      #ponovipassword::-ms-reveal{
+            filter: invert(100%);
+      }
 }

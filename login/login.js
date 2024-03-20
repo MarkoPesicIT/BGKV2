@@ -1,112 +1,53 @@
-// Update import statements to use Firebase 9 modular SDK
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
-import { getFirestore, collection, addDoc, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
-document.addEventListener("DOMContentLoaded", function () {
-    // Your Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyCttdTmQbpirrtL8h6rztxzz2rY7-cxxh0",
-      authDomain: "bg-koordinate.firebaseapp.com",
-      databaseURL: "https://bg-koordinate-default-rtdb.europe-west1.firebasedatabase.app",
-      projectId: "bg-koordinate",
-      storageBucket: "bg-koordinate.appspot.com",
-      messagingSenderId: "16168187625",
-      appId: "1:16168187625:web:9d9734146515b514d16278",
-      measurementId: "G-7WGDCSB8WG"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const firestore = getFirestore(app);
-
-    // Function to handle registration
-    document.getElementById("regstrujse").addEventListener("click", register);
-
-    async function register() {
-      const email = document.getElementById('regusername').value;
-      const password = document.getElementById('regpassword').value;
-  
-      // Check if email is empty
-      if (!email) {
-          console.error("Error: Email field is empty.");
-          return; // Exit the function if email is empty
-      }
-  
-      try {
-          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-          const user = userCredential.user;
-          console.log("Success: User registered with email:", user.email);
-  
-          // Add user information to Firestore users collection
-          await addDoc(collection(firestore, "users"), {
-              email: user.email,
-              password: password,
-              id: user.uid // Assuming Firebase automatically generates a unique ID for users
-          });
-  
-          console.log("User information added to Firestore collection 'users'");
-      } catch (error) {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.error(errorMessage);
-      }
-  }
-  
-  
-
-    // Function to handle sign in
-    document.getElementById("signInDugme").addEventListener("click", signIn);
-
-    async function signIn() {
-        const email = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-            console.log("Success: User signed in with email:", user.email);
-            // You can add any further actions after successful sign-in here
-        } catch (error) {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.error(errorMessage);
-        }
-    }
-});
-
-
 document.addEventListener('DOMContentLoaded', function () {
-      const loginForm = document.getElementById('loginForm');
-      const registracijaForm = document.getElementById('registracijaForm');
-      const registracijaButton = document.getElementById('registracija');
-  
-      // Initially, set loginForm as active and registracijaForm as inactive
-      loginForm.classList.add('activeForm');
-      registracijaForm.classList.add('notActiveForm');
-  
-      // Add event listener to the registracija button
-      registracijaButton.addEventListener('click', function () {
-          // Toggle active and inactive classes between loginForm and registracijaForm
-          loginForm.classList.toggle('activeForm');
-          registracijaForm.classList.toggle('activeForm');
-          loginForm.classList.toggle('notActiveForm');
-          registracijaForm.classList.toggle('notActiveForm');
-      });
+
+      document.getElementById("signInDugme").addEventListener('click', function () {
+            const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "C:\Users\marko\Desktop\bgv2\BGKV2\login\signin.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                  alert(xhr.responseText);
+              } else {
+                  alert("Error occurred during login");
+              }
+          }
+      };
+      xhr.send(`username=${username}&password=${password}`);
   });
   
-  document.addEventListener('DOMContentLoaded', function () {
-        const loginForm = document.getElementById('loginForm');
-        const registracijaForm = document.getElementById('registracijaForm');
-        const registracijaButton = document.getElementById('nazadnaPrijavu');
-    
-        loginForm.classList.add('activeForm');
-        registracijaForm.classList.add('notActiveForm');
-    
-        registracijaButton.addEventListener('click', function () {
-            registracijaForm.classList.toggle('activeForm');
-            loginForm.classList.toggle('activeForm');
-            registracijaForm.classList.toggle('notActiveForm');
-            loginForm.classList.toggle('notActiveForm');
-        });
-    });
+  document.getElementById("regstrujse").addEventListener('click', function () {
+      const regemail = document.getElementById("regemail").value;
+      const regusername = document.getElementById("regusername").value;
+      const regpassword = document.getElementById("regpassword").value;
+      const ponovipassword = document.getElementById("ponovipassword").value;
+  
+      console.log("User info collected:", regemail, regusername, regpassword, ponovipassword);
+  
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "C:\Users\marko\Desktop\bgv2\BGKV2\login\register.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+            console.log('Ready state:', xhr.readyState);
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log("Response from server:", xhr.responseText);
+                    alert(xhr.responseText);
+                } else {
+                    console.error("Error occurred during registration JS:", xhr.status);
+                    console.log("Error response from server:", xhr.responseText); // Log the response for debugging
+                    alert("Error occurred during registration JS");
+                }
+            }
+        };
+        
+        
+      console.log(`Sending registration data: regemail=${regemail}, regusername=${regusername}, regpassword=${regpassword}, ponovipassword=${ponovipassword}`);
+
+xhr.send(`regemail=${regemail}&regusername=${regusername}&regpassword=${regpassword}&ponovipassword=${ponovipassword}`);
+
+  });
+});
