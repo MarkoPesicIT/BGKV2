@@ -122,8 +122,8 @@ main {
 	font-weight: 500;
 }
 
-#bolder{
-      font-weight: 700;
+#bolder {
+	font-weight: 700;
 }
 
 #logoGSS {
@@ -144,24 +144,26 @@ main {
 }
 
 #ulogujse {
-
 	text-align: center;
 	font-size: 1.5rem;
 	padding: 0.7rem;
 	color: white;
 	border: 0;
 	width: auto;
-      /* transform: skewX(35deg); */
+	cursor: pointer;
 }
+
 .loginDM {
-      background-color: var(--primary);
-      transition: all 0.2s ease-in-out;
-      transform: skewX(-35deg);
+	background-color: var(--primary);
+	transform: skewX(-35deg);
+	transition: transform 0.3s, background-color 0.3s;
 }
-.loginDM:hover{
-      transform: scale(1.07);
-      background-color: var(--svetloP);
+
+.loginDM:hover {
+	transform: skewX(-35deg) scale(1.07);
+	background-color: var(--svetloP);
 }
+
 #ulogujse:hover {
 	cursor: pointer;
 }
@@ -626,6 +628,12 @@ i {
 	background-color: var(--primary);
 }
 
+#hrFooter{
+	border: none;
+	height: 0.1rem;
+	background-color: white;
+}
+
 .procitajvise {
 	display: flex;
 	flex-direction: row;
@@ -794,8 +802,8 @@ a,
 .ukratkoPC,
 .brziMeniPC,
 .korisniLinkoviPC {
-	border-top-right-radius: 2rem;
-	border-bottom-left-radius: 2rem;
+	border-top-right-radius: 3rem;
+	border-bottom-left-radius: 3rem;
 	border-right: 0.35rem solid var(--bela);
 	border-bottom: 0.35rem solid var(--bela);
 	border-left: 0.15rem solid var(--bela);
@@ -1067,7 +1075,7 @@ a,
 }
 
 .ogradjUvod h1 {
-      white-space: nowrap;
+	white-space: nowrap;
 	text-align: right;
 	font-weight: 500;
 }
@@ -1116,8 +1124,8 @@ a,
 	width: 400%;
 }
 
-#italicTXT{
-      font-style: italic;
+#italicTXT {
+	font-style: italic;
 }
 
 .beogradjanka {
@@ -1444,8 +1452,7 @@ svg text {
 .quiz_box,
 .result_box {
 	position: relative;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-		0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .info_box.activeInfo,
@@ -1478,10 +1485,7 @@ svg text {
 	75%,
 	90%,
 	100% {
-		-webkit-transition-timing-function: cubic-bezier(0.215,
-				0.61,
-				0.355,
-				1);
+		-webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 
@@ -1520,10 +1524,7 @@ svg text {
 	75%,
 	90%,
 	100% {
-		-webkit-transition-timing-function: cubic-bezier(0.215,
-				0.61,
-				0.355,
-				1);
+		-webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 
@@ -2628,7 +2629,6 @@ section .option_list .option .icon {
 	scale: 2.5;
 }
 
-
 .micaPopovic img {
 	transition: all 0.5s ease-in-out;
 	margin-bottom: 3rem;
@@ -2729,10 +2729,12 @@ section .option_list .option .icon {
 	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
 	animation: animate2 3s linear infinite;
 }
+
 .krug i:nth-child(4) {
 	border-radius: 51% 54% 66% 69%/28% 52% 53% 27%;
 	animation: animate2 11s linear infinite;
 }
+
 .krug:hover i {
 	border: 6px solid var(--clr);
 	filter: drop-shadow(0 0 20px var(--clr));
@@ -2777,10 +2779,10 @@ section .option_list .option .icon {
 .login .inputBx {
 	position: relative;
 	width: 100%;
+	transform: skewX(-35deg);
 }
 
 .login .inputBx input {
-      transform: skewX(-35deg);
 	position: relative;
 	width: 90%;
 	padding: 12px 20px;
@@ -2792,13 +2794,18 @@ section .option_list .option .icon {
 	color: var(--primary);
 	box-shadow: none;
 	outline: none;
+	transition: box-shadow 0.3s ease-in-out;
 }
-.inputBox::placeholder{
-      transform: skewX(35deg);
-}
-.login .inputBx button {
-      transform: skewX(-35deg);
 
+.login .inputBx input:focus {
+	box-shadow: 0 0 1rem rgba(255, 255, 255, 0.7);
+}
+
+.inputBox::placeholder {
+	transform: skewX(35deg);
+}
+
+.login .inputBx button {
 	font-weight: 600;
 	font-size: 1.2em;
 	letter-spacing: 0.5rem;
@@ -2810,50 +2817,56 @@ section .option_list .option .icon {
 	padding: 1rem 1.5rem;
 }
 
-.login .inputBx button::first-line {
-      display: inline-block;
-      transform: skewX(-35deg); /* Apply skew to the text */
-    }
-
 .login .links {
+	transform: skewX(-35deg);
 	position: relative;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-    }
+}
 
-    .activeForm{
+.activeForm {
 	display: flex;
-    }
+}
 
-    .notActiveForm{
+.notActiveForm {
 	display: none;
-    }
+}
 
-    .links button{
-	background-color: var(--bela);
+.links button {
+	background-color: var(--svetloP2);
 	letter-spacing: 0.1rem;
 	font-size: 1rem;
 	width: fit-content;
 	padding: 7px 20px;
 	color: var(--crna);
-	border-radius: 2rem;
-	border: 2px solid var(--primary);
+	border: 2px solid var(--svetloP2);
 	transition: all 0.3s ease-in-out;
-    }
+}
 
-    .links button:hover{
+.links button:hover {
 	background-color: #02bde25d;
 	scale: 1.1;
-    }
+}
 
-    #nazadnaPrijavu{
+#nazadnaPrijavu {
 	margin: 0 auto;
-    }
-    #regstrujse, #signInDugme{
+}
+
+#regstrujse,
+#signInDugme {
 	transition: all 0.3s ease-in-out;
-    }
-    #regstrujse:hover, #signInDugme:hover{
+}
+
+#regstrujse:hover,
+#signInDugme:hover {
 	scale: 1.05;
-    }
+}
+
+#btnLabel {
+	transform: skewX(35deg);
+	margin: 0;
+	font-weight: 600;
+	color: var(--bela);
+}

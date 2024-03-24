@@ -1,53 +1,59 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-      document.getElementById("signInDugme").addEventListener('click', function () {
-            const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+document.addEventListener("DOMContentLoaded", function() {
+      console.log("DOM content loaded");
+  
+      document.getElementById('signInDugme').addEventListener('click', login);
+      document.getElementById('regstrujse').addEventListener('click', register);
+  
+      function login() {
+          console.log("Login button clicked");
+  
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+  
+          console.log("Username:", username);
+          console.log("Password:", password);
+  
+          fetch('loginRegister.php', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+          })
+          .then(response => response.text())
+          .then(data => {
+              console.log("Response from PHP:", data);
+              alert(data); // Handle the response from PHP
+          })
+          .catch(error => console.error('Error:', error));
+      }
       
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", "login/index.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function () {
-          if (xhr.readyState === XMLHttpRequest.DONE) {
-              if (xhr.status === 200) {
-                  alert(xhr.responseText);
-              } else {
-                  alert("Error occurred during login");
-              }
-          }
-      };
-      xhr.send(`username=${username}&password=${password}`);
+      function register() {
+          console.log("Register button clicked");
+  
+          const regemail = document.getElementById('regemail').value;
+          const regusername = document.getElementById('regusername').value;
+          const regpassword = document.getElementById('regpassword').value;
+          const ponovipassword = document.getElementById('ponovipassword').value;
+  
+          console.log("Email:", regemail);
+          console.log("Username:", regusername);
+          console.log("Password:", regpassword);
+          console.log("Confirm Password:", ponovipassword);
+  
+          fetch('loginRegister.php', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              body: `register=true&regemail=${encodeURIComponent(regemail)}&regusername=${encodeURIComponent(regusername)}&regpassword=${encodeURIComponent(regpassword)}&ponovipassword=${encodeURIComponent(ponovipassword)}`
+          })
+          .then(response => response.text())
+          .then(data => {
+              console.log("Response from PHP:", data);
+              alert(data);
+          })
+          .catch(error => console.error('Error:', error));
+      }
   });
   
-  document.getElementById("regstrujse").addEventListener('click', function () {
-      const regemail = document.getElementById("regemail").value;
-      const regusername = document.getElementById("regusername").value;
-      const regpassword = document.getElementById("regpassword").value;
-      const ponovipassword = document.getElementById("ponovipassword").value;
-  
-      console.log("User info collected:", regemail, regusername, regpassword, ponovipassword);
-  
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", "login/index.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function () {
-            console.log('Ready state:', xhr.readyState);
-            console.log("Response from server:", xhr.responseText);
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    alert(xhr.responseText);
-                } else {
-                    console.error("Error occurred during registration JS:", xhr.status);
-                    console.log("Error response from server:", xhr.responseText); // Log the response for debugging
-                    alert("Error occurred during registration JS");
-                }
-            }
-        };
-        
-        
-      console.log(`Sending registration data: regemail=${regemail}, regusername=${regusername}, regpassword=${regpassword}, ponovipassword=${ponovipassword}`);
-
-xhr.send(`regemail=${regemail}&regusername=${regusername}&regpassword=${regpassword}&ponovipassword=${ponovipassword}`);
-
-  });
-});
