@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+</head>
+<body>
+
+    <form id="loginForm" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="button" id="signInDugme">Sign In</button>
+    </form>
+
+    <br>
+
+    <form id="registerForm" method="POST">
+        <label for="regemail">Email:</label><br>
+        <input type="email" id="regemail" name="regemail"><br>
+        <label for="regusername">Username:</label><br>
+        <input type="text" id="regusername" name="regusername"><br>
+        <label for="regpassword">Password:</label><br>
+        <input type="password" id="regpassword" name="regpassword"><br>
+        <label for="ponovipassword">Confirm Password:</label><br>
+        <input type="password" id="ponovipassword" name="ponovipassword"><br><br>
+        <button type="button" id="regstrujse">Register</button>
+    </form>
+
+    <script>
+        document.getElementById("signInDugme").addEventListener('click', function () {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "<?php echo $_SERVER['PHP_SELF']; ?>", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        alert(xhr.responseText);
+                    } else {
+                        alert("Error occurred during login");
+                    }
+                }
+            };
+            xhr.send(`username=${username}&password=${password}`);
+        });
+
+        document.getElementById("regstrujse").addEventListener('click', function () {
+            const regemail = document.getElementById("regemail").value;
+            const regusername = document.getElementById("regusername").value;
+            const regpassword = document.getElementById("regpassword").value;
+            const ponovipassword = document.getElementById("ponovipassword").value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "<?php echo $_SERVER['PHP_SELF']; ?>", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        alert(xhr.responseText);
+                    } else {
+                        console.error("Error occurred during registration JS:", xhr.status);
+                        console.log("Error response from server:", xhr.responseText); // Log the response for debugging
+                        alert("Error occurred during registration JS");
+                    }
+                }
+            };
+
+            xhr.send(`regemail=${regemail}&regusername=${regusername}&regpassword=${regpassword}&ponovipassword=${ponovipassword}`);
+        });
+    </script>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $servername = "localhost";
+        $username = "root";
+        $password = ""; // Set your password here
+
+        $conn = new mysqli($servername, $username, $password);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        if (isset($_POST["username"]) && isset($_POST["password"])) {
+            $username = $_POST["username"];
+            $password = $_POST["password"];
+
+            $sql = "SELECT * FROM korisnic WHERE korisnickoIme='$username' AND password='$password'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows == 1) {
+                echo "Login successful";
+            } else {
+                echo "Invalid username or password";
+            }
+        }
+
+        if (isset($_POST["regemail"]) && isset($_POST["regusername"]) && isset($_POST["regpassword"]) && isset($_POST["ponovipassword"])) {
+            $email = $_POST["regemail"];
+            $username = $_POST["regusername"];
+            $password = $_POST["regpassword"];
+
+            $stmt = $conn->prepare("INSERT INTO korisnici (email, password, korisnickoIme) VALUES (?, ?, ?)");
+            $stmt->bind_param("sss", $email, $password, $username);
+
+            if ($stmt->execute()) {
+                echo "Registration successful";
+            } else {
+                echo "Error occurred during registration: " . $stmt->error;
+                error_log("Error: " . $stmt->error);
+            }
+
+            $stmt->close();
+        }
+
+        $conn->close();
+    }
+    ?>
+
+</body>
+</html>

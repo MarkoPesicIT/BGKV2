@@ -122,6 +122,10 @@ main {
 	font-weight: 500;
 }
 
+#bolder{
+      font-weight: 700;
+}
+
 #logoGSS {
 	width: 20rem;
 	height: 7rem;
@@ -140,20 +144,25 @@ main {
 }
 
 #ulogujse {
+
 	text-align: center;
 	font-size: 1.5rem;
 	padding: 0.7rem;
 	color: white;
-	border-radius: 1rem;
 	border: 0;
-	background-color: var(--primary);
 	width: auto;
-	transition: background-color 0.2s ease-in-out, 0.2s ease-in-out transform;
+      /* transform: skewX(35deg); */
 }
-
+.loginDM {
+      background-color: var(--primary);
+      transition: all 0.2s ease-in-out;
+      transform: skewX(-35deg);
+}
+.loginDM:hover{
+      transform: scale(1.07);
+      background-color: var(--svetloP);
+}
 #ulogujse:hover {
-	background-color: var(--svetloP);
-	transform: scale(1.07);
 	cursor: pointer;
 }
 
@@ -1058,6 +1067,7 @@ a,
 }
 
 .ogradjUvod h1 {
+      white-space: nowrap;
 	text-align: right;
 	font-weight: 500;
 }
@@ -1104,6 +1114,10 @@ a,
 
 .slider-container img.active {
 	width: 400%;
+}
+
+#italicTXT{
+      font-style: italic;
 }
 
 .beogradjanka {
@@ -2614,12 +2628,6 @@ section .option_list .option .icon {
 	scale: 2.5;
 }
 
-.loginDM {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
 
 .micaPopovic img {
 	transition: all 0.5s ease-in-out;
@@ -2772,12 +2780,12 @@ section .option_list .option .icon {
 }
 
 .login .inputBx input {
+      transform: skewX(-35deg);
 	position: relative;
 	width: 90%;
 	padding: 12px 20px;
 	background: transparent;
 	border: 2px solid var(--primary);
-	border-radius: 3rem;
 	font-size: 1.2rem;
 	letter-spacing: 0rem;
 	font-weight: 600;
@@ -2785,8 +2793,12 @@ section .option_list .option .icon {
 	box-shadow: none;
 	outline: none;
 }
-
+.inputBox::placeholder{
+      transform: skewX(35deg);
+}
 .login .inputBx button {
+      transform: skewX(-35deg);
+
 	font-weight: 600;
 	font-size: 1.2em;
 	letter-spacing: 0.5rem;
@@ -2796,8 +2808,12 @@ section .option_list .option .icon {
 	cursor: pointer;
 	color: white;
 	padding: 1rem 1.5rem;
-	border-radius: 3rem;
 }
+
+.login .inputBx button::first-line {
+      display: inline-block;
+      transform: skewX(-35deg); /* Apply skew to the text */
+    }
 
 .login .links {
 	position: relative;

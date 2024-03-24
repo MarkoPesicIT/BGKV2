@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const password = document.getElementById("password").value;
       
       const xhr = new XMLHttpRequest();
-      xhr.open("POST", "C:\Users\marko\Desktop\bgv2\BGKV2\login\signin.php", true);
+      xhr.open("POST", "login/index.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function () {
           if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -28,13 +28,13 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log("User info collected:", regemail, regusername, regpassword, ponovipassword);
   
       const xhr = new XMLHttpRequest();
-      xhr.open("POST", "C:\Users\marko\Desktop\bgv2\BGKV2\login\register.php", true);
+      xhr.open("POST", "login/index.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function () {
             console.log('Ready state:', xhr.readyState);
+            console.log("Response from server:", xhr.responseText);
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                    console.log("Response from server:", xhr.responseText);
                     alert(xhr.responseText);
                 } else {
                     console.error("Error occurred during registration JS:", xhr.status);
