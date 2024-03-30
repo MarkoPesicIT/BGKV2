@@ -1065,6 +1065,9 @@ a,
 }
 
 .ogradjUvod {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	margin: auto;
 	margin-bottom: 5rem;
 	width: 80%;
