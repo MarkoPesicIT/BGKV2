@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@devcycle/js-client-sdk": "^1.21.1",
+    "firebase": "^10.9.0"
+  }
+}
