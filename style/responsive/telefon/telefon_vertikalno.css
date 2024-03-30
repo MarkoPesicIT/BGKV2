@@ -568,9 +568,8 @@
 		margin-top: 5rem;
 		column-count: 1;
 	}
-
-	.slikaGalerija img:hover{
-		scale: 1;
+	.slikaGalerija img{
+		transition: none !important;
 	}
 }
 
